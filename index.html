@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Auckland Airport Transfer | Warm Voyage Premium Chauffeur NZ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Warm Voyage offers premium Auckland Airport transfer, corporate chauffeur and luxury private tours across New Zealand. Reliable, professional and luxury fleet.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        :root {
+            --color-bg: #0c0c10;
+            --color-bg-card: #1a1a22;
+            --color-text: #f5f5f5;
+            --color-text-muted: #777;
+            --color-gold: #d4af37;
+            --color-gold-light: #f5d76e;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 500;
+            line-height: 1.2;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            z-index: 999;
+            transition: var(--transition-smooth);
+        }
+        
+        nav.scrolled {
+            padding: 10px 40px;
+            background: rgba(0, 0, 0, 0.98);
+        }
+        
+        .nav-brand {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav a {
+            color: var(--color-text);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+            transition: var(--transition-smooth);
+        }
+        
+        nav a:hover {
+            color: var(--color-gold);
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: var(--color-text);
+            transition: var(--transition-smooth);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding-top: 60px;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            z-index: -2;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23d4af37" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,165.3C1248,149,1344,107,1392,85.3L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+        
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(2px);
+            padding: 80px 40px;
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            margin: 0 20px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--color-text) 0%, var(--color-gold-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
+            color: #000;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+        
+        .btn:active {
+            transform: translateY(-1px);
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            color: var(--color-gold);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
+            border-radius: 2px;
+        }
+        
+        /* Grid & Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .card {
+            background: var(--color-bg-card);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+        
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--color-text);
+        }
+        
+        .card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 300;
+            line-height: 1.7;
+        }
+        
+        .price-box {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            color: var(--color-gold);
+            font-weight: 500;
+        }
+        
+        /* Pricing Section */
+        #pricing .card {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        input[type="number"] {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--color-text);
+            font-size: 16px;
+            font-family: var(--font-body);
+            transition: var(--transition-smooth);
+        }
+        
+        input[type="number"]:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        input[type="number"]::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        #result {
+            text-align: center;
+            margin-top: 25px;
+            font-size: 1.5rem;
+            color: var(--color-gold);
+            min-height: 40px;
+        }
+        
+        /* Reviews Section */
+        .reviews-container {
+            background: var(--color-bg-card);
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        
+        .reviews-placeholder {
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+        
+        .review-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .review-link:hover {
+            color: var(--color-gold-light);
+            text-decoration: underline;
+        }
+        
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+        
+        .contact-info a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .contact-info a:hover {
+            color: var(--color-gold-light);
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--color-text-muted);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        footer p {
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+            
+            nav.scrolled {
+                padding: 10px 20px;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                padding: 30px;
+                gap: 20px;
+                transform: translateY(-150%);
+                transition: var(--transition-smooth);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .hero-overlay {
+                padding: 50px 25px;
+            }
+            
+            section {
+                padding: 70px 15px;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .card {
+                padding: 30px 25px;
+            }
+            
+            .reviews-container {
+                padding: 30px 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .btn {
+                padding: 14px 30px;
+                font-size: 14px;
+            }
+            
+            .card h3 {
+                font-size: 1.3rem;
+            }
+        }
+        
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div class="nav-brand">Warm Voyage</div>
+        <button class="mobile-menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="nav-links" id="navLinks">
+            <a href="#services" onclick="closeMenu()">Services</a>
+            <a href="#pricing" onclick="closeMenu()">Pricing</a>
+            <a href="#reviews" onclick="closeMenu()">Reviews</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
+        </div>
+    </nav>
+    
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay">
+            <h1>Auckland Airport Transfer</h1>
+            <p>Premium Chauffeur & Corporate Transport Across New Zealand</p>
+            <a class="btn" href="#pricing">Get Instant Quote</a>
+        </div>
+    </header>
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Airport Transfers</h3>
+                <p>Professional Auckland airport pickup & drop-off with flight tracking and meet & greet service. We monitor your flight in real-time to ensure timely pickup.</p>
+                <div class="price-box">From NZD $95 (Central Auckland)</div>
+            </div>
+            
+            <div class="card">
+                <h3>Corporate Chauffeur</h3>
+                <p>Executive hourly service for meetings, VIP guests and business events. Impress your clients with our professional chauffeurs and luxury vehicles.</p>
+                <div class="price-box">From NZD $120 / hour</div>
+            </div>
+            
+            <div class="card">
+                <h3>Luxury Private Tours</h3>
+                <p>Tailored scenic travel experiences with premium SUV comfort. Explore New Zealand's breathtaking landscapes in style and comfort.</p>
+                <div class="price-box">From NZD $150 / hour</div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="pricing">
+        <h2>Price Estimator</h2>
+        <div class="card">
+            <div class="form-group">
+                <label for="distance">Distance (KM)</label>
+                <input type="number" id="distance" placeholder="Enter distance in kilometers" min="0" step="0.1">
+            </div>
+            <button class="btn" onclick="calculate()">Calculate Price</button>
+            <h3 id="result"></h3>
+        </div>
+    </section>
+    
+    <section id="reviews">
+        <h2>Google Reviews</h2>
+        <div class="reviews-container">
+            <p class="reviews-placeholder">⭐⭐⭐⭐⭐ Rated 5.0 by our valued customers</p>
+            <p style="color: rgba(255,255,255,0.5); margin-top: 15px;">See what our clients say about us on Google</p>
+            <a href="https://www.google.com/search?q=Warm+Voyage+Auckland" target="_blank" rel="noopener noreferrer" class="review-link">
+                View Reviews on Google →
+            </a>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:info@warmvoyage.co.nz">info@warmvoyage.co.nz</a></p>
+            <p>Phone: <a href="tel:+64XXXXXXXXX">+64 XXX XXX XXX</a></p>
+        </div>
+        <a class="btn" href="mailto:info@warmvoyage.co.nz">Book Now</a>
+    </section>
+    
+    <footer>
+        <p>&copy; 2026 Warm Voyage | Auckland Airport Transfer Specialists</p>
+        <p style="margin-top: 10px; font-size: 12px;">Premium Chauffeur Services Across New Zealand</p>
+    </footer>
+    
+    <script>
+        // Price calculator
+        function calculate() {
+            const distanceInput = document.getElementById("distance");
+            const resultElement = document.getElementById("result");
+            const distance = parseFloat(distanceInput.value) || 0;
+            
+            if (distance <= 0) {
+                resultElement.innerText = "Please enter a valid distance";
+                resultElement.style.color = "#ff6b6b";
+                return;
+            }
+            
+            const price = distance * 3 + 50;
+            resultElement.innerText = "Estimated Price: NZD $" + price.toFixed(2);
+            resultElement.style.color = "var(--color-gold)";
+        }
+        
+        // Allow Enter key to calculate
+        document.getElementById("distance").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                calculate();
+            }
+        });
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                }
+            });
+        }, observerOptions);
+        
+        // Observe cards and sections
+        document.querySelectorAll(".card, .fade-in").forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById("navbar");
+        let lastScroll = 0;
+        
+        window.addEventListener("scroll", () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+        
+        function closeMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.remove("active");
+        }
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener("click", (e) => {
+            const navLinks = document.getElementById("navLinks");
+            const menuBtn = document.querySelector(".mobile-menu-btn");
+            
+            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+                navLinks.classList.remove("active");
+            }
+        });
+    </script>
+</body>
+</html>
