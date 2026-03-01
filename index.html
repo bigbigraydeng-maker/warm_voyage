@@ -495,6 +495,82 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        /* Quote Form Styles */
+        .quote-card {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="datetime-local"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            color: var(--color-text);
+            font-size: 16px;
+            font-family: var(--font-body);
+            transition: var(--transition-smooth);
+        }
+        
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        input[type="datetime-local"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        input::placeholder,
+        textarea::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23d4af37' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 18px center;
+            padding-right: 45px;
+        }
+        
+        select option {
+            background: var(--color-bg-card);
+            color: var(--color-text);
+        }
+        
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .btn-full {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        @media (max-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
     </style>
 </head>
 
@@ -509,6 +585,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#services" onclick="closeMenu()">Services</a>
             <a href="#pricing" onclick="closeMenu()">Pricing</a>
+            <a href="#quote" onclick="closeMenu()">Get Quote</a>
             <a href="#reviews" onclick="closeMenu()">Reviews</a>
             <a href="#contact" onclick="closeMenu()">Contact</a>
         </div>
@@ -566,6 +643,63 @@
             <a href="https://www.google.com/search?q=Warm+Voyage+Auckland" target="_blank" rel="noopener noreferrer" class="review-link">
                 View Reviews on Google →
             </a>
+        </div>
+    </section>
+    
+    <section id="quote">
+        <h2>Request a Quote</h2>
+        <div class="card quote-card">
+            <form action="confirmation.html" method="GET">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+64 XX XXX XXXX" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Type *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="airport">Airport Transfer</option>
+                            <option value="corporate">Corporate Chauffeur</option>
+                            <option value="tour">Luxury Private Tour</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="pickup">Pickup Location</label>
+                        <input type="text" id="pickup" name="pickup" placeholder="Enter pickup address">
+                    </div>
+                    <div class="form-group">
+                        <label for="dropoff">Drop-off Location</label>
+                        <input type="text" id="dropoff" name="dropoff" placeholder="Enter destination">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="date">Preferred Date & Time</label>
+                    <input type="datetime-local" id="date" name="date">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Additional Requirements</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Tell us about any special requirements..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn btn-full">Submit Quote Request</button>
+            </form>
         </div>
     </section>
     
