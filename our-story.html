@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Story | Warm Voyage Premium Chauffeur NZ</title>
-  <meta name="description" content="Learn about Warm Voyage's story. Premium chauffeur services in New Zealand with a commitment to warmth, reliability, and exceptional service." />
-  <meta name="keywords" content="Warm Voyage story, about Warm Voyage, NZ chauffeur service, airport transfer NZ" />
+  <title>Our Story | Warm Voyage — NZ's Trusted Bilingual Chauffeur Service</title>
+  <meta name="description" content="Learn the Warm Voyage story. Founded in Auckland, we provide warm, reliable bilingual airport transfers and tours across New Zealand. 5,000+ happy clients. 品牌故事 — 暖途。" />
+  <meta name="keywords" content="Warm Voyage story, about Warm Voyage, NZ chauffeur service, airport transfer NZ, 暖途品牌故事, Warm Voyage story, NZ transport service" />
   <link rel="canonical" href="https://warm-voyage.onrender.com/our-story" />
   
   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
@@ -208,13 +208,20 @@
 <body>
   <nav>
     <a href="index.html" class="logo"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#features">Services</a>
-      <a href="index.html#fleet">Fleet</a>
-      <a href="index.html#contact">Contact</a>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Services</a>
+        <a href="index.html#fleet">Fleet</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="lang-switch" style="display:flex;gap:4px;background:#f5f0ea;padding:3px;border-radius:25px;flex-shrink:0">
+        <button class="lang-btn active" data-lang="en" style="padding:6px 14px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:20px;color:#888;transition:all .3s">EN</button>
+        <button class="lang-btn" data-lang="zh" style="padding:6px 14px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:20px;color:#888;transition:all .3s">中文</button>
+      </div>
     </div>
   </nav>
+  <style>.lang-btn.active{background:linear-gradient(135deg,#ffc83d,#ff8a3d);color:#fff!important}</style>
 
   <header class="page-header">
     <div class="container">
@@ -328,7 +335,20 @@
     const langParam = urlParams.get('lang');
     const savedLang = localStorage.getItem('warmvoyage_lang');
     const currentLang = langParam || savedLang || 'en';
-    
+    localStorage.setItem('warmvoyage_lang', currentLang);
+
+    // Language switcher functionality
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        localStorage.setItem('warmvoyage_lang', lang);
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lang);
+        window.location.href = url.toString();
+      });
+      btn.classList.toggle('active', btn.dataset.lang === currentLang);
+    });
+
     if (currentLang === 'zh') {
       document.documentElement.lang = 'zh-CN';
       document.title = '品牌故事 | 暖途 Warm Voyage';
@@ -373,6 +393,7 @@
       
       document.querySelector('footer .logo span').textContent = '暖途 Warm Voyage';
       document.querySelector('footer p').textContent = '新西兰优质接送服务。';
+      document.querySelector('nav .logo span').textContent = '暖途 Warm Voyage';
     }
   </script>
 </body>

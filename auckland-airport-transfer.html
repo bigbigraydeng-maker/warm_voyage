@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auckland Airport Transfer | Warm Voyage Premium Chauffeur NZ</title>
-  <meta name="description" content="Professional Auckland Airport Transfer Service. 24/7 airport pickup and drop-off, flight tracking, luxury vehicles. Book your airport transfer today." />
-  <meta name="keywords" content="Auckland airport transfer, Auckland airport pickup, AKL airport transfer, airport shuttle Auckland, chauffeur service Auckland" />
+  <title>Auckland Airport Transfer from NZ$80 | 24/7 Pickup & Drop-off | Warm Voyage</title>
+  <meta name="description" content="Auckland Airport transfer from NZ$80. Real-time flight tracking, meet & greet, bilingual drivers. Free waiting for delays. Sedan, MPV, minibus available. Book 24/7 — 奥克兰机场接送服务。" />
+  <meta name="keywords" content="Auckland airport transfer, Auckland airport pickup, AKL airport transfer, airport shuttle Auckland, chauffeur service Auckland, 奥克兰机场接送, 奥克兰接机, airport taxi Auckland, Auckland airport to CBD" />
   <link rel="canonical" href="https://warm-voyage.onrender.com/auckland-airport-transfer" />
   
   <!-- Open Graph -->
@@ -219,13 +219,20 @@
 <body>
   <nav>
     <a href="index.html" class="logo"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#features">Services</a>
-      <a href="index.html#fleet">Fleet</a>
-      <a href="index.html#contact">Contact</a>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Services</a>
+        <a href="index.html#fleet">Fleet</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="lang-switch" style="display:flex;gap:4px;background:#f5f0ea;padding:3px;border-radius:25px;flex-shrink:0">
+        <button class="lang-btn active" data-lang="en" style="padding:6px 14px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:20px;color:#888;transition:all .3s">EN</button>
+        <button class="lang-btn" data-lang="zh" style="padding:6px 14px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:20px;color:#888;transition:all .3s">中文</button>
+      </div>
     </div>
   </nav>
+  <style>.lang-btn.active{background:linear-gradient(135deg,#ffc83d,#ff8a3d);color:#fff!important}</style>
 
   <header class="page-header">
     <div class="container">
@@ -326,26 +333,38 @@
   </footer>
   
   <script>
-    // Language switching based on URL parameter
+    // Language switching based on URL parameter or localStorage
     const urlParams = new URLSearchParams(window.location.search);
     const langParam = urlParams.get('lang');
     const savedLang = localStorage.getItem('warmvoyage_lang');
     const currentLang = langParam || savedLang || 'en';
-    
+
+    // Save detected language back to localStorage for cross-page persistence
+    localStorage.setItem('warmvoyage_lang', currentLang);
+
+    // Language switcher functionality
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        localStorage.setItem('warmvoyage_lang', lang);
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lang);
+        window.location.href = url.toString();
+      });
+      btn.classList.toggle('active', btn.dataset.lang === currentLang);
+    });
+
     if (currentLang === 'zh') {
       document.documentElement.lang = 'zh-CN';
       document.title = '奥克兰机场接送 | 暖途 Warm Voyage';
-      
-      // Update page content to Chinese
+
       document.querySelector('.page-header h1').textContent = '奥克兰机场接送';
       document.querySelector('.page-header p').textContent = '专业、舒适、可靠的奥克兰机场接送服务。让您的新西兰之旅从暖途开始。';
-      
-      // Update section headings
+
       const sections = document.querySelectorAll('.content-section h2');
       if (sections[0]) sections[0].textContent = '为什么选择我们的机场接送服务？';
       if (sections[1]) sections[1].textContent = '热门接送路线';
-      
-      // Update feature cards
+
       const features = [
         { title: '航班跟踪', desc: '实时监控您的航班状态，自动调整接送时间应对延误或提前到达。' },
         { title: '举牌接机', desc: '我们的司机会在到达大厅举着写有您姓名的牌子迎接您。' },
@@ -354,22 +373,23 @@
         { title: '24小时服务', desc: '全天候服务，无论您的航班是凌晨还是深夜。' },
         { title: '中文司机', desc: '中英文双语司机，沟通无障碍。' }
       ];
-      
+
       document.querySelectorAll('.feature-card').forEach((card, index) => {
         if (features[index]) {
           card.querySelector('h3').textContent = features[index].title;
           card.querySelector('p').textContent = features[index].desc;
         }
       });
-      
-      // Update CTA section
+
       document.querySelector('.cta-section h2').textContent = '准备好预订您的机场接送了吗？';
       document.querySelector('.cta-section p').textContent = '立即获取报价或预订您的接送服务。';
       document.querySelector('.btn-primary').textContent = '立即预订';
-      
-      // Update footer
+
       document.querySelector('footer .logo span').textContent = '暖途 Warm Voyage';
       document.querySelector('footer p').textContent = '新西兰优质接送服务。';
+
+      // Update nav logo
+      document.querySelector('nav .logo span').textContent = '暖途 Warm Voyage';
     }
   </script>
 </body>

@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corporate Chauffeur Services Auckland | Warm Voyage NZ</title>
-  <meta name="description" content="Professional corporate chauffeur services in Auckland. Executive transfers, airport pickups, corporate events, conference transportation. Reliable, discreet, professional." />
-  <meta name="keywords" content="corporate chauffeur Auckland, executive car service, business transfers, corporate events transport, airport transfers business, Auckland corporate travel" />
+  <title>Corporate Chauffeur Auckland from NZ$120 | Executive Transfers | Warm Voyage</title>
+  <meta name="description" content="Professional corporate chauffeur services in Auckland from NZ$120. Executive airport transfers, conference transport, business events. Licensed, discreet, bilingual. 企业包车服务。" />
+  <meta name="keywords" content="corporate chauffeur Auckland, executive car service, business transfers, corporate events transport, airport transfers business, Auckland corporate travel, 企业包车, 商务用车, 奥克兰企业包车" />
   <link rel="canonical" href="https://warm-voyage.onrender.com/corporate-chauffeur" />
   
   <meta property="og:title" content="Corporate Chauffeur Services | Warm Voyage" />
@@ -365,13 +365,20 @@
 <body>
   <nav>
     <a href="index.html" class="logo"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#features">Services</a>
-      <a href="index.html#fleet">Fleet</a>
-      <a href="index.html#contact">Contact</a>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Services</a>
+        <a href="index.html#fleet">Fleet</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="lang-switch" style="display:flex;gap:4px;background:#f5f0ea;padding:3px;border-radius:25px;flex-shrink:0">
+        <button class="lang-btn active" data-lang="en" style="padding:6px 14px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:20px;color:#888;transition:all .3s">EN</button>
+        <button class="lang-btn" data-lang="zh" style="padding:6px 14px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:20px;color:#888;transition:all .3s">中文</button>
+      </div>
     </div>
   </nav>
+  <style>.lang-btn.active{background:linear-gradient(135deg,#ffc83d,#ff8a3d);color:#fff!important}</style>
 
   <header class="hero-banner">
     <div>
@@ -638,7 +645,20 @@
     const langParam = urlParams.get('lang');
     const savedLang = localStorage.getItem('warmvoyage_lang');
     const currentLang = langParam || savedLang || 'en';
-    
+    localStorage.setItem('warmvoyage_lang', currentLang);
+
+    // Language switcher functionality
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        localStorage.setItem('warmvoyage_lang', lang);
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lang);
+        window.location.href = url.toString();
+      });
+      btn.classList.toggle('active', btn.dataset.lang === currentLang);
+    });
+
     if (currentLang === 'zh') {
       document.documentElement.lang = 'zh-CN';
       document.title = '企业包车服务 | 暖途 Warm Voyage';
@@ -664,6 +684,7 @@
       document.querySelector('.cta-section h2').textContent = '准备好提升您的企业出行体验了吗？';
       document.querySelector('.cta-section p').textContent = '联系我们获取免费咨询和定制方案';
       document.querySelector('.cta-section .btn-primary').textContent = '获取报价';
+      document.querySelector('nav .logo span').textContent = '暖途 Warm Voyage';
     }
   </script>
 </body>

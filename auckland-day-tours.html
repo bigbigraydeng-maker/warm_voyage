@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Auckland Day Tours & Surrounding Attractions | Warm Voyage NZ</title>
-  <meta name="description" content="Explore Auckland's best day trips. Hobbiton, Waitomo Caves, Rotorua, Coromandel, Bay of Islands. 2-5 day private tours with professional Chinese-speaking guides." />
-  <meta name="keywords" content="Auckland day tours, Hobbiton tour from Auckland, Waitomo Caves, Rotorua day trip, Coromandel tour, Bay of Islands, New Zealand private tour" />
+  <title>Auckland Day Tours from NZ$180 | Hobbiton, Rotorua, Waitomo | Warm Voyage</title>
+  <meta name="description" content="Private Auckland day tours from NZ$180. Hobbiton, Waitomo Caves, Rotorua, Coromandel, Bay of Islands. Chinese-speaking driver-guides. 2-5 day itineraries available. 奥克兰周边一日游。" />
+  <meta name="keywords" content="Auckland day tours, Hobbiton tour from Auckland, Waitomo Caves, Rotorua day trip, Coromandel tour, Bay of Islands, New Zealand private tour, 奥克兰一日游, 霍比特村, 怀托摩萤火虫洞" />
   <link rel="canonical" href="https://warm-voyage.onrender.com/auckland-day-tours" />
   
   <meta property="og:title" content="Auckland Day Tours | Warm Voyage" />
@@ -274,13 +274,20 @@
 <body>
   <nav>
     <a href="index.html" class="logo"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#features">Services</a>
-      <a href="index.html#fleet">Fleet</a>
-      <a href="index.html#contact">Contact</a>
+    <div style="display:flex;align-items:center;gap:16px">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="index.html#features">Services</a>
+        <a href="index.html#fleet">Fleet</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="lang-switch" style="display:flex;gap:4px;background:#f5f0ea;padding:3px;border-radius:25px;flex-shrink:0">
+        <button class="lang-btn active" data-lang="en" style="padding:6px 14px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:20px;color:#888;transition:all .3s">EN</button>
+        <button class="lang-btn" data-lang="zh" style="padding:6px 14px;border:none;background:transparent;cursor:pointer;font-size:13px;font-weight:600;border-radius:20px;color:#888;transition:all .3s">中文</button>
+      </div>
     </div>
   </nav>
+  <style>.lang-btn.active{background:linear-gradient(135deg,#ffc83d,#ff8a3d);color:#fff!important}</style>
 
   <header class="hero-banner">
     <div>
@@ -494,7 +501,20 @@
     const langParam = urlParams.get('lang');
     const savedLang = localStorage.getItem('warmvoyage_lang');
     const currentLang = langParam || savedLang || 'en';
-    
+    localStorage.setItem('warmvoyage_lang', currentLang);
+
+    // Language switcher functionality
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        localStorage.setItem('warmvoyage_lang', lang);
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lang);
+        window.location.href = url.toString();
+      });
+      btn.classList.toggle('active', btn.dataset.lang === currentLang);
+    });
+
     if (currentLang === 'zh') {
       document.documentElement.lang = 'zh-CN';
       document.title = '奥克兰周边短途游 | 暖途 Warm Voyage';
@@ -532,6 +552,9 @@
       document.querySelector('.cta-section h2').textContent = '准备好探索奥克兰了吗？';
       document.querySelector('.cta-section p').textContent = '联系我们定制您的完美一日游或多日探险行程';
       document.querySelector('.btn-primary').textContent = '获取报价';
+
+      // Update nav logo
+      document.querySelector('nav .logo span').textContent = '暖途 Warm Voyage';
     }
   </script>
 </body>
