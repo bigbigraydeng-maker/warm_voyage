@@ -1,1533 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Warm Voyage | Premium Chauffeur & Auckland Airport Transfer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Warm Voyage offers premium chauffeur services, Auckland Airport transfers, and luxury tours across New Zealand. Book your professional transport today.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --color-primary: #0f172a;
-            --color-primary-light: #1e293b;
-            --color-gold: #d4af37;
-            --color-gold-light: #f5d76e;
-            --color-gold-dark: #b8962e;
-            --color-white: #ffffff;
-            --color-bg-light: #f8fafc;
-            --color-bg-dark: #0c0c10;
-            --color-text-dark: #1e293b;
-            --color-text-light: #94a3b8;
-            --color-text-white: #f1f5f9;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
-            --shadow-md: 0 10px 30px rgba(0,0,0,0.12);
-            --shadow-lg: 0 20px 50px rgba(0,0,0,0.18);
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-body);
-            color: var(--color-text-dark);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body.dark-mode {
-            background: var(--color-bg-dark);
-            color: var(--color-text-white);
-        }
-
-        h1, h2, h3, h4 {
-            font-family: var(--font-heading);
-            font-weight: 500;
-            line-height: 1.2;
-        }
-
-        /* Language Switcher */
-        .lang-switch {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            z-index: 9999;
-            display: flex;
-            gap: 4px;
-            background: rgba(255, 255, 255, 0.98);
-            padding: 4px;
-            border-radius: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .lang-btn {
-            padding: 8px 16px;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 600;
-            border-radius: 20px;
-            transition: var(--transition);
-            color: #666;
-            min-width: 44px;
-        }
-
-        .lang-btn:hover {
-            color: #000;
-            background: rgba(212, 175, 55, 0.1);
-        }
-
-        .lang-btn.active {
-            background: linear-gradient(135deg, #d4af37, #f5d76e);
-            color: #000;
-            box-shadow: 0 2px 8px rgba(212, 175, 55, 0.4);
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: var(--transition);
-            background: transparent;
-        }
-
-        header.scrolled {
-            background: white;
-            box-shadow: var(--shadow-sm);
-            padding: 12px 40px;
-        }
-
-        body.dark-mode header.scrolled {
-            background: var(--color-bg-dark);
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--color-gold);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        header.scrolled .logo {
-            color: var(--color-gold);
-        }
-
-        body.dark-mode header:not(.scrolled) .logo {
-            color: var(--color-gold);
-        }
-
-        body.dark-mode header:not(.scrolled) .logo span {
-            color: white;
-        }
-
-        .logo span {
-            color: var(--color-primary);
-            font-weight: 700;
-        }
-
-        header.scrolled .logo span {
-            color: var(--color-primary);
-        }
-
-        body.dark-mode header.scrolled .logo span {
-            color: white;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .nav-link {
-            text-decoration: none;
-            color: var(--color-text-dark);
-            font-size: 14px;
-            font-weight: 500;
-            position: relative;
-            transition: var(--transition);
-        }
-
-        header.scrolled .nav-link {
-            color: var(--color-text-dark);
-        }
-
-        body.dark-mode header:not(.scrolled) .nav-link {
-            color: white;
-        }
-
-        body.dark-mode header.scrolled .nav-link {
-            color: var(--color-text-white);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--color-gold);
-            transition: var(--transition);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .btn-book {
-            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
-            color: #000;
-            padding: 12px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-book:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-        }
-
-        .mobile-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-        }
-
-        .mobile-toggle span {
-            width: 24px;
-            height: 2px;
-            background: var(--color-text-dark);
-            transition: var(--transition);
-        }
-
-        body.dark-mode header:not(.scrolled) .mobile-toggle span {
-            background: white;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(26, 26, 46, 0.9) 100%),
-                        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80') center/cover no-repeat;
-            display: flex;
-            align-items: flex-end;
-            padding: 120px 40px 40px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.03" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
-            background-size: cover;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: end;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-text h1 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            color: white;
-            margin-bottom: 15px;
-            line-height: 1.1;
-        }
-
-        .hero-text p {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.8);
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        .hero-features {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .hero-feature {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255,255,255,0.9);
-            font-size: 14px;
-        }
-
-        .hero-feature svg {
-            width: 18px;
-            height: 18px;
-            color: var(--color-gold);
-        }
-
-        /* Booking Widget */
-        .booking-widget {
-            background: white;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            overflow: hidden;
-        }
-
-        .booking-tabs {
-            display: flex;
-            background: var(--color-bg-light);
-        }
-
-        .booking-tab {
-            flex: 1;
-            padding: 18px;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--color-text-light);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .booking-tab.active {
-            color: var(--color-primary);
-            background: white;
-        }
-
-        .booking-tab.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--color-gold);
-        }
-
-        .booking-form {
-            padding: 30px;
-        }
-
-        .booking-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .booking-row.full {
-            grid-template-columns: 1fr;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--color-text-dark);
-        }
-
-        .form-group input,
-        .form-group select {
-            padding: 14px 16px;
-            border: 1px solid #e2e8f0;
-            border-radius: var(--radius-sm);
-            font-size: 15px;
-            font-family: var(--font-body);
-            transition: var(--transition);
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--color-gold);
-            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-        }
-
-        .form-group select {
-            cursor: pointer;
-            background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 16px center;
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .checkbox-group input {
-            width: 18px;
-            height: 18px;
-            accent-color: var(--color-gold);
-        }
-
-        .checkbox-group label {
-            font-size: 14px;
-            color: var(--color-text-dark);
-            cursor: pointer;
-        }
-
-        .btn-quote {
-            width: 100%;
-            padding: 16px;
-            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-light));
-            color: #000;
-            border: none;
-            border-radius: var(--radius-sm);
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-        }
-
-        .btn-quote:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
-        }
-
-        /* Vehicle Section */
-        .vehicles-section {
-            padding: 100px 40px;
-            background: var(--color-bg-light);
-        }
-
-        body.dark-mode .vehicles-section {
-            background: var(--color-bg-dark);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            color: var(--color-primary);
-            margin-bottom: 15px;
-        }
-
-        body.dark-mode .section-title h2 {
-            color: white;
-        }
-
-        .section-title p {
-            color: var(--color-text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .vehicles-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .vehicle-card {
-            background: white;
-            border-radius: var(--radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-            border: 2px solid transparent;
-        }
-
-        body.dark-mode .vehicle-card {
-            background: #1a1a22;
-        }
-
-        .vehicle-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--color-gold);
-        }
-
-        .vehicle-image {
-            height: 180px;
-            background: linear-gradient(135deg, #e2e8f0, #f1f5f9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        body.dark-mode .vehicle-image {
-            background: linear-gradient(135deg, #2a2a35, #1a1a22);
-        }
-
-        .vehicle-image svg {
-            width: 120px;
-            height: 80px;
-            color: var(--color-text-light);
-            opacity: 0.5;
-        }
-
-        .vehicle-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--color-gold);
-            color: #000;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-
-        .vehicle-info {
-            padding: 25px;
-        }
-
-        .vehicle-info h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-            color: var(--color-text-dark);
-        }
-
-        body.dark-mode .vehicle-info h3 {
-            color: white;
-        }
-
-        .vehicle-subtitle {
-            font-size: 14px;
-            color: var(--color-text-light);
-            margin-bottom: 15px;
-        }
-
-        .vehicle-specs {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        body.dark-mode .vehicle-specs {
-            border-color: #2a2a35;
-        }
-
-        .vehicle-spec {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            color: var(--color-text-light);
-        }
-
-        .vehicle-spec svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .vehicle-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .price-label {
-            font-size: 13px;
-            color: var(--color-text-light);
-        }
-
-        .price-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-gold);
-        }
-
-        .vehicle-features {
-            margin-top: 15px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .vehicle-feature {
-            font-size: 12px;
-            padding: 4px 10px;
-            background: var(--color-bg-light);
-            border-radius: 15px;
-            color: var(--color-text-light);
-        }
-
-        body.dark-mode .vehicle-feature {
-            background: #2a2a35;
-            color: var(--color-text-light);
-        }
-
-        /* Stats Section */
-        .stats-section {
-            padding: 80px 40px;
-            background: var(--color-primary);
-        }
-
-        .stats-grid {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
-            text-align: center;
-        }
-
-        .stat-item h3 {
-            font-size: 3rem;
-            color: var(--color-gold);
-            margin-bottom: 8px;
-        }
-
-        .stat-item p {
-            color: rgba(255,255,255,0.7);
-            font-size: 14px;
-        }
-
-        /* Testimonials */
-        .testimonials-section {
-            padding: 100px 40px;
-            background: white;
-        }
-
-        body.dark-mode .testimonials-section {
-            background: var(--color-bg-dark);
-        }
-
-        .testimonials-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .testimonial-card {
-            background: var(--color-bg-light);
-            padding: 30px;
-            border-radius: var(--radius-md);
-            transition: var(--transition);
-        }
-
-        body.dark-mode .testimonial-card {
-            background: #1a1a22;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 18px;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--color-gold), var(--color-gold-dark));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            color: #000;
-            font-size: 1.2rem;
-        }
-
-        .testimonial-info h4 {
-            font-size: 1rem;
-            color: var(--color-text-dark);
-            font-family: var(--font-body);
-            font-weight: 600;
-        }
-
-        body.dark-mode .testimonial-info h4 {
-            color: white;
-        }
-
-        .testimonial-rating {
-            color: var(--color-gold);
-            font-size: 14px;
-        }
-
-        .testimonial-text {
-            color: var(--color-text-light);
-            font-size: 15px;
-            line-height: 1.7;
-            font-style: italic;
-        }
-
-        /* Credentials */
-        .credentials-section {
-            padding: 60px 40px;
-            background: var(--color-bg-light);
-            border-top: 1px solid #e2e8f0;
-        }
-
-        body.dark-mode .credentials-section {
-            background: #0a0a0f;
-            border-color: #1a1a22;
-        }
-
-        .credentials-grid {
-            max-width: 900px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-        }
-
-        .credential-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            color: var(--color-text-light);
-            font-size: 14px;
-        }
-
-        .credential-item svg {
-            width: 24px;
-            height: 24px;
-            color: var(--color-gold);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 100px 40px;
-            background: var(--color-primary);
-            text-align: center;
-        }
-
-        .contact-section h2 {
-            color: white;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-section p {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 30px;
-        }
-
-        .contact-methods {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-size: 15px;
-        }
-
-        .contact-method svg {
-            width: 20px;
-            height: 20px;
-            color: var(--color-gold);
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px;
-            background: #0a0a0f;
-            text-align: center;
-            color: var(--color-text-light);
-            font-size: 14px;
-        }
-
-        /* Mobile */
-        @media (max-width: 900px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-text {
-                text-align: center;
-            }
-
-            .hero-features {
-                justify-content: center;
-            }
-
-            .booking-row {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 15px 20px;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: white;
-                flex-direction: column;
-                justify-content: center;
-                padding: 40px;
-                gap: 25px;
-                transition: var(--transition);
-                box-shadow: var(--shadow-lg);
-            }
-
-            body.dark-mode .nav-menu {
-                background: var(--color-bg-dark);
-            }
-
-            .nav-menu.active {
-                right: 0;
-            }
-
-            .mobile-toggle {
-                display: flex;
-                z-index: 1001;
-            }
-
-            .mobile-toggle.active span:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-
-            .mobile-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-toggle.active span:nth-child(3) {
-                transform: rotate(-45deg) translate(5px, -5px);
-            }
-
-            .hero {
-                padding: 100px 20px 30px;
-            }
-
-            .vehicles-section,
-            .testimonials-section,
-            .contact-section {
-                padding: 70px 20px;
-            }
-
-            .stats-section {
-                padding: 50px 20px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 30px;
-            }
-
-            .stat-item h3 {
-                font-size: 2rem;
-            }
-
-            .credentials-grid {
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-            }
-
-            .lang-switch {
-                top: 10px;
-                right: 70px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warm Voyage | Premium Chauffeur & Auckland Airport Transfer</title>
+  <meta name="description" content="Warm Voyage offers premium chauffeur services, Auckland Airport transfers, and luxury tours across New Zealand. Book your professional transport today.">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-yellow: #ffc83d;
+      --secondary-orange: #ff8a3d;
+      --deep-brown: #3a2b1f;
+      --cream-white: #fff6e8;
+      --text-dark: #333;
+      --text-gray: #666;
+      --white: #fff;
+      --shadow: 0 10px 30px rgba(58, 43, 31, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--cream-white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+    .container { width: min(1400px, 92vw); margin: 0 auto; }
+
+    /* Language Switcher */
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 120px;
+      z-index: 1001;
+      display: flex;
+      gap: 4px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 4px;
+      border-radius: 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .lang-btn {
+      padding: 6px 14px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 20px;
+      transition: all 0.3s ease;
+      color: #888;
+    }
+    .lang-btn:hover { color: var(--deep-brown); }
+    .lang-btn.active {
+      background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+      color: #fff;
+    }
+
+    nav {
+      position: fixed; inset: 0 0 auto 0; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4vw; background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px); z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.03);
+    }
+    .logo { font-size: clamp(22px, 2vw, 30px); color: var(--secondary-orange); display:flex; gap:10px; align-items:center; font-weight:700; }
+    .logo i { color: var(--primary-yellow); }
+    .nav-links { display:flex; gap:22px; }
+    .nav-links a { text-decoration:none; color: var(--deep-brown); font-weight:600; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--secondary-orange); }
+    .btn-primary {
+      background: var(--primary-yellow); color: var(--deep-brown); border:none;
+      padding: 10px 20px; border-radius: 999px; text-decoration:none; font-weight:700;
+      display:inline-flex; align-items:center; justify-content:center; cursor:pointer;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255,200,61,0.4); }
+
+    .hero { margin-top: 80px; min-height: 76vh; display:grid; place-items:center; background: linear-gradient(135deg,#fff9f0,#fff0d6); padding: 40px 0; }
+    .hero-content { width:min(1400px,92vw); display:grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items:center; }
+    .hero-text h1 { font-size: clamp(34px, 4vw, 62px); line-height:1.2; color:var(--deep-brown); margin-bottom:16px; }
+    .hero-text h1 span { color: var(--secondary-orange); }
+    .hero-text p { color: var(--text-gray); font-size: clamp(16px,1.6vw,22px); margin-bottom:24px; }
+    .hero-illustration {
+      min-height: 360px; border-radius: 24px; box-shadow: var(--shadow);
+      background: url('https://a.lovart.ai/artifacts/agent/XEQPFhICCy2sEMS2.png') center/contain no-repeat, #fff;
+    }
+
+    .hero-form { background: #fff; padding: 24px; border-radius: 18px; box-shadow: var(--shadow); }
+    .hero-form h3 { margin-bottom: 16px; color: var(--deep-brown); }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display:block; margin-bottom: 6px; font-size:14px; color:var(--text-gray); }
+    .form-control { width:100%; padding:12px; border:1px solid #eee; border-radius: 10px; font-size:16px; font-family: inherit; transition: border-color 0.3s; }
+    .form-control:focus { outline: none; border-color: var(--primary-yellow); box-shadow: 0 0 0 3px rgba(255,200,61,0.15); }
+    .form-row { display:grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    section { padding: 70px 0; }
+    .section-title { text-align:center; margin-bottom:40px; }
+    .section-title h2 { font-size: clamp(28px, 3vw, 42px); color: var(--deep-brown); margin-bottom: 8px; }
+    .section-title p { color: var(--text-gray); }
+
+    .features { background: #fff; }
+    .features-grid { display:grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+    .feature-card { background: var(--cream-white); border-radius: 18px; padding: 22px; text-align:center; transition: transform 0.3s; }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card i { font-size: 2rem; color: var(--secondary-orange); margin-bottom: 12px; display: block; }
+    .feature-card h3 { margin-bottom: 8px; color: var(--deep-brown); }
+    .feature-card p { color: var(--text-gray); font-size: 14px; }
+
+    .fleet-grid { display:grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+    .fleet-card { background: #fff; border-radius: 18px; overflow:hidden; box-shadow: var(--shadow); transition: transform 0.3s; }
+    .fleet-card:hover { transform: translateY(-5px); }
+    .fleet-image { height: 190px; background: #f2f2f2; }
+    .fleet-info { padding: 16px; }
+    .fleet-info h3 { color: var(--deep-brown); margin-bottom: 4px; }
+    .fleet-info p { color: var(--text-gray); font-size: 14px; }
+
+    .stats { background: linear-gradient(90deg,var(--secondary-orange),var(--primary-yellow)); color: #fff; }
+    .stats-container { display:grid; grid-template-columns: repeat(4,1fr); text-align:center; gap: 18px; }
+    .stats-container h3 { font-size: clamp(28px, 3vw, 42px); margin-bottom: 4px; }
+
+    .testimonials { background:#fff; }
+    .testimonials-grid { display:grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .review-card { background: var(--cream-white); border-radius: 18px; padding: 20px; transition: transform 0.3s; }
+    .review-card:hover { transform: translateY(-5px); }
+    .avatar { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; }
+    .review-card p { color: var(--text-gray); font-size: 15px; font-style: italic; }
+
+    .cta-box {
+      width:min(1200px,92vw); margin:0 auto; background:var(--deep-brown); color:#fff;
+      border-radius: 24px; padding: 36px; display:flex; align-items:center; justify-content:space-between; gap: 16px;
+    }
+    .cta-box h2 { color: var(--primary-yellow); margin-bottom: 8px; }
+    .btn-white { background:#fff; color:var(--deep-brown); padding:12px 22px; border-radius:999px; text-decoration:none; font-weight:700; transition: transform 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-white:hover { transform: translateY(-2px); }
+
+    footer { background:#fff; border-top:1px solid #eee; padding: 50px 0 24px; }
+    .footer-grid { display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap:20px; }
+    .footer-links { list-style:none; }
+    .footer-links li { margin-bottom:8px; color: var(--text-gray); font-size: 14px; }
+    .footer-col h4 { color: var(--deep-brown); margin-bottom: 12px; }
+    .copyright { margin-top: 26px; padding-top: 18px; text-align:center; border-top:1px solid #f0f0f0; color:#999; font-size:14px; }
+
+    @media (max-width: 1024px) {
+      .nav-links { display:none; }
+      .lang-switch { right: 80px; }
+      .hero-content { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: repeat(2,1fr); }
+      .fleet-grid { grid-template-columns: 1fr 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .stats-container { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+      .form-row, .fleet-grid, .features-grid, .testimonials-grid, .footer-grid, .stats-container { grid-template-columns: 1fr; }
+      .cta-box { flex-direction: column; align-items:flex-start; }
+      .lang-switch { right: 70px; top: 22px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Language Switcher -->
-    <div class="lang-switch">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="zh">中文</button>
+  <!-- Language Switcher -->
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+  </div>
+
+  <nav>
+    <div class="logo"><i class="ri-sun-fill"></i> <span data-en="Warm Voyage" data-zh="暖途 Warm Voyage">Warm Voyage</span></div>
+    <div class="nav-links">
+      <a href="#home" data-en="Home" data-zh="首页">Home</a>
+      <a href="#features" data-en="Services" data-zh="服务优势">Services</a>
+      <a href="#fleet" data-en="Fleet" data-zh="车队介绍">Fleet</a>
+      <a href="#contact" data-en="Contact" data-zh="联系我们">Contact</a>
     </div>
+    <a href="#booking" class="btn-primary" data-en="Book Now" data-zh="立即预订">Book Now</a>
+  </nav>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="logo">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                <path d="M2 17l10 5 10-5"/>
-                <path d="M2 12l10 5 10-5"/>
-            </svg>
-            <span>Warm Voyage</span>
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div>
+        <div class="hero-text">
+          <h1 data-en="Your New Zealand Journey<br>Starts with <span>Warm Voyage</span>" data-zh="新西兰旅程<br>从<span>暖途</span>开始">Your New Zealand Journey<br>Starts with <span>Warm Voyage</span></h1>
+          <p data-en="Warm, sunny, and reliable — a family-like transfer experience. Whether you arrive in Auckland or Queenstown, we are here waiting for you." data-zh="温暖、阳光、可靠，给您家人般的接送体验。无论您抵达奥克兰还是皇后镇，我们都在这里等候。">Warm, sunny, and reliable — a family-like transfer experience. Whether you arrive in Auckland or Queenstown, we are here waiting for you.</p>
         </div>
-        <nav class="nav-menu" id="navMenu">
-            <a href="#services" class="nav-link" data-en="Services" data-zh="服务项目">Services</a>
-            <a href="#vehicles" class="nav-link" data-en="Fleet" data-zh="车型展示">Fleet</a>
-            <a href="#testimonials" class="nav-link" data-en="Reviews" data-zh="客户评价">Reviews</a>
-            <a href="#contact" class="nav-link" data-en="Contact" data-zh="联系我们">Contact</a>
-            <button class="junglebee-widget-book-now-button" data-junglebee-widget-id="zzULwfK" style="padding:12px 28px;border-radius:30px;background:linear-gradient(135deg, #a98a19, #d4af37);color:#FFFFFF;border:none;cursor:pointer;font-weight:600;font-size:14px;box-shadow:0 4px 15px rgba(169,138,25,0.3);transition:all 0.3s ease;">Book now</button>
-        </nav>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 data-en="Premium Chauffeur Service in Auckland" data-zh="奥克兰高端专车服务">Premium Chauffeur Service in Auckland</h1>
-                <p data-en="Professional airport transfers, corporate chauffeur & luxury tours across New Zealand. Experience elegance and comfort with our premium fleet." data-zh="专业机场接送、企业包车及新西兰全境豪华旅游。选择我们的高端车队，享受尊贵舒适的出行体验。">Professional airport transfers, corporate chauffeur & luxury tours across New Zealand.</p>
-
-                <div class="hero-features">
-                    <div class="hero-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                        <span data-en="5+ Years Experience" data-zh="5年以上经验">5+ Years Experience</span>
-                    </div>
-                    <div class="hero-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                        <span data-en="10,000+ Happy Clients" data-zh="10000+满意客户">10,000+ Happy Clients</span>
-                    </div>
-                    <div class="hero-feature">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                            <polyline points="22 4 12 14.01 9 11.01"/>
-                        </svg>
-                        <span data-en="24/7 Support" data-zh="24小时客服">24/7 Support</span>
-                    </div>
-                </div>
+        <div class="hero-form" id="booking">
+          <h3 data-en="Quick Booking" data-zh="快速预订接送">Quick Booking</h3>
+          <form>
+            <div class="form-group">
+              <label for="pickup" data-en="Pick-up Location" data-zh="出发地">Pick-up Location</label>
+              <input id="pickup" class="form-control" type="text" data-placeholder-en="Enter pick-up location" data-placeholder-zh="请输入出发地点" placeholder="Enter pick-up location" autocomplete="street-address" required />
             </div>
-
-            <!-- Booking Widget -->
-            <div class="booking-widget" id="booking">
-                <div class="booking-tabs">
-                    <button class="booking-tab active" data-tab="oneway" data-en="One Way / Return" data-zh="单程/往返">One Way / Return</button>
-                    <button class="booking-tab" data-tab="hourly" data-en="Hourly Rental" data-zh="按时计费">Hourly Rental</button>
-                </div>
-                <form class="booking-form" id="bookingForm" onsubmit="return false;">
-                    <div class="booking-row">
-                        <div class="form-group">
-                            <label data-en="From" data-zh="出发地">From</label>
-                            <input type="text" id="pickup" placeholder="Airport, Hotel, Address..." data-placeholder-en="Airport, Hotel, Address..." data-placeholder-zh="机场、酒店、地址...">
-                        </div>
-                        <div class="form-group">
-                            <label data-en="To" data-zh="目的地">To</label>
-                            <input type="text" id="dropoff" placeholder="Destination" data-placeholder-en="Destination" data-placeholder-zh="目的地">
-                        </div>
-                    </div>
-                    <div class="booking-row" id="datetimeRow">
-                        <div class="form-group">
-                            <label data-en="Date" data-zh="日期">Date</label>
-                            <input type="date" id="date">
-                        </div>
-                        <div class="form-group">
-                            <label data-en="Time" data-zh="时间">Time</label>
-                            <input type="time" id="time" value="12:00">
-                        </div>
-                    </div>
-                    <div class="booking-row" id="returnRow" style="display: none;">
-                        <div class="form-group">
-                            <label data-en="Return Date" data-zh="返回日期">Return Date</label>
-                            <input type="date" id="returnDate">
-                        </div>
-                        <div class="form-group">
-                            <label data-en="Return Time" data-zh="返回时间">Return Time</label>
-                            <input type="time" id="returnTime" value="12:00">
-                        </div>
-                    </div>
-                    <div class="booking-row" id="durationRow" style="display: none;">
-                        <div class="form-group">
-                            <label data-en="Duration" data-zh="时长">Duration</label>
-                            <select id="duration">
-                                <option value="2">2 Hours</option>
-                                <option value="4" selected>4 Hours</option>
-                                <option value="6">6 Hours</option>
-                                <option value="8">8 Hours</option>
-                                <option value="10">10 Hours</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label data-en="Passengers" data-zh="乘客数">Passengers</label>
-                            <select id="passengers">
-                                <option value="1">1 Passenger</option>
-                                <option value="2">2 Passengers</option>
-                                <option value="3">3 Passengers</option>
-                                <option value="4">4 Passengers</option>
-                                <option value="5">5 Passengers</option>
-                                <option value="6">6+ Passengers</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="checkbox-group">
-                        <input type="checkbox" id="returnTrip">
-                        <label for="returnTrip" data-en="Add Return Trip" data-zh="添加往返">Add Return Trip</label>
-                    </div>
-                    <button class="btn-quote" onclick="showPrices()" data-en="Get Instant Quote" data-zh="立即询价">Get Instant Quote</button>
-                </form>
+            <div class="form-group">
+              <label for="dropoff" data-en="Destination" data-zh="目的地">Destination</label>
+              <input id="dropoff" class="form-control" type="text" data-placeholder-en="Enter destination" data-placeholder-zh="请输入目的地" placeholder="Enter destination" autocomplete="street-address" required />
             </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date" data-en="Date" data-zh="日期">Date</label>
+                <input id="date" class="form-control" type="date" required />
+              </div>
+              <div class="form-group">
+                <label for="passengers" data-en="Passengers" data-zh="人数">Passengers</label>
+                <select id="passengers" class="form-control" required>
+                  <option value="" data-en="Select" data-zh="请选择">Select</option>
+                  <option value="1-4" data-en="1-4 Passengers" data-zh="1-4 人">1-4 Passengers</option>
+                  <option value="5-7" data-en="5-7 Passengers" data-zh="5-7 人">5-7 Passengers</option>
+                  <option value="8+" data-en="8+ Passengers" data-zh="8+ 人">8+ Passengers</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%" data-en="Get Quote" data-zh="查询价格">Get Quote</button>
+          </form>
         </div>
-    </section>
+      </div>
+      <div class="hero-illustration" aria-hidden="true"></div>
+    </div>
+  </section>
 
-    <!-- Vehicles Section -->
-    <section class="vehicles-section" id="vehicles">
-        <div class="section-title">
-            <h2 data-en="Our Fleet" data-zh="车型展示">Our Fleet</h2>
-            <p data-en="Choose from our premium selection of luxury vehicles to suit your travel needs" data-zh="从我们的豪华车队中选择适合您出行需求的车型">Choose from our premium selection of luxury vehicles</p>
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Why Choose Warm Voyage?" data-zh="为什么选择暖途？">Why Choose Warm Voyage?</h2>
+        <p data-en="More than just a driver — your guide and friend in New Zealand" data-zh="不仅仅是司机，更是您在新西兰的向导与朋友">More than just a driver — your guide and friend in New Zealand</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="ri-time-line"></i>
+          <h3 data-en="Always On Time" data-zh="准时守信">Always On Time</h3>
+          <p data-en="Automatic flight delay tracking with complimentary waiting time." data-zh="航班延误自动跟踪，提供免费等候时间。">Automatic flight delay tracking with complimentary waiting time.</p>
         </div>
-        <div class="vehicles-grid">
-            <!-- Business Class -->
-            <div class="vehicle-card">
-                <div class="vehicle-image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M5 17h14v-5H5v5z"/>
-                        <path d="M6 12l2-5h8l2 5"/>
-                        <circle cx="7" cy="17" r="2"/>
-                        <circle cx="17" cy="17" r="2"/>
-                    </svg>
-                    <span class="vehicle-badge" data-en="Popular" data-zh="热门">Popular</span>
-                </div>
-                <div class="vehicle-info">
-                    <h3 data-en="Business Class Sedan" data-zh="商务轿车">Business Class Sedan</h3>
-                    <p class="vehicle-subtitle">Mercedes E-Class, BMW 5 Series</p>
-                    <div class="vehicle-specs">
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            <span data-en="1-2" data-zh="1-2">1-2</span>
-                        </span>
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
-                            <span data-en="2 Bags" data-zh="2行李">2 Bags</span>
-                        </span>
-                    </div>
-                    <div class="vehicle-price">
-                        <span class="price-label" data-en="From" data-zh="起价">From</span>
-                        <span class="price-value">$95</span>
-                    </div>
-                    <div class="vehicle-features">
-                        <span class="vehicle-feature" data-en="Free WiFi" data-zh="免费WiFi">Free WiFi</span>
-                        <span class="vehicle-feature" data-en="Water" data-zh="饮用水">Water</span>
-                        <span class="vehicle-feature" data-en="Meet & Greet" data-zh="接机">Meet & Greet</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- First Class -->
-            <div class="vehicle-card">
-                <div class="vehicle-image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M5 17h14v-5H5v5z"/>
-                        <path d="M6 12l2-5h8l2 5"/>
-                        <circle cx="7" cy="17" r="2"/>
-                        <circle cx="17" cy="17" r="2"/>
-                    </svg>
-                </div>
-                <div class="vehicle-info">
-                    <h3 data-en="First Class Sedan" data-zh="豪华轿车">First Class Sedan</h3>
-                    <p class="vehicle-subtitle">Mercedes S-Class, BMW 7 Series</p>
-                    <div class="vehicle-specs">
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            <span data-en="1-3" data-zh="1-3">1-3</span>
-                        </span>
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
-                            <span data-en="2 Bags" data-zh="2行李">2 Bags</span>
-                        </span>
-                    </div>
-                    <div class="vehicle-price">
-                        <span class="price-label" data-en="From" data-zh="起价">From</span>
-                        <span class="price-value">$150</span>
-                    </div>
-                    <div class="vehicle-features">
-                        <span class="vehicle-feature" data-en="Premium WiFi" data-zh="高速WiFi">Premium WiFi</span>
-                        <span class="vehicle-feature" data-en="Refreshments" data-zh="饮品">Refreshments</span>
-                        <span class="vehicle-feature" data-en="VIP Service" data-zh="VIP服务">VIP Service</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Business Van -->
-            <div class="vehicle-card">
-                <div class="vehicle-image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M5 17h14v-5H5v5z"/>
-                        <path d="M6 12l2-5h8l2 5"/>
-                        <circle cx="7" cy="17" r="2"/>
-                        <circle cx="17" cy="17" r="2"/>
-                    </svg>
-                    <span class="vehicle-badge" data-en="Best Value" data-zh="性价比之选">Best Value</span>
-                </div>
-                <div class="vehicle-info">
-                    <h3 data-en="Business Class Van" data-zh="商务MPV">Business Class Van</h3>
-                    <p class="vehicle-subtitle">Mercedes V-Class, Toyota Alphard</p>
-                    <div class="vehicle-specs">
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            <span data-en="3-6" data-zh="3-6">3-6</span>
-                        </span>
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
-                            <span data-en="6 Bags" data-zh="6行李">6 Bags</span>
-                        </span>
-                    </div>
-                    <div class="vehicle-price">
-                        <span class="price-label" data-en="From" data-zh="起价">From</span>
-                        <span class="price-value">$140</span>
-                    </div>
-                    <div class="vehicle-features">
-                        <span class="vehicle-feature" data-en="Spacious" data-zh="宽敞">Spacious</span>
-                        <span class="vehicle-feature" data-en="WiFi" data-zh="WiFi">WiFi</span>
-                        <span class="vehicle-feature" data-en="USB Chargers" data-zh="USB充电">USB</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Mini Sprinter -->
-            <div class="vehicle-card">
-                <div class="vehicle-image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M5 17h14v-5H5v5z"/>
-                        <path d="M6 12l2-5h8l2 5"/>
-                        <circle cx="7" cy="17" r="2"/>
-                        <circle cx="17" cy="17" r="2"/>
-                    </svg>
-                </div>
-                <div class="vehicle-info">
-                    <h3 data-en="Mini Sprinter" data-zh="小型商务车">Mini Sprinter</h3>
-                    <p class="vehicle-subtitle">Mercedes Sprinter 315 CDI</p>
-                    <div class="vehicle-specs">
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            <span data-en="7-10" data-zh="7-10">7-10</span>
-                        </span>
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
-                            <span data-en="10 Bags" data-zh="10行李">10 Bags</span>
-                        </span>
-                    </div>
-                    <div class="vehicle-price">
-                        <span class="price-label" data-en="From" data-zh="起价">From</span>
-                        <span class="price-value">$180</span>
-                    </div>
-                    <div class="vehicle-features">
-                        <span class="vehicle-feature" data-en="Group Travel" data-zh="团体出行">Group Travel</span>
-                        <span class="vehicle-feature" data-en="WiFi" data-zh="WiFi">WiFi</span>
-                        <span class="vehicle-feature" data-en="Air Conditioning" data-zh="空调">AC</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Large Sprinter -->
-            <div class="vehicle-card">
-                <div class="vehicle-image">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M5 17h14v-5H5v5z"/>
-                        <path d="M6 12l2-5h8l2 5"/>
-                        <circle cx="7" cy="17" r="2"/>
-                        <circle cx="17" cy="17" r="2"/>
-                    </svg>
-                </div>
-                <div class="vehicle-info">
-                    <h3 data-en="Executive Sprinter" data-zh="大型商务车">Executive Sprinter</h3>
-                    <p class="vehicle-subtitle">Mercedes Sprinter 519 CDI</p>
-                    <div class="vehicle-specs">
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                            <span data-en="11-16" data-zh="11-16">11-16</span>
-                        </span>
-                        <span class="vehicle-spec">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
-                            <span data-en="16 Bags" data-zh="16行李">16 Bags</span>
-                        </span>
-                    </div>
-                    <div class="vehicle-price">
-                        <span class="price-label" data-en="From" data-zh="起价">From</span>
-                        <span class="price-value">$250</span>
-                    </div>
-                    <div class="vehicle-features">
-                        <span class="vehicle-feature" data-en="Large Groups" data-zh="大型团体">Large Groups</span>
-                        <span class="vehicle-feature" data-en="Luxury Interior" data-zh="豪华内饰">Luxury Interior</span>
-                        <span class="vehicle-feature" data-en="Entertainment" data-zh="娱乐系统">Entertainment</span>
-                    </div>
-                </div>
-            </div>
+        <div class="feature-card">
+          <i class="ri-shield-check-line"></i>
+          <h3 data-en="Safe & Licensed" data-zh="安全合规">Safe & Licensed</h3>
+          <p data-en="Fully licensed vehicles and drivers, comprehensive insurance coverage." data-zh="正规持牌车辆与司机，保险齐全，出行无忧。">Fully licensed vehicles and drivers, comprehensive insurance coverage.</p>
         </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <h3>5+</h3>
-                <p data-en="Years Experience" data-zh="年服务经验">Years Experience</p>
-            </div>
-            <div class="stat-item">
-                <h3>10K+</h3>
-                <p data-en="Happy Clients" data-zh="满意客户">Happy Clients</p>
-            </div>
-            <div class="stat-item">
-                <h3>4.9</h3>
-                <p data-en="Client Rating" data-zh="客户评分">Client Rating</p>
-            </div>
-            <div class="stat-item">
-                <h3>98%</h3>
-                <p data-en="Satisfaction" data-zh="满意度">Satisfaction</p>
-            </div>
+        <div class="feature-card">
+          <i class="ri-translate-2"></i>
+          <h3 data-en="Bilingual Service" data-zh="中文服务">Bilingual Service</h3>
+          <p data-en="English and Chinese speaking drivers for seamless communication." data-zh="全程中文沟通，沟通顺畅零压力。">English and Chinese speaking drivers for seamless communication.</p>
         </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials-section" id="testimonials">
-        <div class="section-title">
-            <h2 data-en="What Our Clients Say" data-zh="客户评价">What Our Clients Say</h2>
-            <p data-en="Read reviews from our satisfied customers worldwide" data-zh="来自全球满意客户的评价">Read reviews from our satisfied customers worldwide</p>
+        <div class="feature-card">
+          <i class="ri-price-tag-3-line"></i>
+          <h3 data-en="Transparent Pricing" data-zh="透明一口价">Transparent Pricing</h3>
+          <p data-en="Confirmed pricing upfront, no hidden fees or surprises." data-zh="提前确认价格，无隐形消费。">Confirmed pricing upfront, no hidden fees or surprises.</p>
         </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">J</div>
-                    <div class="testimonial-info">
-                        <h4>James Thompson</h4>
-                        <div class="testimonial-rating">★★★★★</div>
-                    </div>
-                </div>
-                <p class="testimonial-text" data-en="Excellent service! The driver was punctual, professional and the vehicle was immaculate. Will definitely use again." data-zh="服务非常出色！司机准时专业，车辆整洁。一定会再次使用！">Excellent service! The driver was punctual and professional.</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">L</div>
-                    <div class="testimonial-info">
-                        <h4>李女士</h4>
-                        <div class="testimonial-rating">★★★★★</div>
-                    </div>
-                </div>
-                <p class="testimonial-text" data-en="Chinese speaking driver was very helpful. Great service for family travel in New Zealand!" data-zh="中文司机非常热情。新西兰家庭旅游的好选择！">Chinese speaking driver was very helpful. Great service!</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">M</div>
-                    <div class="testimonial-info">
-                        <h4>Michael Chen</h4>
-                        <div class="testimonial-rating">★★★★★</div>
-                    </div>
-                </div>
-                <p class="testimonial-text" data-en="We use Warm Voyage for all our corporate events. Always reliable and professional. Highly recommended!" data-zh="我们公司所有活动都使用Warm Voyage。一直可靠专业。强烈推荐！">We use Warm Voyage for all corporate events. Always reliable!</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">S</div>
-                    <div class="testimonial-info">
-                        <h4>Sarah Johnson</h4>
-                        <div class="testimonial-rating">★★★★★</div>
-                    </div>
-                </div>
-                <p class="testimonial-text" data-en="Perfect for our family of 5. The van was spacious and comfortable. Driver was very friendly!" data-zh="非常适合我们一家5口。车辆宽敞舒适。司机非常友好！">Perfect for our family of 5. Van was spacious and comfortable!</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">W</div>
-                    <div class="testimonial-info">
-                        <h4>王先生</h4>
-                        <div class="testimonial-rating">★★★★★</div>
-                    </div>
-                </div>
-                <p class="testimonial-text" data-en="Early morning flight pickup was smooth. Driver arrived on time and helped with luggage. Great service!" data-zh="凌晨航班接送非常顺利。司机准时到达并帮忙搬运行李。服务一流！">Early morning flight was smooth. Driver was punctual!</p>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">T</div>
-                    <div class="testimonial-info">
-                        <h4>Thomas Wilson</h4>
-                        <div class="testimonial-rating">★★★★★</div>
-                    </div>
-                </div>
-                <p class="testimonial-text" data-en="Best chauffeur service in Auckland. Luxury vehicles and professional drivers. Worth every penny!" data-zh="奥克兰最好的专车服务。豪华车辆和专业司机。物有所值！">Best chauffeur service in Auckland. Luxury vehicles!</p>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fleet">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Our Comfortable Fleet" data-zh="舒适车队，任您选择">Our Comfortable Fleet</h2>
+        <p data-en="Couples, families, and groups — we have the perfect vehicle for you" data-zh="情侣出游、家庭旅行、团队出行都能匹配">Couples, families, and groups — we have the perfect vehicle for you</p>
+      </div>
+      <div class="fleet-grid">
+        <article class="fleet-card">
+          <div class="fleet-image" style="background:url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80') center/cover"></div>
+          <div class="fleet-info">
+            <h3 data-en="Comfort Sedan" data-zh="舒适轿车 Sedan">Comfort Sedan</h3>
+            <p data-en="4 passengers / 2 bags · From NZ$80" data-zh="4人 / 2件行李 · NZ$80 起">4 passengers / 2 bags · From NZ$80</p>
+          </div>
+        </article>
+        <article class="fleet-card">
+          <div class="fleet-image" style="background:url('https://images.unsplash.com/photo-1565043589221-1a6a8bc66953?auto=format&fit=crop&w=900&q=80') center/cover"></div>
+          <div class="fleet-info">
+            <h3 data-en="Premium MPV" data-zh="豪华商务 MPV">Premium MPV</h3>
+            <p data-en="7 passengers / 4 bags · From NZ$120" data-zh="7人 / 4件行李 · NZ$120 起">7 passengers / 4 bags · From NZ$120</p>
+          </div>
+        </article>
+        <article class="fleet-card">
+          <div class="fleet-image" style="background:url('https://images.unsplash.com/photo-1554900508-34863f699026?auto=format&fit=crop&w=900&q=80') center/cover"></div>
+          <div class="fleet-info">
+            <h3 data-en="Minibus" data-zh="小型巴士 Minibus">Minibus</h3>
+            <p data-en="12 passengers / 10 bags · From NZ$200" data-zh="12人 / 10件行李 · NZ$200 起">12 passengers / 10 bags · From NZ$200</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-container">
+      <div><h3>5,000+</h3><p data-en="Clients Served" data-zh="服务客户">Clients Served</p></div>
+      <div><h3>99.9%</h3><p data-en="On-Time Rate" data-zh="准点率">On-Time Rate</p></div>
+      <div><h3>100%</h3><p data-en="Positive Reviews" data-zh="好评率">Positive Reviews</p></div>
+      <div><h3>5+</h3><p data-en="Years Experience" data-zh="年行业经验">Years Experience</p></div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="What Our Clients Say" data-zh="客户暖心评价">What Our Clients Say</h2>
+        <p data-en="Real feedback from every Warm Voyage friend" data-zh="来自每一位"暖途"朋友的真实反馈">Real feedback from every Warm Voyage friend</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="review-card">
+          <img class="avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="Ms. Li" />
+          <p data-en="First time bringing my parents to NZ — the driver was incredibly professional and caring." data-zh="第一次带父母来新西兰，司机非常专业贴心。">First time bringing my parents to NZ — the driver was incredibly professional and caring.</p>
         </div>
-    </section>
-
-    <!-- Credentials -->
-    <section class="credentials-section">
-        <div class="credentials-grid">
-            <div class="credential-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                </svg>
-                <span data-en="Fully Insured" data-zh="商业保险保障">Fully Insured</span>
-            </div>
-            <div class="credential-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                    <polyline points="22 4 12 14.01 9 11.01"/>
-                </svg>
-                <span data-en="Licensed Operator" data-zh="持牌运营资质">Licensed Operator</span>
-            </div>
-            <div class="credential-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="12" cy="12" r="10"/>
-                    <line x1="2" y1="12" x2="22" y2="12"/>
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-                <span data-en="NZTA Certified" data-zh="新西兰交通局认证">NZTA Certified</span>
-            </div>
-            <div class="credential-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                    <polyline points="14 2 14 8 20 8"/>
-                    <line x1="16" y1="13" x2="8" y2="13"/>
-                </svg>
-                <span data-en="Tax Invoices Available" data-zh="可开企业发票">Tax Invoices Available</span>
-            </div>
+        <div class="review-card">
+          <img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Mr. Zhang" />
+          <p data-en="Flight was delayed but they waited patiently. Excellent experience." data-zh="航班延误也一直等候，体验非常好。">Flight was delayed but they waited patiently. Excellent experience.</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <h2 data-en="Ready to Book?" data-zh="立即预订？">Ready to Book?</h2>
-        <p data-en="Contact us today for a free quote or book directly online" data-zh="立即联系我们获取免费报价或直接在线预订">Contact us today for a free quote or book directly online</p>
-
-        <div class="contact-methods">
-            <a href="tel:+64090000100" class="contact-method">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                0800 900 100
-            </a>
-            <a href="mailto:info@warmvoyage.co.nz" class="contact-method">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                info@warmvoyage.co.nz
-            </a>
-            <div class="contact-method">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-                </svg>
-                WeChat: WarmVoyageNZ
-            </div>
+        <div class="review-card">
+          <img class="avatar" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Ms. Chen" />
+          <p data-en="Traveling with kids was stress-free. Clean car and child seats provided." data-zh="带娃出行很省心，车况整洁、安全座椅齐全。">Traveling with kids was stress-free. Clean car and child seats provided.</p>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <a href="#booking" class="btn-book" data-en="Get Free Quote" data-zh="获取免费报价">Get Free Quote</a>
-    </section>
+  <section>
+    <div class="cta-box">
+      <div>
+        <h2 data-en="Ready for Your Warm New Zealand Journey?" data-zh="准备好开启您的新西兰温暖之旅了吗？">Ready for Your Warm New Zealand Journey?</h2>
+        <p data-en="Contact us now to customise your private transfer." data-zh="立即联系我们，定制您的专属接送方案。">Contact us now to customise your private transfer.</p>
+      </div>
+      <a class="btn-white" href="#contact"><i class="ri-wechat-fill" style="color:#07C160"></i> <span data-en="Contact Us" data-zh="联系微信客服">Contact Us</span></a>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Warm Voyage | <span data-en="Auckland Airport Transfer Specialists" data-zh="奥克兰机场接送专家">Auckland Airport Transfer Specialists</span></p>
-    </footer>
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo"><i class="ri-sun-fill"></i> <span data-en="Warm Voyage" data-zh="暖途 Warm Voyage">Warm Voyage</span></div>
+          <p style="margin-top:10px;color:var(--text-gray)" data-en="Warm Voyage is dedicated to providing warm, reliable transfer and charter services for visitors to New Zealand." data-zh="暖途致力于为来到新西兰的华人提供温暖、可靠的接送与包车服务。">Warm Voyage is dedicated to providing warm, reliable transfer and charter services for visitors to New Zealand.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Services" data-zh="服务项目">Services</h4>
+          <ul class="footer-links">
+            <li data-en="Auckland Airport Transfer" data-zh="奥克兰接送机">Auckland Airport Transfer</li>
+            <li data-en="Queenstown Airport Transfer" data-zh="皇后镇接送机">Queenstown Airport Transfer</li>
+            <li data-en="Custom Charter Tours" data-zh="全境包车定制">Custom Charter Tours</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="About Us" data-zh="关于我们">About Us</h4>
+          <ul class="footer-links">
+            <li data-en="Our Story" data-zh="品牌故事">Our Story</li>
+            <li data-en="Our Fleet" data-zh="车队展示">Our Fleet</li>
+            <li data-en="Client Reviews" data-zh="客户评价">Client Reviews</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Contact" data-zh="联系方式">Contact</h4>
+          <ul class="footer-links">
+            <li>+64 21 000 0000</li>
+            <li>hello@warmvoyage.co.nz</li>
+            <li>Auckland, New Zealand</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2026 Warm Voyage New Zealand. All Rights Reserved.</div>
+    </div>
+  </footer>
 
-    <script>
-        // Language switching
-        let currentLang = 'en';
+  <script>
+    // Language switching
+    let currentLang = 'en';
+    const langBtns = document.querySelectorAll('.lang-btn');
 
-        const langBtns = document.querySelectorAll('.lang-btn');
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const lang = btn.dataset.lang;
+        setLanguage(lang);
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
 
-        langBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const lang = btn.dataset.lang;
-                setLanguage(lang);
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      document.title = lang === 'zh'
+        ? '暖途 - 新西兰温馨接送'
+        : 'Warm Voyage | Premium Chauffeur & Auckland Airport Transfer';
 
-                langBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-
-            // Translate all elements with data attributes
-            document.querySelectorAll('[data-en]').forEach(el => {
-                const text = el.dataset[lang];
-                if (text) {
-                    el.textContent = text;
-                }
-            });
-
-            // Translate placeholders
-            document.querySelectorAll('[data-placeholder-en]').forEach(el => {
-                const text = el.dataset['placeholder-' + lang];
-                if (text) {
-                    el.placeholder = text;
-                }
-            });
-
-            // Store preference
-            localStorage.setItem('warmvoyage_lang', lang);
+      // Translate all elements with data attributes
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.dataset[lang];
+        if (text) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') return;
+          el.innerHTML = text;
         }
+      });
 
-        // Check saved language
-        const savedLang = localStorage.getItem('warmvoyage_lang');
-        if (savedLang) {
-            setLanguage(savedLang);
-            langBtns.forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === savedLang);
-            });
-        }
+      // Translate placeholders
+      document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+        const key = 'placeholder-' + lang;
+        const text = el.dataset[key.replace('-', '')];
+        // fallback: try with dash
+        const text2 = el.getAttribute('data-placeholder-' + lang);
+        if (text2) el.placeholder = text2;
+      });
 
-        // Header scroll effect
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
+      // Translate select options
+      document.querySelectorAll('select option[data-en]').forEach(opt => {
+        const text = opt.dataset[lang];
+        if (text) opt.textContent = text;
+      });
 
-        // Booking tabs
-        const bookingTabs = document.querySelectorAll('.booking-tab');
-        const returnRow = document.getElementById('returnRow');
-        const durationRow = document.getElementById('durationRow');
-        const returnTripCheckbox = document.getElementById('returnTrip');
+      localStorage.setItem('warmvoyage_lang', lang);
+    }
 
-        bookingTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                bookingTabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
+    // Check saved language preference
+    const savedLang = localStorage.getItem('warmvoyage_lang');
+    if (savedLang) {
+      setLanguage(savedLang);
+      langBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === savedLang);
+      });
+    }
 
-                const isHourly = tab.dataset.tab === 'hourly';
-
-                if (isHourly) {
-                    document.getElementById('dropoff').parentElement.style.display = 'none';
-                    document.getElementById('returnTrip').parentElement.style.display = 'none';
-                    returnRow.style.display = 'none';
-                    durationRow.style.display = 'grid';
-                } else {
-                    document.getElementById('dropoff').parentElement.style.display = 'flex';
-                    document.getElementById('returnTrip').parentElement.style.display = 'flex';
-                    durationRow.style.display = 'none';
-                }
-            });
-        });
-
-        returnTripCheckbox.addEventListener('change', () => {
-            returnRow.style.display = returnTripCheckbox.checked ? 'grid' : 'none';
-        });
-
-        // Mobile menu
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when clicking links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // Show prices (demo)
-        function showPrices() {
-            const pickup = document.getElementById('pickup').value;
-            const dropoff = document.getElementById('dropoff').value;
-            const date = document.getElementById('date').value;
-            const time = document.getElementById('time').value;
-            const tab = document.querySelector('.booking-tab.active').dataset.tab;
-
-            if (!pickup || !date || !time) {
-                alert(currentLang === 'en' ? 'Please fill in all required fields' : '请填写所有必填项');
-                return;
-            }
-
-            if (tab === 'oneway' && !dropoff) {
-                alert(currentLang === 'en' ? 'Please enter destination' : '请输入目的地');
-                return;
-            }
-
-            // Scroll to vehicles section
-            document.getElementById('vehicles').scrollIntoView({ behavior: 'smooth' });
-
-            // Show confirmation
-            setTimeout(() => {
-                const message = currentLang === 'en'
-                    ? 'Quote request received! Our team will contact you shortly with pricing.'
-                    : '询价请求已收到！我们团队将尽快联系您报价。';
-                alert(message);
-            }, 500);
-        }
-
-        // Set minimum date to today
-        const dateInput = document.getElementById('date');
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
-    </script>
-    
-    <!-- JungleBee Booking Widget -->
-    <script src="https://app.junglebee.com/widget/bundle.js"></script>
+    // Set minimum date to today
+    const dateInput = document.getElementById('date');
+    if (dateInput) {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+    }
+  </script>
 </body>
 </html>
