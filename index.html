@@ -907,8 +907,8 @@
 <body>
     <!-- Language Switcher -->
     <div class="lang-switch">
-        <button class="lang-btn active" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="zh">中文</button>
+        <button class="lang-btn active" data-lang="en" type="button" aria-label="Switch language to English">EN</button>
+        <button class="lang-btn" data-lang="zh" type="button" aria-label="切换语言到中文">中文</button>
     </div>
 
     <!-- Header -->
@@ -922,13 +922,13 @@
             <span>Warm Voyage</span>
         </div>
         <nav class="nav-menu" id="navMenu">
-            <a href="#services" class="nav-link" data-en="Services" data-zh="服务项目">Services</a>
+            <a href="#home" class="nav-link" data-en="Services" data-zh="服务项目">Services</a>
             <a href="#vehicles" class="nav-link" data-en="Fleet" data-zh="车型展示">Fleet</a>
             <a href="#testimonials" class="nav-link" data-en="Reviews" data-zh="客户评价">Reviews</a>
             <a href="#contact" class="nav-link" data-en="Contact" data-zh="联系我们">Contact</a>
             <button class="junglebee-widget-book-now-button" data-junglebee-widget-id="zzULwfK" style="padding:12px 28px;border-radius:30px;background:linear-gradient(135deg, #a98a19, #d4af37);color:#FFFFFF;border:none;cursor:pointer;font-weight:600;font-size:14px;box-shadow:0 4px 15px rgba(169,138,25,0.3);transition:all 0.3s ease;">Book now</button>
         </nav>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navMenu" type="button">
             <span></span>
             <span></span>
             <span></span>
@@ -970,43 +970,43 @@
             <!-- Booking Widget -->
             <div class="booking-widget" id="booking">
                 <div class="booking-tabs">
-                    <button class="booking-tab active" data-tab="oneway" data-en="One Way / Return" data-zh="单程/往返">One Way / Return</button>
-                    <button class="booking-tab" data-tab="hourly" data-en="Hourly Rental" data-zh="按时计费">Hourly Rental</button>
+                    <button class="booking-tab active" data-tab="oneway" data-en="One Way / Return" data-zh="单程/往返" type="button">One Way / Return</button>
+                    <button class="booking-tab" data-tab="hourly" data-en="Hourly Rental" data-zh="按时计费" type="button">Hourly Rental</button>
                 </div>
                 <form class="booking-form" id="bookingForm" onsubmit="return false;">
                     <div class="booking-row">
                         <div class="form-group">
-                            <label data-en="From" data-zh="出发地">From</label>
-                            <input type="text" id="pickup" placeholder="Airport, Hotel, Address..." data-placeholder-en="Airport, Hotel, Address..." data-placeholder-zh="机场、酒店、地址...">
+                            <label for="pickup" data-en="From" data-zh="出发地">From</label>
+                            <input type="text" id="pickup" placeholder="Airport, Hotel, Address..." data-placeholder-en="Airport, Hotel, Address..." data-placeholder-zh="机场、酒店、地址..." autocomplete="street-address" required>
                         </div>
                         <div class="form-group">
-                            <label data-en="To" data-zh="目的地">To</label>
-                            <input type="text" id="dropoff" placeholder="Destination" data-placeholder-en="Destination" data-placeholder-zh="目的地">
+                            <label for="dropoff" data-en="To" data-zh="目的地">To</label>
+                            <input type="text" id="dropoff" placeholder="Destination" data-placeholder-en="Destination" data-placeholder-zh="目的地" autocomplete="street-address" required>
                         </div>
                     </div>
                     <div class="booking-row" id="datetimeRow">
                         <div class="form-group">
-                            <label data-en="Date" data-zh="日期">Date</label>
-                            <input type="date" id="date">
+                            <label for="date" data-en="Date" data-zh="日期">Date</label>
+                            <input type="date" id="date" required>
                         </div>
                         <div class="form-group">
-                            <label data-en="Time" data-zh="时间">Time</label>
-                            <input type="time" id="time" value="12:00">
+                            <label for="time" data-en="Time" data-zh="时间">Time</label>
+                            <input type="time" id="time" value="12:00" required>
                         </div>
                     </div>
                     <div class="booking-row" id="returnRow" style="display: none;">
                         <div class="form-group">
-                            <label data-en="Return Date" data-zh="返回日期">Return Date</label>
+                            <label for="returnDate" data-en="Return Date" data-zh="返回日期">Return Date</label>
                             <input type="date" id="returnDate">
                         </div>
                         <div class="form-group">
-                            <label data-en="Return Time" data-zh="返回时间">Return Time</label>
+                            <label for="returnTime" data-en="Return Time" data-zh="返回时间">Return Time</label>
                             <input type="time" id="returnTime" value="12:00">
                         </div>
                     </div>
                     <div class="booking-row" id="durationRow" style="display: none;">
                         <div class="form-group">
-                            <label data-en="Duration" data-zh="时长">Duration</label>
+                            <label for="duration" data-en="Duration" data-zh="时长">Duration</label>
                             <select id="duration">
                                 <option value="2">2 Hours</option>
                                 <option value="4" selected>4 Hours</option>
@@ -1016,7 +1016,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label data-en="Passengers" data-zh="乘客数">Passengers</label>
+                            <label for="passengers" data-en="Passengers" data-zh="乘客数">Passengers</label>
                             <select id="passengers">
                                 <option value="1">1 Passenger</option>
                                 <option value="2">2 Passengers</option>
@@ -1032,6 +1032,7 @@
                         <label for="returnTrip" data-en="Add Return Trip" data-zh="添加往返">Add Return Trip</label>
                     </div>
                     <button class="btn-quote" onclick="showPrices()" data-en="Get Instant Quote" data-zh="立即询价">Get Instant Quote</button>
+                    <p id="bookingMessage" role="status" aria-live="polite" style="margin-top:10px;font-size:13px;color:#475569;"></p>
                 </form>
             </div>
         </div>
@@ -1479,8 +1480,9 @@
         const navMenu = document.getElementById('navMenu');
 
         mobileToggle.addEventListener('click', () => {
-            mobileToggle.classList.toggle('active');
+            const isOpen = mobileToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            mobileToggle.setAttribute('aria-expanded', String(isOpen));
         });
 
         // Close menu when clicking links
@@ -1488,24 +1490,32 @@
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('active');
                 navMenu.classList.remove('active');
+                mobileToggle.setAttribute('aria-expanded', 'false');
             });
         });
 
         // Show prices (demo)
         function showPrices() {
+            const bookingMessage = document.getElementById('bookingMessage');
             const pickup = document.getElementById('pickup').value;
             const dropoff = document.getElementById('dropoff').value;
             const date = document.getElementById('date').value;
             const time = document.getElementById('time').value;
             const tab = document.querySelector('.booking-tab.active').dataset.tab;
 
+            bookingMessage.textContent = '';
+
             if (!pickup || !date || !time) {
-                alert(currentLang === 'en' ? 'Please fill in all required fields' : '请填写所有必填项');
+                bookingMessage.textContent = currentLang === 'en'
+                    ? 'Please fill in all required fields.'
+                    : '请填写所有必填项。';
                 return;
             }
 
             if (tab === 'oneway' && !dropoff) {
-                alert(currentLang === 'en' ? 'Please enter destination' : '请输入目的地');
+                bookingMessage.textContent = currentLang === 'en'
+                    ? 'Please enter destination.'
+                    : '请输入目的地。';
                 return;
             }
 
@@ -1517,7 +1527,7 @@
                 const message = currentLang === 'en'
                     ? 'Quote request received! Our team will contact you shortly with pricing.'
                     : '询价请求已收到！我们团队将尽快联系您报价。';
-                alert(message);
+                bookingMessage.textContent = message;
             }, 500);
         }
 
