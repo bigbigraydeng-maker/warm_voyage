@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corporate Chauffeur Services Auckland | Warm Voyage NZ</title>
+  <meta name="description" content="Professional corporate chauffeur services in Auckland. Executive transfers, airport pickups, corporate events, conference transportation. Reliable, discreet, professional." />
+  <meta name="keywords" content="corporate chauffeur Auckland, executive car service, business transfers, corporate events transport, airport transfers business, Auckland corporate travel" />
+  <link rel="canonical" href="https://warm-voyage.onrender.com/corporate-chauffeur" />
+  
+  <meta property="og:title" content="Corporate Chauffeur Services | Warm Voyage" />
+  <meta property="og:description" content="Professional executive transportation for businesses in Auckland." />
+  <meta property="og:type" content="website" />
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-yellow: #ffc83d;
+      --secondary-orange: #ff8a3d;
+      --deep-brown: #3a2b1f;
+      --cream-white: #fff6e8;
+      --text-dark: #333;
+      --text-gray: #666;
+      --white: #fff;
+      --shadow: 0 10px 30px rgba(58, 43, 31, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--cream-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    .container { width: min(1400px, 92vw); margin: 0 auto; }
+    
+    nav {
+      position: fixed; inset: 0 0 auto 0; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4vw; background: rgba(255,255,255,.95);
+      backdrop-filter: blur(10px); z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.03);
+    }
+    .logo { font-size: clamp(22px, 2vw, 30px); color: var(--secondary-orange); display:flex; gap:10px; align-items:center; font-weight:700; text-decoration:none; }
+    .logo i { color: var(--primary-yellow); }
+    .nav-links { display:flex; gap:22px; }
+    .nav-links a { text-decoration:none; color: var(--deep-brown); font-weight:600; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--secondary-orange); }
+    
+    .hero-banner {
+      margin-top: 80px;
+      height: 50vh;
+      min-height: 400px;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('https://images.unsplash.com/photo-1449965408869-euj076c6e6af?w=1920&q=80') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-banner h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      margin-bottom: 16px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+    
+    .stats-bar {
+      background: var(--deep-brown);
+      padding: 40px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      text-align: center;
+      color: white;
+    }
+    .stat-item h3 {
+      font-size: 2.5rem;
+      color: var(--primary-yellow);
+      margin-bottom: 8px;
+    }
+    .stat-item p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    
+    .content-section {
+      padding: 80px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--deep-brown);
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      color: var(--text-gray);
+      font-size: 1.1rem;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+    .service-card i {
+      font-size: 48px;
+      color: var(--secondary-orange);
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.4rem;
+      color: var(--deep-brown);
+      margin-bottom: 12px;
+    }
+    .service-card p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    .service-card ul {
+      list-style: none;
+    }
+    .service-card ul li {
+      padding: 6px 0;
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      display: flex;
+      gap: 10px;
+    }
+    .service-card ul li i {
+      font-size: 16px;
+      color: var(--primary-yellow);
+      margin-top: 3px;
+    }
+    
+    .features-section {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    .feature-item {
+      text-align: center;
+      padding: 30px;
+    }
+    .feature-item i {
+      font-size: 56px;
+      color: var(--primary-yellow);
+      margin-bottom: 20px;
+    }
+    .feature-item h3 {
+      color: var(--deep-brown);
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+    .feature-item p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+    
+    .case-studies {
+      padding: 80px 0;
+    }
+    .case-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      margin-bottom: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .case-image {
+      min-height: 300px;
+      background-size: cover;
+      background-position: center;
+    }
+    .case-content {
+      padding: 40px;
+    }
+    .case-content h3 {
+      color: var(--deep-brown);
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .case-content p {
+      color: var(--text-gray);
+      margin-bottom: 16px;
+    }
+    .case-content .result {
+      background: var(--cream-white);
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+    .case-content .result strong {
+      color: var(--secondary-orange);
+    }
+    
+    .pricing-section {
+      background: linear-gradient(135deg, #fff9f0, #fff0d6);
+      padding: 80px 0;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .pricing-card {
+      background: var(--white);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+    .pricing-card.featured {
+      border: 3px solid var(--secondary-orange);
+      position: relative;
+    }
+    .pricing-card.featured::before {
+      content: 'Popular';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--secondary-orange);
+      color: white;
+      padding: 4px 20px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+    .pricing-card h3 {
+      font-size: 1.4rem;
+      color: var(--deep-brown);
+      margin-bottom: 12px;
+    }
+    .pricing-card .price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--secondary-orange);
+      margin-bottom: 8px;
+    }
+    .pricing-card .price span {
+      font-size: 1rem;
+      color: var(--text-gray);
+      font-weight: 400;
+    }
+    .pricing-card ul {
+      list-style: none;
+      margin: 24px 0;
+      text-align: left;
+    }
+    .pricing-card ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+      color: var(--text-gray);
+    }
+    .pricing-card ul li i {
+      color: var(--primary-yellow);
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      color: var(--deep-brown);
+      margin-bottom: 16px;
+      font-size: 2rem;
+    }
+    .cta-section p {
+      color: var(--deep-brown);
+      margin-bottom: 24px;
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--deep-brown);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    
+    footer {
+      background: var(--deep-brown);
+      color: var(--white);
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: var(--primary-yellow);
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: var(--primary-yellow);
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .case-card { grid-template-columns: 1fr; }
+      .case-image { min-height: 200px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Services</a>
+      <a href="index.html#fleet">Fleet</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero-banner">
+    <div>
+      <h1 data-en="Corporate Chauffeur Services" data-zh="企业包车服务">Corporate Chauffeur Services</h1>
+      <p data-en="Professional, reliable, and discreet transportation solutions for businesses in Auckland" data-zh="专业、可靠、私密的企业出行解决方案">Professional, reliable, and discreet transportation solutions for businesses in Auckland</p>
+    </div>
+  </header>
+
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h3>500+</h3>
+          <p data-en="Corporate Clients" data-zh="企业客户">Corporate Clients</p>
+        </div>
+        <div class="stat-item">
+          <h3>99.5%</h3>
+          <p data-en="On-Time Rate" data-zh="准时率">On-Time Rate</p>
+        </div>
+        <div class="stat-item">
+          <h3>24/7</h3>
+          <p data-en="Availability" data-zh="全天候服务">Availability</p>
+        </div>
+        <div class="stat-item">
+          <h3>5★</h3>
+          <p data-en="Client Rating" data-zh="客户评分">Client Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Our Corporate Services" data-zh="企业服务项目">Our Corporate Services</h2>
+        <p data-en="Tailored transportation solutions for every business need" data-zh="为各类企业需求量身定制的出行方案">Tailored transportation solutions for every business need</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="service-card">
+          <i class="ri-plane-line"></i>
+          <h3 data-en="Executive Airport Transfers" data-zh="高管机场接送">Executive Airport Transfers</h3>
+          <p data-en="First-class airport pickups and drop-offs for your executives and VIP guests." data-zh="为企业高管和贵宾提供一流的机场接送服务。">First-class airport pickups and drop-offs for your executives and VIP guests.</p>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="Flight tracking & adjustments" data-zh="航班实时跟踪调整">Flight tracking & adjustments</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Meet & greet service" data-zh="举牌接机服务">Meet & greet service</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Luggage assistance" data-zh="行李协助">Luggage assistance</span></li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <i class="ri-building-line"></i>
+          <h3 data-en="Daily Executive Transport" data-zh="高管日常通勤">Daily Executive Transport</h3>
+          <p data-en="Regular transportation for executives between home, office, and meetings." data-zh="高管日常通勤、商务会议接送服务。">Regular transportation for executives between home, office, and meetings.</p>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="Scheduled daily pickups" data-zh="每日定时接送">Scheduled daily pickups</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Multiple stops support" data-zh="多点接送支持">Multiple stops support</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Dedicated vehicle option" data-zh="专属车辆可选">Dedicated vehicle option</span></li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <i class="ri-team-line"></i>
+          <h3 data-en="Conference & Event Transport" data-zh="会议活动接送">Conference & Event Transport</h3>
+          <p data-en="Coordinated transportation for corporate events, conferences, and team gatherings." data-zh="企业活动、会议、团建接送统筹服务。">Coordinated transportation for corporate events, conferences, and team gatherings.</p>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="Multi-vehicle coordination" data-zh="多车协调调度">Multi-vehicle coordination</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Guest management" data-zh="宾客出行管理">Guest management</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="On-site coordination" data-zh="现场协调服务">On-site coordination</span></li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <i class="ri-user-star-line"></i>
+          <h3 data-en="VIP & Client Services" data-zh="贵宾客户接待">VIP & Client Services</h3>
+          <p data-en="Impress your clients with premium transportation for business meetings and site visits." data-zh="为商务洽谈和实地考察提供高端接送，给客户留下深刻印象。">Impress your clients with premium transportation for business meetings and site visits.</p>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="Luxury vehicle fleet" data-zh="豪华车队">Luxury vehicle fleet</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Professional chauffeurs" data-zh="专业司机团队">Professional chauffeurs</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Confidentiality assured" data-zh="隐私保密保证">Confidentiality assured</span></li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <i class="ri-hotel-line"></i>
+          <h3 data-en="Roadshow Support" data-zh="路演活动支持">Roadshow Support</h3>
+          <p data-en="Comprehensive transportation for multi-city roadshows and investor tours." data-zh="多城市路演和投资者考察全程交通支持。">Comprehensive transportation for multi-city roadshows and investor tours.</p>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="Multi-day scheduling" data-zh="多日行程安排">Multi-day scheduling</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Inter-city transfers" data-zh="城际接送服务">Inter-city transfers</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Flexible itinerary" data-zh="灵活行程调整">Flexible itinerary</span></li>
+          </ul>
+        </div>
+        
+        <div class="service-card">
+          <i class="ri-group-line"></i>
+          <h3 data-en="Team Building Transport" data-zh="团建活动接送">Team Building Transport</h3>
+          <p data-en="Group transportation for company retreats, team building activities, and outings." data-zh="公司团建、员工活动集体接送服务。">Group transportation for company retreats, team building activities, and outings.</p>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="Minibus & van options" data-zh="中巴/商务车可选">Minibus & van options</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Up to 20 passengers" data-zh="最多可载20人">Up to 20 passengers</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Wait & return service" data-zh="等候返程服务">Wait & return service</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Why Businesses Choose Us" data-zh="企业选择我们的理由">Why Businesses Choose Us</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item">
+          <i class="ri-shield-check-line"></i>
+          <h3 data-en="Reliability Guaranteed" data-zh="准时可靠保证">Reliability Guaranteed</h3>
+          <p data-en="99.5% on-time rate with real-time tracking and proactive communication" data-zh="99.5%准时率，实时追踪和主动沟通">99.5% on-time rate with real-time tracking and proactive communication</p>
+        </div>
+        <div class="feature-item">
+          <i class="ri-user-heart-line"></i>
+          <h3 data-en="Professional Chauffeurs" data-zh="专业司机团队">Professional Chauffeurs</h3>
+          <p data-en="Background-checked, trained, and experienced drivers with local knowledge" data-zh="背景调查、专业培训、熟悉本地的资深司机">Background-checked, trained, and experienced drivers with local knowledge</p>
+        </div>
+        <div class="feature-item">
+          <i class="ri-car-line"></i>
+          <h3 data-en="Premium Fleet" data-zh="优质车队">Premium Fleet</h3>
+          <p data-en="Luxury sedans, SUVs, and minibuses maintained to the highest standards" data-zh="豪华轿车、SUV、中巴，高标准维护保养">Luxury sedans, SUVs, and minibuses maintained to the highest standards</p>
+        </div>
+        <div class="feature-item">
+          <i class="ri-file-list-3-line"></i>
+          <h3 data-en="Simple Billing" data-zh="便捷结算">Simple Billing</h3>
+          <p data-en="Monthly invoicing, corporate accounts, and detailed trip reports" data-zh="月结账单、企业账户、详细行程报告">Monthly invoicing, corporate accounts, and detailed trip reports</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-studies">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Client Success Stories" data-zh="客户成功案例">Client Success Stories</h2>
+      </div>
+      
+      <div class="case-card">
+        <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80')"></div>
+        <div class="case-content">
+          <h3 data-en="International Tech Company - Auckland Office" data-zh="国际科技公司奥克兰分公司">International Tech Company - Auckland Office</h3>
+          <p data-en="Providing daily executive transport for 15 senior managers, plus airport transfers for visiting executives from HQ in China and US. Our bilingual drivers ensure seamless communication." data-zh="为15位高级经理提供日常通勤服务，以及来自中国和美国总部高管的机场接送。双语司机确保沟通无障碍。">Providing daily executive transport for 15 senior managers, plus airport transfers for visiting executives from HQ in China and US. Our bilingual drivers ensure seamless communication.</p>
+          <div class="result">
+            <strong data-en="Result:" data-zh="成果：">Result:</strong> <span data-en="98% satisfaction rate, 200+ trips per month" data-zh="98%满意度，每月200+次行程">98% satisfaction rate, 200+ trips per month</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="case-card">
+        <div class="case-image" style="background-image: url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&q=80')"></div>
+        <div class="case-content">
+          <h3 data-en="Annual Industry Conference - 500 Attendees" data-zh="年度行业会议 - 500名参会者">Annual Industry Conference - 500 Attendees</h3>
+          <p data-en="Coordinated airport transfers and hotel shuttles for 500 international delegates across 3 days. Managed multiple vehicle types from luxury sedans for VIP speakers to minibuses for group transfers." data-zh="为500名国际代表协调3天的机场接送和酒店班车。管理多种车型，从VIP演讲者的豪华轿车到团体接送的中巴。">Coordinated airport transfers and hotel shuttles for 500 international delegates across 3 days. Managed multiple vehicle types from luxury sedans for VIP speakers to minibuses for group transfers.</p>
+          <div class="result">
+            <strong data-en="Result:" data-zh="成果：">Result:</strong> <span data-en="Zero complaints, 100% on-time performance" data-zh="零投诉，100%准时率">Zero complaints, 100% on-time performance</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Corporate Packages" data-zh="企业套餐方案">Corporate Packages</h2>
+        <p data-en="Flexible pricing to suit your business needs" data-zh="灵活定价，满足您的企业需求">Flexible pricing to suit your business needs</p>
+      </div>
+      
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 data-en="Pay As You Go" data-zh="按次计费">Pay As You Go</h3>
+          <div class="price">NZ$80 <span data-en="/trip from" data-zh="/趟起">/trip from</span></div>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="No minimum commitment" data-zh="无最低消费承诺">No minimum commitment</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Instant booking confirmation" data-zh="即时预订确认">Instant booking confirmation</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Email invoicing" data-zh="邮件账单">Email invoicing</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Standard vehicle options" data-zh="标准车型选择">Standard vehicle options</span></li>
+          </ul>
+          <a href="index.html#booking" class="btn-primary" data-en="Get Started" data-zh="开始使用">Get Started</a>
+        </div>
+        
+        <div class="pricing-card featured">
+          <h3 data-en="Corporate Account" data-zh="企业账户">Corporate Account</h3>
+          <div class="price">NZ$65 <span data-en="/trip from" data-zh="/趟起">/trip from</span></div>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="20% discount on standard rates" data-zh="标准费率8折优惠">20% discount on standard rates</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Monthly consolidated billing" data-zh="月度合并账单">Monthly consolidated billing</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Priority booking" data-zh="优先预订">Priority booking</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Dedicated account manager" data-zh="专属客户经理">Dedicated account manager</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="All vehicle options" data-zh="所有车型可选">All vehicle options</span></li>
+          </ul>
+          <a href="index.html#booking" class="btn-primary" data-en="Contact Us" data-zh="联系我们">Contact Us</a>
+        </div>
+        
+        <div class="pricing-card">
+          <h3 data-en="Enterprise Solution" data-zh="企业定制方案">Enterprise Solution</h3>
+          <div class="price" data-en="Custom" data-zh="定制">Custom</div>
+          <ul>
+            <li><i class="ri-check-line"></i> <span data-en="Volume-based pricing" data-zh="基于用量的定价">Volume-based pricing</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Dedicated fleet option" data-zh="专属车队可选">Dedicated fleet option</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="API integration available" data-zh="API对接可用">API integration available</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="24/7 dedicated support" data-zh="24/7专属支持">24/7 dedicated support</span></li>
+            <li><i class="ri-check-line"></i> <span data-en="Custom reporting" data-zh="定制报告">Custom reporting</span></li>
+          </ul>
+          <a href="index.html#booking" class="btn-primary" data-en="Request Quote" data-zh="获取报价">Request Quote</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 data-en="Ready to Elevate Your Corporate Transport?" data-zh="准备好提升您的企业出行体验了吗？">Ready to Elevate Your Corporate Transport?</h2>
+      <p data-en="Contact us for a free consultation and customized proposal" data-zh="联系我们获取免费咨询和定制方案">Contact us for a free consultation and customized proposal</p>
+      <a href="index.html#booking" class="btn-primary" data-en="Get a Quote" data-zh="获取报价">Get a Quote</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="color:var(--white)"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
+          <p style="margin-top:10px;color:rgba(255,255,255,0.8)">Premium chauffeur services in New Zealand.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="auckland-airport-transfer.html">Auckland Airport Transfer</a></li>
+            <li><a href="auckland-day-tours.html">Auckland Day Tours</a></li>
+            <li><a href="corporate-chauffeur.html">Corporate Chauffeur</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul class="footer-links">
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="index.html#fleet">Our Fleet</a></li>
+            <li><a href="index.html#reviews">Client Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>+64 21 000 0000</li>
+            <li>hello@warmvoyage.co.nz</li>
+            <li>Auckland, New Zealand</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2026 Warm Voyage New Zealand. All Rights Reserved.</div>
+    </div>
+  </footer>
+  
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    const savedLang = localStorage.getItem('warmvoyage_lang');
+    const currentLang = langParam || savedLang || 'en';
+    
+    if (currentLang === 'zh') {
+      document.documentElement.lang = 'zh-CN';
+      document.title = '企业包车服务 | 暖途 Warm Voyage';
+      
+      document.querySelector('.hero-banner h1').textContent = '企业包车服务';
+      document.querySelector('.hero-banner p').textContent = '专业、可靠、私密的企业出行解决方案';
+      
+      document.querySelectorAll('.stat-item p').forEach((p, i) => {
+        const texts = ['企业客户', '准时率', '全天候服务', '客户评分'];
+        if (texts[i]) p.textContent = texts[i];
+      });
+      
+      document.querySelectorAll('.section-title h2').forEach((h2, i) => {
+        const texts = ['企业服务项目', '企业选择我们的理由', '客户成功案例', '企业套餐方案'];
+        if (texts[i]) h2.textContent = texts[i];
+      });
+      
+      document.querySelectorAll('.section-title p').forEach((p, i) => {
+        const texts = ['为各类企业需求量身定制的出行方案', '灵活定价，满足您的企业需求'];
+        if (texts[i]) p.textContent = texts[i];
+      });
+      
+      document.querySelector('.cta-section h2').textContent = '准备好提升您的企业出行体验了吗？';
+      document.querySelector('.cta-section p').textContent = '联系我们获取免费咨询和定制方案';
+      document.querySelector('.cta-section .btn-primary').textContent = '获取报价';
+    }
+  </script>
+</body>
+</html>

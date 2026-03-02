@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auckland Day Tours & Surrounding Attractions | Warm Voyage NZ</title>
+  <meta name="description" content="Explore Auckland's best day trips. Hobbiton, Waitomo Caves, Rotorua, Coromandel, Bay of Islands. 2-5 day private tours with professional Chinese-speaking guides." />
+  <meta name="keywords" content="Auckland day tours, Hobbiton tour from Auckland, Waitomo Caves, Rotorua day trip, Coromandel tour, Bay of Islands, New Zealand private tour" />
+  <link rel="canonical" href="https://warm-voyage.onrender.com/auckland-day-tours" />
+  
+  <meta property="og:title" content="Auckland Day Tours | Warm Voyage" />
+  <meta property="og:description" content="Discover Auckland's surrounding attractions. Private tours to Hobbiton, Waitomo, Rotorua & more." />
+  <meta property="og:type" content="website" />
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-yellow: #ffc83d;
+      --secondary-orange: #ff8a3d;
+      --deep-brown: #3a2b1f;
+      --cream-white: #fff6e8;
+      --text-dark: #333;
+      --text-gray: #666;
+      --white: #fff;
+      --shadow: 0 10px 30px rgba(58, 43, 31, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--cream-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    .container { width: min(1400px, 92vw); margin: 0 auto; }
+    
+    nav {
+      position: fixed; inset: 0 0 auto 0; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4vw; background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px); z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.03);
+    }
+    .logo { font-size: clamp(22px, 2vw, 30px); color: var(--secondary-orange); display:flex; gap:10px; align-items:center; font-weight:700; text-decoration:none; }
+    .logo i { color: var(--primary-yellow); }
+    .nav-links { display:flex; gap:22px; }
+    .nav-links a { text-decoration:none; color: var(--deep-brown); font-weight:600; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--secondary-orange); }
+    
+    .hero-banner {
+      margin-top: 80px;
+      height: 50vh;
+      min-height: 400px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('https://images.unsplash.com/photo-1507699622108-4be7abd85f4d?w=1920&q=80') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+    .hero-banner h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      margin-bottom: 16px;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+    }
+    .hero-banner p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    }
+    
+    .content-section {
+      padding: 80px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .section-title h2 {
+      font-size: 2.2rem;
+      color: var(--deep-brown);
+      margin-bottom: 12px;
+    }
+    .section-title p {
+      color: var(--text-gray);
+      font-size: 1.1rem;
+    }
+    
+    .tour-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+    }
+    .tour-card {
+      background: var(--white);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+    }
+    .tour-card:hover {
+      transform: translateY(-8px);
+    }
+    .tour-image {
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .tour-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--secondary-orange);
+      color: white;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .tour-content {
+      padding: 24px;
+    }
+    .tour-content h3 {
+      font-size: 1.4rem;
+      color: var(--deep-brown);
+      margin-bottom: 12px;
+    }
+    .tour-content p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+    .tour-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .tour-highlights span {
+      background: var(--cream-white);
+      padding: 4px 12px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+      color: var(--deep-brown);
+    }
+    .tour-price {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+    }
+    .tour-price .price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--secondary-orange);
+    }
+    .tour-price .duration {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+    }
+    
+    .itinerary-section {
+      background: var(--white);
+      padding: 80px 0;
+    }
+    .itinerary-card {
+      background: var(--cream-white);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 24px;
+    }
+    .itinerary-card h3 {
+      color: var(--secondary-orange);
+      margin-bottom: 16px;
+      font-size: 1.3rem;
+    }
+    .itinerary-card ul {
+      list-style: none;
+    }
+    .itinerary-card li {
+      padding: 10px 0;
+      border-bottom: 1px dashed #ddd;
+      display: flex;
+      gap: 12px;
+    }
+    .itinerary-card li:last-child {
+      border-bottom: none;
+    }
+    .itinerary-card li i {
+      color: var(--primary-yellow);
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+      padding: 80px 0;
+      text-align: center;
+    }
+    .cta-section h2 {
+      color: var(--deep-brown);
+      margin-bottom: 16px;
+      font-size: 2rem;
+    }
+    .cta-section p {
+      color: var(--deep-brown);
+      margin-bottom: 24px;
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--deep-brown);
+      border: none;
+      padding: 16px 40px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-block;
+      transition: transform 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    }
+    
+    footer {
+      background: var(--deep-brown);
+      color: var(--white);
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: var(--primary-yellow);
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover {
+      color: var(--primary-yellow);
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .tour-grid { grid-template-columns: 1fr; }
+      .hero-banner { height: 40vh; min-height: 300px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Services</a>
+      <a href="index.html#fleet">Fleet</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero-banner">
+    <div>
+      <h1 data-en="Auckland Day Tours" data-zh="奥克兰周边短途游">Auckland Day Tours</h1>
+      <p data-en="Discover the best of Auckland's surrounding attractions with our private tours" data-zh="私人定制行程，探索奥克兰周边精华景点">Discover the best of Auckland's surrounding attractions with our private tours</p>
+    </div>
+  </header>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Popular Day Trips from Auckland" data-zh="奥克兰出发热门一日游">Popular Day Trips from Auckland</h2>
+        <p data-en="Private tours with Chinese-speaking driver guides" data-zh="中文司机兼导游，私人定制行程">Private tours with Chinese-speaking driver guides</p>
+      </div>
+      
+      <div class="tour-grid">
+        <div class="tour-card">
+          <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1585064776529-0b1f80b0c4d3?w=800&q=80')">
+            <span class="tour-badge" data-en="Best Seller" data-zh="热门推荐">Best Seller</span>
+          </div>
+          <div class="tour-content">
+            <h3 data-en="Hobbiton & Waitomo Caves" data-zh="霍比特村 + 怀托摩萤火虫洞">Hobbiton & Waitomo Caves</h3>
+            <p data-en="Visit the magical Hobbiton movie set and glowworm caves in one day. Perfect for Lord of the Rings fans." data-zh="一天游览霍比特村电影取景地和萤火虫洞，魔戒粉丝必打卡。">Visit the magical Hobbiton movie set and glowworm caves in one day. Perfect for Lord of the Rings fans.</p>
+            <div class="tour-highlights">
+              <span><i class="ri-camera-line"></i> Hobbiton</span>
+              <span><i class="ri-flashlight-line"></i> Glowworm Caves</span>
+              <span><i class="ri-restaurant-line"></i> Lunch Included</span>
+            </div>
+            <div class="tour-price">
+              <span class="price">From NZ$280</span>
+              <span class="duration"><i class="ri-time-line"></i> 10-12 hours</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tour-card">
+          <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80')">
+            <span class="tour-badge" data-en="Geothermal" data-zh="地热奇观">Geothermal</span>
+          </div>
+          <div class="tour-content">
+            <h3 data-en="Rotorua Day Trip" data-zh="罗托鲁瓦一日游">Rotorua Day Trip</h3>
+            <p data-en="Experience Maori culture, geothermal wonders, and natural hot springs. Visit Te Puia and Polynesian Spa." data-zh="体验毛利文化、地热奇观和天然温泉，游览蒂普亚和波利尼西亚温泉。">Experience Maori culture, geothermal wonders, and natural hot springs. Visit Te Puia and Polynesian Spa.</p>
+            <div class="tour-highlights">
+              <span><i class="ri-fire-line"></i> Geysers</span>
+              <span><i class="ri-group-line"></i> Maori Culture</span>
+              <span><i class="ri-hot-celsius-line"></i> Hot Springs</span>
+            </div>
+            <div class="tour-price">
+              <span class="price">From NZ$260</span>
+              <span class="duration"><i class="ri-time-line"></i> 10-11 hours</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tour-card">
+          <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80')">
+            <span class="tour-badge" data-en="Beach" data-zh="海滩风光">Beach</span>
+          </div>
+          <div class="tour-content">
+            <h3 data-en="Coromandel Peninsula" data-zh="科罗曼德半岛">Coromandel Peninsula</h3>
+            <p data-en="Visit Cathedral Cove, Hot Water Beach, and scenic coastal drives. Dig your own hot pool at the beach!" data-zh="游览教堂湾、热水海滩，沿海岸线风光驾驶。在海滩挖自己的温泉池！">Visit Cathedral Cove, Hot Water Beach, and scenic coastal drives. Dig your own hot pool at the beach!</p>
+            <div class="tour-highlights">
+              <span><i class="ri-water-flash-line"></i> Cathedral Cove</span>
+              <span><i class="ri-temp-hot-line"></i> Hot Water Beach</span>
+              <span><i class="ri-road-map-line"></i> Scenic Drive</span>
+            </div>
+            <div class="tour-price">
+              <span class="price">From NZ$240</span>
+              <span class="duration"><i class="ri-time-line"></i> 10-12 hours</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tour-card">
+          <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32fd4?w=800&q=80')">
+            <span class="tour-badge" data-en="Nature" data-zh="自然风光">Nature</span>
+          </div>
+          <div class="tour-content">
+            <h3 data-en="Bay of Islands" data-zh="岛屿湾">Bay of Islands</h3>
+            <p data-en="Explore 144 islands, visit the historic Waitangi Treaty Grounds. Optional dolphin watching cruise available." data-zh="探索144座岛屿，参观历史悠久的怀唐伊条约签署地。可选海豚巡游。">Explore 144 islands, visit the historic Waitangi Treaty Grounds. Optional dolphin watching cruise available.</p>
+            <div class="tour-highlights">
+              <span><i class="ri-ship-line"></i> Island Cruise</span>
+              <span><i class="ri-ancient-gate-line"></i> Waitangi</span>
+              <span><i class="ri-emotion-happy-line"></i> Dolphins</span>
+            </div>
+            <div class="tour-price">
+              <span class="price">From NZ$300</span>
+              <span class="duration"><i class="ri-time-line"></i> 11-13 hours</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tour-card">
+          <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&q=80')">
+            <span class="tour-badge" data-en="Adventure" data-zh="探险之旅">Adventure</span>
+          </div>
+          <div class="tour-content">
+            <h3 data-en="Waitakere Ranges & West Coast" data-zh="怀塔克雷山脉 + 西海岸">Waitakere Ranges & West Coast</h3>
+            <p data-en="Black sand beaches, native rainforest walks, and stunning waterfalls. Piha, Karekare, and Fairy Falls." data-zh="黑沙滩、原始雨林徒步、壮观瀑布。皮哈海滩、 Karekare、仙女瀑布。">Black sand beaches, native rainforest walks, and stunning waterfalls. Piha, Karekare, and Fairy Falls.</p>
+            <div class="tour-highlights">
+              <span><i class="ri-landscape-line"></i> Rainforest</span>
+              <span><i class="ri-drop-line"></i> Waterfalls</span>
+              <span><i class="ri-sun-foggy-line"></i> Black Sand</span>
+            </div>
+            <div class="tour-price">
+              <span class="price">From NZ$180</span>
+              <span class="duration"><i class="ri-time-line"></i> 6-8 hours</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tour-card">
+          <div class="tour-image" style="background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&q=80')">
+            <span class="tour-badge" data-en="Wine" data-zh="美酒之旅">Wine</span>
+          </div>
+          <div class="tour-content">
+            <h3 data-en="Waiheke Island Wine Tour" data-zh="激流岛葡萄酒之旅">Waiheke Island Wine Tour</h3>
+            <p data-en="Ferry to Waiheke, visit 3-4 award-winning wineries, enjoy vineyard lunches and stunning ocean views." data-zh="乘轮渡前往激流岛，参观3-4家获奖酒庄，享受葡萄园午餐和海景。">Ferry to Waiheke, visit 3-4 award-winning wineries, enjoy vineyard lunches and stunning ocean views.</p>
+            <div class="tour-highlights">
+              <span><i class="ri-goblet-line"></i> Wineries</span>
+              <span><i class="ri-ship-2-line"></i> Ferry Ride</span>
+              <span><i class="ri-restaurant-2-line"></i> Vineyard Lunch</span>
+            </div>
+            <div class="tour-price">
+              <span class="price">From NZ$220</span>
+              <span class="duration"><i class="ri-time-line"></i> 7-9 hours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="itinerary-section">
+    <div class="container">
+      <div class="section-title">
+        <h2 data-en="Multi-Day Itineraries" data-zh="多日游行程推荐">Multi-Day Itineraries</h2>
+        <p data-en="Fully customizable private tours with accommodation assistance" data-zh="私人定制行程，可协助预订住宿">Fully customizable private tours with accommodation assistance</p>
+      </div>
+      
+      <div class="itinerary-card">
+        <h3><i class="ri-calendar-todo-line"></i> <span data-en="2-3 Day: Hobbiton & Rotorua Explorer" data-zh="2-3天：霍比特村 + 罗托鲁瓦深度游">2-3 Day: Hobbiton & Rotorua Explorer</span></h3>
+        <ul>
+          <li><i class="ri-map-pin-2-line"></i> <span data-en="Day 1: Auckland → Waitomo Caves → Hobbiton → Rotorua (overnight)" data-zh="第一天：奥克兰 → 怀托摩萤火虫洞 → 霍比特村 → 罗托鲁瓦（住宿）">Day 1: Auckland → Waitomo Caves → Hobbiton → Rotorua (overnight)</span></li>
+          <li><i class="ri-map-pin-2-line"></i> <span data-en="Day 2: Te Puia Geothermal Park → Maori Village → Polynesian Spa → Return to Auckland" data-zh="第二天：蒂普亚地热公园 → 毛利文化村 → 波利尼西亚温泉 → 返回奥克兰">Day 2: Te Puia Geothermal Park → Maori Village → Polynesian Spa → Return to Auckland</span></li>
+          <li><i class="ri-map-pin-2-line"></i> <span data-en="Optional Day 3: Blue Springs walk or Taupo day extension" data-zh="可选第三天：蓝泉徒步或陶波延伸游">Optional Day 3: Blue Springs walk or Taupo day extension</span></li>
+        </ul>
+        <p style="margin-top:16px;color:var(--secondary-orange);font-weight:600;" data-en="From NZ$1,200 for 2 days (includes accommodation assistance)" data-zh="2天行程 NZ$1,200 起（含住宿协助）">From NZ$1,200 for 2 days (includes accommodation assistance)</p>
+      </div>
+      
+      <div class="itinerary-card">
+        <h3><i class="ri-calendar-todo-line"></i> <span data-en="3-5 Day: North Island Highlights" data-zh="3-5天：北岛精华游">3-5 Day: North Island Highlights</span></h3>
+        <ul>
+          <li><i class="ri-map-pin-2-line"></i> <span data-en="Day 1: Auckland city tour → Waitakere Ranges → Piha Beach" data-zh="第一天：奥克兰市区游览 → 怀塔克雷山脉 → 皮哈海滩">Day 1: Auckland city tour → Waitakere Ranges → Piha Beach</span></li>
+          <li><i class="ri-map-pin-2-line"></i> <span data-en="Day 2: Coromandel Peninsula → Cathedral Cove → Hot Water Beach" data-zh="第二天：科罗曼德半岛 → 教堂湾 → 热水海滩">Day 2: Coromandel Peninsula → Cathedral Cove → Hot Water Beach</span></li>
+          <li><i class="ri-map-pin-2-line"></i> <span data-en="Day 3: Waitomo Caves → Hobbiton → Rotorua" data-zh="第三天：怀托摩萤火虫洞 → 霍比特村 → 罗托鲁瓦">Day 3: Waitomo Caves → Hobbiton → Rotorua</span></li>
+          <li><i class="ri-map-pin-2-line"></i> <span data-en="Day 4: Rotorua geothermal → Taupo → Huka Falls" data-zh="第四天：罗托鲁瓦地热 → 陶波 → 胡卡瀑布">Day 4: Rotorua geothermal → Taupo → Huka Falls</span></li>
+          <li><i class="ri-map-pin-2-line"></i> <span data-en="Day 5: Return via Hamilton Gardens or direct to Auckland" data-zh="第五天：经汉密尔顿花园返回或直接返回奥克兰">Day 5: Return via Hamilton Gardens or direct to Auckland</span></li>
+        </ul>
+        <p style="margin-top:16px;color:var(--secondary-orange);font-weight:600;" data-en="From NZ$2,800 for 5 days (includes accommodation assistance)" data-zh="5天行程 NZ$2,800 起（含住宿协助）">From NZ$2,800 for 5 days (includes accommodation assistance)</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2 data-en="Ready to Explore Auckland?" data-zh="准备好探索奥克兰了吗？">Ready to Explore Auckland?</h2>
+      <p data-en="Contact us to customize your perfect day trip or multi-day adventure" data-zh="联系我们定制您的完美一日游或多日探险行程">Contact us to customize your perfect day trip or multi-day adventure</p>
+      <a href="index.html#booking" class="btn-primary" data-en="Get a Quote" data-zh="获取报价">Get a Quote</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="logo" style="color:var(--white)"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
+          <p style="margin-top:10px;color:rgba(255,255,255,0.8)">Premium chauffeur services in New Zealand.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="auckland-airport-transfer.html">Auckland Airport Transfer</a></li>
+            <li><a href="auckland-day-tours.html">Auckland Day Tours</a></li>
+            <li><a href="corporate-chauffeur.html">Corporate Chauffeur</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul class="footer-links">
+            <li><a href="our-story.html">Our Story</a></li>
+            <li><a href="index.html#fleet">Our Fleet</a></li>
+            <li><a href="index.html#reviews">Client Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>+64 21 000 0000</li>
+            <li>hello@warmvoyage.co.nz</li>
+            <li>Auckland, New Zealand</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2026 Warm Voyage New Zealand. All Rights Reserved.</div>
+    </div>
+  </footer>
+  
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    const savedLang = localStorage.getItem('warmvoyage_lang');
+    const currentLang = langParam || savedLang || 'en';
+    
+    if (currentLang === 'zh') {
+      document.documentElement.lang = 'zh-CN';
+      document.title = '奥克兰周边短途游 | 暖途 Warm Voyage';
+      
+      document.querySelector('.hero-banner h1').textContent = '奥克兰周边短途游';
+      document.querySelector('.hero-banner p').textContent = '私人定制行程，探索奥克兰周边精华景点';
+      
+      document.querySelectorAll('.section-title h2').forEach((h2, i) => {
+        if (i === 0) h2.textContent = '奥克兰出发热门一日游';
+        if (i === 1) h2.textContent = '多日游行程推荐';
+      });
+      
+      document.querySelectorAll('.section-title p').forEach((p, i) => {
+        if (i === 0) p.textContent = '中文司机兼导游，私人定制行程';
+        if (i === 1) p.textContent = '私人定制行程，可协助预订住宿';
+      });
+      
+      const tourData = [
+        { badge: '热门推荐', title: '霍比特村 + 怀托摩萤火虫洞', desc: '一天游览霍比特村电影取景地和萤火虫洞，魔戒粉丝必打卡。' },
+        { badge: '地热奇观', title: '罗托鲁瓦一日游', desc: '体验毛利文化、地热奇观和天然温泉，游览蒂普亚和波利尼西亚温泉。' },
+        { badge: '海滩风光', title: '科罗曼德半岛', desc: '游览教堂湾、热水海滩，沿海岸线风光驾驶。在海滩挖自己的温泉池！' },
+        { badge: '自然风光', title: '岛屿湾', desc: '探索144座岛屿，参观历史悠久的怀唐伊条约签署地。可选海豚巡游。' },
+        { badge: '探险之旅', title: '怀塔克雷山脉 + 西海岸', desc: '黑沙滩、原始雨林徒步、壮观瀑布。皮哈海滩、Karekare、仙女瀑布。' },
+        { badge: '美酒之旅', title: '激流岛葡萄酒之旅', desc: '乘轮渡前往激流岛，参观3-4家获奖酒庄，享受葡萄园午餐和海景。' }
+      ];
+      
+      document.querySelectorAll('.tour-card').forEach((card, i) => {
+        if (tourData[i]) {
+          card.querySelector('.tour-badge').textContent = tourData[i].badge;
+          card.querySelector('.tour-content h3').textContent = tourData[i].title;
+          card.querySelector('.tour-content p').textContent = tourData[i].desc;
+        }
+      });
+      
+      document.querySelector('.cta-section h2').textContent = '准备好探索奥克兰了吗？';
+      document.querySelector('.cta-section p').textContent = '联系我们定制您的完美一日游或多日探险行程';
+      document.querySelector('.btn-primary').textContent = '获取报价';
+    }
+  </script>
+</body>
+</html>
