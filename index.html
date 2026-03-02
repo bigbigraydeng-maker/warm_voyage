@@ -407,15 +407,15 @@
         <div class="footer-col">
           <h4 data-en="Services" data-zh="服务项目">Services</h4>
           <ul class="footer-links">
-            <li><a href="auckland-airport-transfer.html" data-en="Auckland Airport Transfer" data-zh="奥克兰接送机">Auckland Airport Transfer</a></li>
-            <li><a href="queenstown-airport-transfer.html" data-en="Queenstown Airport Transfer" data-zh="皇后镇接送机">Queenstown Airport Transfer</a></li>
-            <li><a href="custom-charter-tours.html" data-en="Custom Charter Tours" data-zh="全境包车定制">Custom Charter Tours</a></li>
+            <li><a href="auckland-airport-transfer.html?lang=zh" class="footer-link-cn" data-en="Auckland Airport Transfer" data-zh="奥克兰接送机">Auckland Airport Transfer</a></li>
+            <li><a href="queenstown-airport-transfer.html?lang=zh" class="footer-link-cn" data-en="Queenstown Airport Transfer" data-zh="皇后镇接送机">Queenstown Airport Transfer</a></li>
+            <li><a href="custom-charter-tours.html?lang=zh" class="footer-link-cn" data-en="Custom Charter Tours" data-zh="全境包车定制">Custom Charter Tours</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4 data-en="About Us" data-zh="关于我们">About Us</h4>
           <ul class="footer-links">
-            <li><a href="our-story.html" data-en="Our Story" data-zh="品牌故事">Our Story</a></li>
+            <li><a href="our-story.html?lang=zh" class="footer-link-cn" data-en="Our Story" data-zh="品牌故事">Our Story</a></li>
             <li><a href="#fleet" data-en="Our Fleet" data-zh="车队展示">Our Fleet</a></li>
             <li><a href="#reviews" data-en="Client Reviews" data-zh="客户评价">Client Reviews</a></li>
           </ul>
@@ -427,6 +427,13 @@
             <li>hello@warmvoyage.co.nz</li>
             <li>Auckland, New Zealand</li>
           </ul>
+          <div class="wechat-qr" style="margin-top:15px;">
+            <p style="font-size:12px;color:var(--text-gray);margin-bottom:8px;" data-en="WeChat QR Code" data-zh="微信扫码咨询">WeChat QR Code</p>
+            <div style="width:100px;height:100px;background:linear-gradient(135deg,#f0f0f0,#e0e0e0);border-radius:8px;display:flex;align-items:center;justify-content:center;border:2px dashed #ccc;">
+              <i class="ri-qr-code-line" style="font-size:40px;color:#999;"></i>
+            </div>
+            <p style="font-size:11px;color:#999;margin-top:5px;" data-en="Scan to add WeChat" data-zh="扫码添加微信">Scan to add WeChat</p>
+          </div>
         </div>
       </div>
       <div class="copyright">&copy; 2026 Warm Voyage New Zealand. All Rights Reserved.</div>
@@ -479,6 +486,21 @@
       });
 
       localStorage.setItem('warmvoyage_lang', lang);
+      
+      // Update footer links based on language
+      updateFooterLinks(lang);
+    }
+    
+    // Update footer links to include language parameter
+    function updateFooterLinks(lang) {
+      document.querySelectorAll('.footer-link-cn').forEach(link => {
+        const baseUrl = link.getAttribute('href').split('?')[0];
+        if (lang === 'zh') {
+          link.setAttribute('href', baseUrl + '?lang=zh');
+        } else {
+          link.setAttribute('href', baseUrl);
+        }
+      });
     }
 
     // Check saved language preference
@@ -488,6 +510,9 @@
       langBtns.forEach(btn => {
         btn.classList.toggle('active', btn.dataset.lang === savedLang);
       });
+      updateFooterLinks(savedLang);
+    } else {
+      updateFooterLinks('en');
     }
 
     // Set minimum date to today

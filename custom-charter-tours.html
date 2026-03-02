@@ -282,5 +282,48 @@
       <div class="copyright">&copy; 2026 Warm Voyage New Zealand. All Rights Reserved.</div>
     </div>
   </footer>
+  
+  <script>
+    // Language switching based on URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    const savedLang = localStorage.getItem('warmvoyage_lang');
+    const currentLang = langParam || savedLang || 'en';
+    
+    if (currentLang === 'zh') {
+      document.documentElement.lang = 'zh-CN';
+      document.title = '定制包车旅游 | 暖途 Warm Voyage';
+      
+      document.querySelector('.page-header h1').textContent = '定制包车旅游';
+      document.querySelector('.page-header p').textContent = '按照您的方式体验新西兰。个性化私人包车旅游，打造完美行程。';
+      
+      const sections = document.querySelectorAll('.content-section h2');
+      if (sections[0]) sections[0].textContent = '为什么选择我们的定制包车旅游？';
+      if (sections[1]) sections[1].textContent = '热门旅游目的地';
+      
+      const features = [
+        { title: '定制行程', desc: '告诉我们您的兴趣和偏好，我们将为您打造专属行程。' },
+        { title: '灵活安排', desc: '按照自己的节奏旅行。早出发、晚停留，随心所欲。' },
+        { title: '专业向导', desc: '我们的双语司机熟悉当地文化、历史和隐秘景点。' },
+        { title: '豪华车辆', desc: '乘坐我们的优质车队，舒适安全地游览新西兰。' },
+        { title: '适合团体', desc: '各种规模的团体都能找到合适的车辆，从情侣到大家庭。' },
+        { title: '双语服务', desc: '中英文服务，沟通无障碍。' }
+      ];
+      
+      document.querySelectorAll('.feature-card').forEach((card, index) => {
+        if (features[index]) {
+          card.querySelector('h3').textContent = features[index].title;
+          card.querySelector('p').textContent = features[index].desc;
+        }
+      });
+      
+      document.querySelector('.cta-section h2').textContent = '准备好规划您的定制之旅了吗？';
+      document.querySelector('.cta-section p').textContent = '联系我们，讨论您的新西兰梦想之旅。';
+      document.querySelector('.btn-primary').textContent = '开始规划';
+      
+      document.querySelector('footer .logo span').textContent = '暖途 Warm Voyage';
+      document.querySelector('footer p').textContent = '新西兰优质接送服务。';
+    }
+  </script>
 </body>
 </html>

@@ -321,5 +321,59 @@
       <div class="copyright">&copy; 2026 Warm Voyage New Zealand. All Rights Reserved.</div>
     </div>
   </footer>
+  
+  <script>
+    // Language switching based on URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    const savedLang = localStorage.getItem('warmvoyage_lang');
+    const currentLang = langParam || savedLang || 'en';
+    
+    if (currentLang === 'zh') {
+      document.documentElement.lang = 'zh-CN';
+      document.title = '品牌故事 | 暖途 Warm Voyage';
+      
+      document.querySelector('.page-header h1').textContent = '品牌故事';
+      document.querySelector('.page-header p').textContent = '从一个简单的想法到新西兰值得信赖的接送服务。了解暖途的旅程。';
+      
+      const sections = document.querySelectorAll('.content-section h2, .values-section h2');
+      if (sections[0]) sections[0].textContent = '一切如何开始';
+      if (sections[1]) sections[1].textContent = '我们的核心价值观';
+      
+      const storyCards = [
+        { title: '初心', desc: '暖途诞生于一个简单的观察：来到新西兰的游客值得拥有的不仅仅是交通——他们值得从抵达的那一刻起就感受到温暖、热情的欢迎。' },
+        { title: '共同成长', desc: '通过口碑传播和对卓越的执着追求，我们扩展了车队和团队。今天，我们为奥克兰和皇后镇的数千名客户提供服务，始终保持着最初的那份用心。' },
+        { title: '展望未来', desc: '我们在成长的同时始终坚守核心价值观。我们的愿景是成为新西兰最值得信赖的接送服务品牌，以可靠、温暖和超越期望而闻名。' }
+      ];
+      
+      document.querySelectorAll('.story-card').forEach((card, index) => {
+        if (storyCards[index]) {
+          card.querySelector('h3').textContent = storyCards[index].title;
+          card.querySelector('p').textContent = storyCards[index].desc;
+        }
+      });
+      
+      const values = [
+        { title: '温暖', desc: '每一次互动都充满真诚的关怀和热情' },
+        { title: '可靠', desc: '永远准时，永远值得信赖' },
+        { title: '卓越', desc: '服务质量持续改进' },
+        { title: '诚信', desc: '透明定价，诚实沟通' }
+      ];
+      
+      document.querySelectorAll('.value-item').forEach((item, index) => {
+        if (values[index]) {
+          item.querySelector('h3').textContent = values[index].title;
+          item.querySelector('p').textContent = values[index].desc;
+        }
+      });
+      
+      document.querySelector('.cta-section h2').textContent = '体验暖途';
+      document.querySelector('.cta-section p').textContent = '让我们向您展示温暖和可靠能带来的不同。';
+      document.querySelector('.btn-primary').textContent = '预订您的旅程';
+      
+      document.querySelector('footer .logo span').textContent = '暖途 Warm Voyage';
+      document.querySelector('footer p').textContent = '新西兰优质接送服务。';
+    }
+  </script>
 </body>
 </html>

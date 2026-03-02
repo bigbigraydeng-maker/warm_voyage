@@ -8,6 +8,12 @@
   <meta name="keywords" content="Auckland airport transfer, Auckland airport pickup, AKL airport transfer, airport shuttle Auckland, chauffeur service Auckland" />
   <link rel="canonical" href="https://warm-voyage.onrender.com/auckland-airport-transfer" />
   
+  <!-- Open Graph -->
+  <meta property="og:title" content="Auckland Airport Transfer | Warm Voyage" />
+  <meta property="og:description" content="Professional Auckland airport transfers with bilingual drivers. 24/7 service, flight tracking, luxury vehicles." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://warm-voyage.onrender.com/auckland-airport-transfer.html" />
+  
   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -318,5 +324,53 @@
       <div class="copyright">&copy; 2026 Warm Voyage New Zealand. All Rights Reserved.</div>
     </div>
   </footer>
+  
+  <script>
+    // Language switching based on URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const langParam = urlParams.get('lang');
+    const savedLang = localStorage.getItem('warmvoyage_lang');
+    const currentLang = langParam || savedLang || 'en';
+    
+    if (currentLang === 'zh') {
+      document.documentElement.lang = 'zh-CN';
+      document.title = '奥克兰机场接送 | 暖途 Warm Voyage';
+      
+      // Update page content to Chinese
+      document.querySelector('.page-header h1').textContent = '奥克兰机场接送';
+      document.querySelector('.page-header p').textContent = '专业、舒适、可靠的奥克兰机场接送服务。让您的新西兰之旅从暖途开始。';
+      
+      // Update section headings
+      const sections = document.querySelectorAll('.content-section h2');
+      if (sections[0]) sections[0].textContent = '为什么选择我们的机场接送服务？';
+      if (sections[1]) sections[1].textContent = '热门接送路线';
+      
+      // Update feature cards
+      const features = [
+        { title: '航班跟踪', desc: '实时监控您的航班状态，自动调整接送时间应对延误或提前到达。' },
+        { title: '举牌接机', desc: '我们的司机会在到达大厅举着写有您姓名的牌子迎接您。' },
+        { title: '豪华车辆', desc: '乘坐我们的高级轿车、商务车和小巴，享受舒适的旅程。' },
+        { title: '固定价格', desc: '透明定价，无隐藏费用。预订前即可知道确切价格。' },
+        { title: '24小时服务', desc: '全天候服务，无论您的航班是凌晨还是深夜。' },
+        { title: '中文司机', desc: '中英文双语司机，沟通无障碍。' }
+      ];
+      
+      document.querySelectorAll('.feature-card').forEach((card, index) => {
+        if (features[index]) {
+          card.querySelector('h3').textContent = features[index].title;
+          card.querySelector('p').textContent = features[index].desc;
+        }
+      });
+      
+      // Update CTA section
+      document.querySelector('.cta-section h2').textContent = '准备好预订您的机场接送了吗？';
+      document.querySelector('.cta-section p').textContent = '立即获取报价或预订您的接送服务。';
+      document.querySelector('.btn-primary').textContent = '立即预订';
+      
+      // Update footer
+      document.querySelector('footer .logo span').textContent = '暖途 Warm Voyage';
+      document.querySelector('footer p').textContent = '新西兰优质接送服务。';
+    }
+  </script>
 </body>
 </html>
