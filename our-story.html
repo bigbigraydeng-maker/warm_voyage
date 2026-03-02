@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story | Warm Voyage Premium Chauffeur NZ</title>
+  <meta name="description" content="Learn about Warm Voyage's story. Premium chauffeur services in New Zealand with a commitment to warmth, reliability, and exceptional service." />
+  <meta name="keywords" content="Warm Voyage story, about Warm Voyage, NZ chauffeur service, airport transfer NZ" />
+  <link rel="canonical" href="https://warm-voyage.onrender.com/our-story" />
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-yellow: #ffc83d;
+      --secondary-orange: #ff8a3d;
+      --deep-brown: #3a2b1f;
+      --cream-white: #fff6e8;
+      --text-dark: #333;
+      --text-gray: #666;
+      --white: #fff;
+      --shadow: 0 10px 30px rgba(58, 43, 31, 0.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--cream-white);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    .container { width: min(1400px, 92vw); margin: 0 auto; }
+    
+    nav {
+      position: fixed; inset: 0 0 auto 0; height: 80px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4vw; background: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px); z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,.03);
+    }
+    .logo { font-size: clamp(22px, 2vw, 30px); color: var(--secondary-orange); display:flex; gap:10px; align-items:center; font-weight:700; }
+    .logo i { color: var(--primary-yellow); }
+    .nav-links { display:flex; gap:22px; }
+    .nav-links a { text-decoration:none; color: var(--deep-brown); font-weight:600; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--secondary-orange); }
+    
+    .page-header {
+      margin-top: 80px;
+      background: linear-gradient(135deg, #fff9f0, #fff0d6);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .page-header h1 {
+      font-size: clamp(32px, 4vw, 48px);
+      color: var(--deep-brown);
+      margin-bottom: 16px;
+    }
+    .page-header p {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .content-section {
+      padding: 60px 0;
+    }
+    .content-section h2 {
+      font-size: 2rem;
+      color: var(--deep-brown);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+    .content-section p {
+      font-size: 1.1rem;
+      color: var(--text-gray);
+      margin-bottom: 16px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+    
+    .story-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .story-card {
+      background: var(--white);
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .story-card i {
+      font-size: 56px;
+      color: var(--primary-yellow);
+      margin-bottom: 20px;
+    }
+    .story-card h3 {
+      color: var(--deep-brown);
+      margin-bottom: 16px;
+      font-size: 1.4rem;
+    }
+    .story-card p {
+      color: var(--text-gray);
+      font-size: 1rem;
+      text-align: left;
+    }
+    
+    .values-section {
+      background: var(--white);
+      padding: 80px 0;
+      margin-top: 60px;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .value-item {
+      text-align: center;
+      padding: 20px;
+    }
+    .value-item i {
+      font-size: 48px;
+      color: var(--secondary-orange);
+      margin-bottom: 16px;
+    }
+    .value-item h3 {
+      color: var(--deep-brown);
+      margin-bottom: 12px;
+      font-size: 1.2rem;
+    }
+    .value-item p {
+      color: var(--text-gray);
+      font-size: 0.95rem;
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange));
+      padding: 60px 0;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .cta-section h2 {
+      color: var(--deep-brown);
+      margin-bottom: 20px;
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--deep-brown);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      display: inline-block;
+      margin-top: 20px;
+      transition: transform 0.3s;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    footer {
+      background: var(--deep-brown);
+      color: var(--white);
+      padding: 60px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-col h4 {
+      color: var(--primary-yellow);
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      list-style: none;
+    }
+    .footer-links li {
+      margin-bottom: 12px;
+      color: rgba(255,255,255,0.8);
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.6);
+    }
+    
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .page-header { padding: 60px 20px; }
+      .content-section { padding: 40px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="logo"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#features">Services</a>
+      <a href="index.html#fleet">Fleet</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Our Story</h1>
+      <p>From a simple idea to New Zealand's trusted chauffeur service. Discover the Warm Voyage journey.</p>
+    </div>
+  </header>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>How It All Began</h2>
+      <p>Warm Voyage was born from a simple observation: visitors to New Zealand deserved more than just transportation—they deserved a warm, welcoming experience from the moment they arrived.</p>
+      
+      <div class="story-grid">
+        <div class="story-card">
+          <i class="ri-seedling-line"></i>
+          <h3>The Beginning</h3>
+          <p>Founded in 2020, Warm Voyage started with one vehicle and a commitment to providing exceptional service. Our founder, having experienced the challenges of navigating a new country, wanted to make arriving in New Zealand stress-free and enjoyable.</p>
+        </div>
+        <div class="story-card">
+          <i class="ri-team-line"></i>
+          <h3>Growing Together</h3>
+          <p>Through word-of-mouth and dedication to excellence, we expanded our fleet and team. Today, we serve thousands of clients across Auckland and Queenstown, maintaining the same personal touch that started it all.</p>
+        </div>
+        <div class="story-card">
+          <i class="ri-rocket-line"></i>
+          <h3>Looking Forward</h3>
+          <p>We continue to grow while staying true to our core values. Our vision is to become New Zealand's most trusted chauffeur service, known for reliability, warmth, and going above and beyond for every client.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <h2>Our Core Values</h2>
+      <p>These principles guide everything we do at Warm Voyage.</p>
+      
+      <div class="values-grid">
+        <div class="value-item">
+          <i class="ri-heart-line"></i>
+          <h3>Warmth</h3>
+          <p>Genuine care and hospitality in every interaction</p>
+        </div>
+        <div class="value-item">
+          <i class="ri-shield-check-line"></i>
+          <h3>Reliability</h3>
+          <p>Always on time, always dependable</p>
+        </div>
+        <div class="value-item">
+          <i class="ri-star-line"></i>
+          <h3>Excellence</h3>
+          <p>Continuous improvement in service quality</p>
+        </div>
+        <div class="value-item">
+          <i class="ri-user-heart-line"></i>
+          <h3>Integrity</h3>
+          <p>Transparent pricing and honest communication</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Experience Warm Voyage</h2>
+      <p>Let us show you the difference warmth and reliability can make.</p>
+      <a href="index.html#booking" class="btn-primary">Book Your Journey</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="color:var(--white)"><i class="ri-sun-fill"></i> <span>Warm Voyage</span></div>
+          <p style="margin-top:10px;color:rgba(255,255,255,0.8)">Premium chauffeur services in New Zealand.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul class="footer-links">
+            <li><a href="auckland-airport-transfer.html" style="color:inherit;text-decoration:none">Auckland Airport Transfer</a></li>
+            <li><a href="queenstown-airport-transfer.html" style="color:inherit;text-decoration:none">Queenstown Airport Transfer</a></li>
+            <li><a href="custom-charter-tours.html" style="color:inherit;text-decoration:none">Custom Charter Tours</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul class="footer-links">
+            <li><a href="our-story.html" style="color:inherit;text-decoration:none">Our Story</a></li>
+            <li><a href="index.html#fleet" style="color:inherit;text-decoration:none">Our Fleet</a></li>
+            <li><a href="index.html#reviews" style="color:inherit;text-decoration:none">Client Reviews</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>+64 21 000 0000</li>
+            <li>hello@warmvoyage.co.nz</li>
+            <li>Auckland, New Zealand</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2026 Warm Voyage New Zealand. All Rights Reserved.</div>
+    </div>
+  </footer>
+</body>
+</html>
