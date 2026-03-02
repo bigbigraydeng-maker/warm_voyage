@@ -177,7 +177,6 @@
       <a href="#fleet" data-en="Fleet" data-zh="车队介绍">Fleet</a>
       <a href="#contact" data-en="Contact" data-zh="联系我们">Contact</a>
     </div>
-    <a href="#booking" class="btn-primary" data-en="Book Now" data-zh="立即预订">Book Now</a>
   </nav>
 
   <section class="hero" id="home">
@@ -424,6 +423,31 @@
     if (dateInput) {
       const today = new Date().toISOString().split('T')[0];
       dateInput.min = today;
+    }
+
+    // Form submission handling
+    const bookingForm = document.querySelector('.hero-form form');
+    if (bookingForm) {
+      bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const pickup = document.getElementById('pickup').value;
+        const dropoff = document.getElementById('dropoff').value;
+        const date = document.getElementById('date').value;
+        const passengers = document.getElementById('passengers').value;
+        
+        // Build query string for confirmation page
+        const params = new URLSearchParams({
+          pickup: pickup,
+          dropoff: dropoff,
+          date: date,
+          passengers: passengers,
+          lang: currentLang
+        });
+        
+        // Redirect to confirmation page
+        window.location.href = 'confirmation.html?' + params.toString();
+      });
     }
   </script>
 </body>

@@ -525,50 +525,57 @@
             const summaryDiv = document.getElementById('quote-summary');
             const summaryContent = document.getElementById('summary-content');
             
-            const name = urlParams.get('name');
-            const service = urlParams.get('service');
             const pickup = urlParams.get('pickup');
             const dropoff = urlParams.get('dropoff');
             const date = urlParams.get('date');
+            const passengers = urlParams.get('passengers');
+            const lang = urlParams.get('lang') || 'en';
             
-            if (name || service) {
+            // Set language based on URL parameter
+            if (lang === 'zh') {
+                document.querySelector('h1').textContent = '请求已收到';
+                document.querySelector('.subtitle').textContent = '感谢您选择暖途';
+                document.querySelector('.message').textContent = '您的报价请求已成功提交。我们的团队将在24小时内审核您的详细信息并提供个性化报价。';
+                document.querySelector('.quote-summary h3').textContent = '您的请求详情';
+                document.querySelector('.info-box h3').textContent = '接下来会发生什么？';
+                document.querySelector('.btn').textContent = '返回首页';
+            }
+            
+            if (pickup || dropoff || date) {
                 summaryDiv.style.display = 'block';
                 
-                const serviceNames = {
-                    'airport': 'Airport Transfer',
-                    'corporate': 'Corporate Chauffeur',
-                    'tour': 'Luxury Private Tour'
+                const labels = lang === 'zh' ? {
+                    pickup: '出发地',
+                    dropoff: '目的地',
+                    date: '日期',
+                    passengers: '人数'
+                } : {
+                    pickup: 'Pick-up Location',
+                    dropoff: 'Destination',
+                    date: 'Date',
+                    passengers: 'Passengers'
                 };
                 
                 let html = '';
                 
-                if (name) {
-                    html += `<p><strong>Name:</strong> ${escapeHtml(name)}</p>`;
-                }
-                
-                if (service && serviceNames[service]) {
-                    html += `<p><strong>Service:</strong> ${serviceNames[service]}</p>`;
-                }
-                
                 if (pickup) {
-                    html += `<p><strong>Pickup:</strong> ${escapeHtml(pickup)}</p>`;
+                    html += `<p><strong>${labels.pickup}:</strong> ${escapeHtml(pickup)}</p>`;
                 }
                 
                 if (dropoff) {
-                    html += `<p><strong>Drop-off:</strong> ${escapeHtml(dropoff)}</p>`;
+                    html += `<p><strong>${labels.dropoff}:</strong> ${escapeHtml(dropoff)}</p>`;
                 }
                 
                 if (date) {
                     const dateObj = new Date(date);
-                    const formattedDate = dateObj.toLocaleString('en-NZ', {
-                        weekday: 'short',
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit'
-                    });
-                    html += `<p><strong>Date:</strong> ${formattedDate}</p>`;
+                    const formattedDate = lang === 'zh' 
+                        ? dateObj.toLocaleDateString('zh-CN', { year: 'numeric', month: 'long', day: 'numeric' })
+                        : dateObj.toLocaleDateString('en-NZ', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' });
+                    html += `<p><strong>${labels.date}:</strong> ${formattedDate}</p>`;
+                }
+                
+                if (passengers) {
+                    html += `<p><strong>${labels.passengers}:</strong> ${escapeHtml(passengers)}</p>`;
                 }
                 
                 summaryContent.innerHTML = html;
