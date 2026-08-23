@@ -350,12 +350,12 @@
         <h2 data-en="Not a Company. Just Me." data-zh="不是公司，只有我">Not a Company. Just Me.</h2>
       </div>
       <div class="about-grid fade-up">
-        <div class="about-photo">
+        <div class="about-photo" id="about-photo-box">
           <i class="ri-user-3-line"></i>
-          <span data-en="Replace with a real photo of you" data-zh="替换成你本人的真实照片">Replace with a real photo of you</span>
+          <span data-en="Photo coming soon" data-zh="照片即将上线">Photo coming soon</span>
         </div>
         <div class="about-text">
-          <p data-en="I'm <span class='ph-name'>Ray Deng</span> — I've lived in Auckland for 24 years. <span class='placeholder'>[Add a sentence or two here: where you're originally from, what you did before this, why you started driving people around.]</span>" data-zh="我是<span class='ph-name'>Ray Deng</span>，在奥克兰生活了24年。<span class='placeholder'>[在这里补充1-2句真实经历：你从哪里来、之前做什么、为什么开始做接送]</span>">I'm <span class="ph-name">Ray Deng</span> — I've lived in Auckland for 24 years. <span class="placeholder">[Add a sentence or two here: where you're originally from, what you did before this, why you started driving people around.]</span></p>
+          <p data-en="Originally from Hangzhou, China, I've called Auckland home for the past 24 years. I know this city inside out — not just the tourist routes, but the shortcuts, the good local spots, and how to get you where you're going without the stress of somewhere unfamiliar." data-zh="我来自中国杭州，在奥克兰生活了24年。这座城市的路我比大多数人都熟——不只是游客常走的那几条，还有近道和值得去的小地方，怎么送你到目的地还不折腾。">Originally from Hangzhou, China, I've called Auckland home for the past 24 years. I know this city inside out — not just the tourist routes, but the shortcuts, the good local spots, and how to get you where you're going without the stress of somewhere unfamiliar.</p>
           <p data-en="Every booking with Warm Voyage is driven by me personally — not a contracted driver, not whoever's free that day. One car, one driver, no exceptions." data-zh="暖途的每一趟车都是我本人亲自开——不是临时外包司机，不是「今天谁有空谁来」。一台车，一个司机，没有例外。">Every booking with Warm Voyage is driven by me personally — not a contracted driver, not whoever's free that day. One car, one driver, no exceptions.</p>
           <div class="car-card">
             <i class="ri-car-line"></i>
@@ -516,7 +516,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <script>
     // ===== WhatsApp QR (set your number to generate one) =====
-    const WHATSAPP_NUMBER = ''; // e.g. '+64211234567'
+    const WHATSAPP_NUMBER = '+64 27 752 0888';
     if (WHATSAPP_NUMBER) {
       const waBox = document.getElementById('whatsapp-qr-box');
       waBox.innerHTML = '';
@@ -531,7 +531,15 @@
       const box = document.getElementById('wechat-qr-box');
       const img = new Image();
       img.onload = () => { box.innerHTML = ''; box.appendChild(img); };
-      img.src = 'wechat-qr.png';
+      img.src = 'wechat-qr.jpg';
+    })();
+
+    // ===== About Me photo (drop a ray-photo.jpg file next to index.html) =====
+    (function () {
+      const box = document.getElementById('about-photo-box');
+      const img = new Image();
+      img.onload = () => { box.innerHTML = ''; box.appendChild(img); img.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:22px;'; };
+      img.src = 'ray-photo.jpg';
     })();
 
     // ===== Language switching =====
