@@ -53,6 +53,7 @@
   </script>
 
   <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" rel="stylesheet" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -226,6 +227,53 @@
     .qr-box img, .qr-box canvas { width: 100%; height: 100%; border-radius: 8px; }
     .copyright { margin-top: 32px; padding-top: 20px; text-align: center; border-top: 1px solid #f0f0f0; color: #999; font-size: 13px; }
 
+    /* ===== My Car ===== */
+    .car-section { background: linear-gradient(180deg, #fff, var(--cream-white)); }
+    .car-showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .car-image { width: 100%; aspect-ratio: 4/3; border-radius: 24px; background: linear-gradient(135deg, var(--cream-white), #ffe9c7); border: 2px dashed rgba(255,138,61,0.35); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--secondary-orange); text-align: center; padding: 20px; overflow: hidden; }
+    .car-image i { font-size: 64px; }
+    .car-image span { font-size: 12px; color: var(--text-gray); }
+    .car-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 22px; }
+    .car-detail h3 { color: var(--deep-brown); font-size: clamp(22px, 2.4vw, 28px); margin-bottom: 6px; font-weight: 700; }
+    .car-detail .car-sub { color: var(--secondary-orange); font-weight: 600; margin-bottom: 18px; font-size: 15px; }
+    .car-detail > p { color: var(--text-gray); font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+    .spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .spec-item { display: flex; align-items: center; gap: 10px; background: var(--white); border-radius: 12px; padding: 13px 15px; font-size: 14px; color: var(--text-dark); box-shadow: var(--shadow); }
+    .spec-item i { color: var(--secondary-orange); font-size: 20px; flex-shrink: 0; }
+
+    /* ===== Instant Quote ===== */
+    .quote { background: var(--white); }
+    .quote-card { max-width: 700px; margin: 0 auto; background: var(--cream-white); border-radius: 24px; padding: clamp(24px, 4vw, 36px); box-shadow: var(--shadow-lg); border: 1px solid rgba(255,200,61,0.25); }
+    .quote-dir { display: flex; gap: 10px; margin-bottom: 20px; }
+    .quote-dir button { flex: 1; padding: 13px 10px; border: 1.5px solid #eadfce; background: var(--white); border-radius: 12px; cursor: pointer; font-weight: 600; font-family: inherit; font-size: 14px; color: var(--text-gray); transition: all 0.25s ease; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .quote-dir button.active { background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); color: #fff; border-color: transparent; box-shadow: 0 4px 15px rgba(255,138,61,0.25); }
+    .quote-result { margin-top: 22px; text-align: center; background: var(--white); border-radius: 16px; padding: 26px 20px; border: 1px dashed rgba(255,138,61,0.4); }
+    .quote-result .from { font-size: 13px; color: var(--text-gray); font-weight: 500; display: block; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .quote-price { font-size: clamp(38px, 6vw, 48px); font-weight: 800; color: var(--deep-brown); line-height: 1; font-variant-numeric: tabular-nums; }
+    .quote-price small { font-size: 18px; font-weight: 600; color: var(--text-gray); }
+    .quote-eta { color: var(--text-gray); font-size: 14px; margin-top: 10px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+    .quote-eta i { color: var(--secondary-orange); }
+    .quote-result.ask .quote-price { font-size: 20px; font-weight: 700; color: var(--secondary-orange); }
+    .quote-disclaimer { font-size: 12px; color: var(--text-gray); margin-top: 16px; line-height: 1.55; text-align: center; }
+    .map-wrap { max-width: 900px; margin: 40px auto 0; }
+    #price-map { height: 440px; width: 100%; border-radius: 20px; box-shadow: var(--shadow-lg); z-index: 0; }
+    #price-map .price-pill { background: #fff; border: 2px solid var(--secondary-orange); color: var(--deep-brown); font-weight: 700; font-size: 12px; padding: 4px 9px; border-radius: 999px; white-space: nowrap; box-shadow: 0 3px 10px rgba(0,0,0,0.18); font-family: 'Inter', sans-serif; }
+    #price-map .price-pill.p140 { border-color: #e05a2b; }
+    #price-map .price-pill.airport { background: var(--deep-brown); border-color: var(--deep-brown); color: #fff; }
+    .map-note { text-align: center; color: var(--text-gray); font-size: 13px; margin-top: 16px; line-height: 1.6; }
+
+    /* ===== Places / Attractions ===== */
+    .places { background: linear-gradient(180deg, var(--cream-white), #fff); }
+    .places-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .place-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.04); transition: all 0.4s ease; display: flex; flex-direction: column; }
+    .place-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+    .place-head { height: 96px; background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); display: flex; align-items: center; justify-content: center; position: relative; }
+    .place-head i { font-size: 44px; color: #fff; opacity: 0.95; }
+    .place-time { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.92); color: var(--deep-brown); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; display: flex; align-items: center; gap: 4px; }
+    .place-body { padding: 20px 22px 24px; }
+    .place-body h4 { color: var(--deep-brown); font-size: 17px; margin-bottom: 8px; font-weight: 700; }
+    .place-body p { color: var(--text-gray); font-size: 14px; line-height: 1.6; }
+
     /* ===== Responsive ===== */
     @media (max-width: 1024px) {
       .nav-links { display: none; }
@@ -236,9 +284,11 @@
       .footer-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 200px 1fr; gap: 28px; }
       .steps-grid::before { display: none; }
+      .car-showcase { grid-template-columns: 1fr; gap: 28px; }
+      .places-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
-      .form-row, .features-grid, .steps-grid { grid-template-columns: 1fr; }
+      .form-row, .features-grid, .steps-grid, .places-grid { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; text-align: center; }
       .about-photo { width: 160px; margin: 0 auto; }
       .cta-box { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
@@ -256,8 +306,10 @@
     <div class="nav-right">
       <div class="nav-links">
         <a href="#home" data-en="Home" data-zh="首页">Home</a>
+        <a href="#quote" data-en="Get a Price" data-zh="报价">Get a Price</a>
+        <a href="#car" data-en="My Car" data-zh="我的车">My Car</a>
+        <a href="#places" data-en="Places" data-zh="周边景点">Places</a>
         <a href="#about" data-en="About Me" data-zh="关于我">About Me</a>
-        <a href="#where" data-en="Where I Drive" data-zh="服务范围">Where I Drive</a>
         <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
         <a href="#booking" class="nav-cta" data-en="<i class='ri-calendar-check-line'></i> Book Now" data-zh="<i class='ri-calendar-check-line'></i> 立即预约"><i class="ri-calendar-check-line"></i> Book Now</a>
       </div>
@@ -271,8 +323,10 @@
 
   <div class="mobile-menu">
     <a href="#home" data-en="Home" data-zh="首页">Home</a>
+    <a href="#quote" data-en="Get a Price" data-zh="报价">Get a Price</a>
+    <a href="#car" data-en="My Car" data-zh="我的车">My Car</a>
+    <a href="#places" data-en="Places" data-zh="周边景点">Places</a>
     <a href="#about" data-en="About Me" data-zh="关于我">About Me</a>
-    <a href="#where" data-en="Where I Drive" data-zh="服务范围">Where I Drive</a>
     <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
     <a href="#booking" class="btn-primary" data-en="Book Now" data-zh="立即预约">Book Now</a>
   </div>
@@ -357,14 +411,65 @@
         <div class="about-text">
           <p data-en="Originally from Xi'an, China, I've called Auckland home for the past 24 years. I know this city inside out — not just the tourist routes, but the shortcuts, the good local spots, and how to get you where you're going without the stress of somewhere unfamiliar." data-zh="我来自中国西安，在奥克兰生活了24年。这座城市的路我比大多数人都熟——不只是游客常走的那几条，还有近道和值得去的小地方，怎么送你到目的地还不折腾。">Originally from Xi'an, China, I've called Auckland home for the past 24 years. I know this city inside out — not just the tourist routes, but the shortcuts, the good local spots, and how to get you where you're going without the stress of somewhere unfamiliar.</p>
           <p data-en="Every booking with Warm Voyage is driven by me personally — not a contracted driver, not whoever's free that day. One car, one driver, no exceptions." data-zh="暖途的每一趟车都是我本人亲自开——不是临时外包司机，不是「今天谁有空谁来」。一台车，一个司机，没有例外。">Every booking with Warm Voyage is driven by me personally — not a contracted driver, not whoever's free that day. One car, one driver, no exceptions.</p>
-          <div class="car-card">
-            <i class="ri-car-line"></i>
-            <div>
-              <h4 data-en="My Car" data-zh="我的车">My Car</h4>
-              <p data-en="Mercedes-Benz GLS 400, seats 5 (plus luggage)" data-zh="奔驰 GLS 400，可坐5位乘客（另有行李空间）">Mercedes-Benz GLS 400, seats 5 (plus luggage)</p>
-            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Car -->
+  <section class="car-section" id="car">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge" data-en="My Car" data-zh="我的座驾">My Car</span>
+        <h2 data-en="One Car, Kept Immaculate" data-zh="就这一台车，始终整洁">One Car, Kept Immaculate</h2>
+        <p data-en="You always ride in the same car — my Mercedes-Benz GLS 400." data-zh="你每次坐的都是同一台车——我的奔驰 GLS 400。">You always ride in the same car — my Mercedes-Benz GLS 400.</p>
+      </div>
+      <div class="car-showcase fade-up">
+        <div class="car-image" id="car-image-box">
+          <i class="ri-car-line"></i>
+          <span data-en="Add car.jpg to the project" data-zh="把 car.jpg 放进项目里">Add car.jpg to the project</span>
+        </div>
+        <div class="car-detail">
+          <h3>Mercedes-Benz GLS 400</h3>
+          <p class="car-sub" data-en="Full-size luxury SUV · seats 5 + luggage" data-zh="全尺寸豪华 SUV · 可坐 5 人 + 行李">Full-size luxury SUV · seats 5 + luggage</p>
+          <p data-en="Spacious, quiet and comfortable, with plenty of room for suitcases — your whole family and all your luggage travel together in one car, no splitting up. Cleaned before every trip." data-zh="宽敞、安静、舒适，行李空间充足——一家人连人带箱一台车全装下，不用分车。每一趟出发前都清洁到位。">Spacious, quiet and comfortable, with plenty of room for suitcases — your whole family and all your luggage travel together in one car, no splitting up. Cleaned before every trip.</p>
+          <div class="spec-grid">
+            <div class="spec-item"><i class="ri-user-line"></i> <span data-en="Up to 5 passengers" data-zh="最多 5 位乘客">Up to 5 passengers</span></div>
+            <div class="spec-item"><i class="ri-suitcase-line"></i> <span data-en="Room for large luggage" data-zh="大件行李空间充足">Room for large luggage</span></div>
+            <div class="spec-item"><i class="ri-temp-cold-line"></i> <span data-en="Climate control" data-zh="全车恒温空调">Climate control</span></div>
+            <div class="spec-item"><i class="ri-battery-charge-line"></i> <span data-en="Phone charging on board" data-zh="车内手机充电">Phone charging on board</span></div>
+            <div class="spec-item"><i class="ri-parent-line"></i> <span data-en="Free child seat on request" data-zh="可免费提供儿童座椅">Free child seat on request</span></div>
+            <div class="spec-item"><i class="ri-cup-line"></i> <span data-en="Bottled water for you" data-zh="为你备有瓶装水">Bottled water for you</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instant Quote -->
+  <section class="quote" id="quote">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge" data-en="Instant Estimate" data-zh="即时估价">Instant Estimate</span>
+        <h2 data-en="Airport Transfer Price" data-zh="机场接送报价">Airport Transfer Price</h2>
+        <p data-en="Choose your area for an instant estimate. It's a flat fare — no meter, no surge. I confirm the final price when I reply." data-zh="选择你所在的区域，立刻看到预估价。一口价，不打表、不加价。最终价格我会在回复时确认。">Choose your area for an instant estimate. It's a flat fare — no meter, no surge. I confirm the final price when I reply.</p>
+      </div>
+      <div class="quote-card fade-up">
+        <div class="quote-dir">
+          <button type="button" class="active" data-dir="from" data-en="<i class='ri-flight-land-line'></i> From Airport" data-zh="<i class='ri-flight-land-line'></i> 机场出发"><i class="ri-flight-land-line"></i> From Airport</button>
+          <button type="button" data-dir="to" data-en="<i class='ri-flight-takeoff-line'></i> To Airport" data-zh="<i class='ri-flight-takeoff-line'></i> 前往机场"><i class="ri-flight-takeoff-line"></i> To Airport</button>
+        </div>
+        <div class="form-group">
+          <label for="quote-area" data-en="Your Area in Auckland" data-zh="你在奥克兰的区域">Your Area in Auckland</label>
+          <select id="quote-area" class="form-control"></select>
+        </div>
+        <div class="quote-result" id="quote-result"></div>
+        <button class="btn-primary" id="quote-book-btn" style="width:100%;margin-top:18px" data-en="<i class='ri-calendar-check-line'></i> Book This Trip" data-zh="<i class='ri-calendar-check-line'></i> 用这个行程预约"><i class="ri-calendar-check-line"></i> Book This Trip</button>
+        <p class="quote-disclaimer" data-en="One-way flat fares for a private Mercedes GLS — same price for pick-up and drop-off. Anywhere beyond these areas is quoted separately." data-zh="以上为奔驰 GLS 专车单程一口价——接和送同价。超出这些区域的地点单独报价。">One-way flat fares for a private Mercedes GLS — same price for pick-up and drop-off. Anywhere beyond these areas is quoted separately.</p>
+      </div>
+      <div class="map-wrap fade-up">
+        <div id="price-map"></div>
+        <p class="map-note" data-en="Tap a pin to see the area and its flat fare. North Shore is covered up to Albany, West up to Hobsonville — anywhere further is quoted separately." data-zh="点地图上的标记看每个区和它的一口价。北岸覆盖到 Albany，西区覆盖到 Hobsonville——更远的地点单独报价。">Tap a pin to see the area and its flat fare. North Shore is covered up to Albany, West up to Hobsonville — anywhere further is quoted separately.</p>
       </div>
     </div>
   </section>
@@ -467,7 +572,62 @@
           </div>
         </div>
       </div>
-      <p class="price-note" data-en="Price depends on route and time — send a booking request above and I'll confirm before you commit." data-zh="价格视路线与时长而定——在上方发送预约请求，我会在您确认预约前先报价。">Price depends on route and time — send a booking request above and I'll confirm before you commit.</p>
+      <p class="price-note" data-en="Airport transfers have an instant price above. Day charters depend on route and time — send a request and I'll confirm before you commit." data-zh="机场接送在上方即可看到即时报价。一日包车视路线与时长而定——发送请求，我会在你确认前先报价。">Airport transfers have an instant price above. Day charters depend on route and time — send a request and I'll confirm before you commit.</p>
+    </div>
+  </section>
+
+  <!-- Places / Attractions -->
+  <section class="places" id="places">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge" data-en="Auckland & Beyond" data-zh="奥克兰周边">Auckland & Beyond</span>
+        <h2 data-en="Places I Can Take You" data-zh="我可以带你去的地方">Places I Can Take You</h2>
+        <p data-en="From city landmarks to full-day adventures — a few favourites, with rough drive times from the city." data-zh="从市区地标到一日远行——精选几个值得去的地方，附上从市区出发的大致车程。">From city landmarks to full-day adventures — a few favourites, with rough drive times from the city.</p>
+      </div>
+      <div class="places-grid fade-up">
+        <div class="place-card">
+          <div class="place-head"><i class="ri-building-2-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~5 min" data-zh="约5分钟">~5 min</span></span></div>
+          <div class="place-body">
+            <h4 data-en="Sky Tower" data-zh="天空塔 Sky Tower">Sky Tower</h4>
+            <p data-en="New Zealand's tallest tower at 328m, right in the city. 360° views over the harbour and out to the islands." data-zh="新西兰最高建筑，328 米，就在市中心。360 度俯瞰海港，一直望到远处的岛屿。">New Zealand's tallest tower at 328m, right in the city. 360° views over the harbour and out to the islands.</p>
+          </div>
+        </div>
+        <div class="place-card">
+          <div class="place-head"><i class="ri-ship-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~40 min ferry" data-zh="约40分钟轮渡">~40 min ferry</span></span></div>
+          <div class="place-body">
+            <h4 data-en="Waiheke Island" data-zh="怀希基岛 Waiheke">Waiheke Island</h4>
+            <p data-en="A short ferry to a laid-back island of vineyards, olive groves and golden beaches." data-zh="一程轮渡，到达一座悠闲的小岛，遍布葡萄园、橄榄园和金色沙滩。">A short ferry to a laid-back island of vineyards, olive groves and golden beaches.</p>
+          </div>
+        </div>
+        <div class="place-card">
+          <div class="place-head"><i class="ri-landscape-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~45 min" data-zh="约45分钟">~45 min</span></span></div>
+          <div class="place-body">
+            <h4 data-en="Piha Beach" data-zh="皮哈海滩 Piha">Piha Beach</h4>
+            <p data-en="A dramatic black-sand surf beach west of the city, framed by rainforest and the iconic Lion Rock." data-zh="市区以西一片壮观的黑沙冲浪海滩，被雨林环抱，狮子岩是它的标志。">A dramatic black-sand surf beach west of the city, framed by rainforest and the iconic Lion Rock.</p>
+          </div>
+        </div>
+        <div class="place-card">
+          <div class="place-head"><i class="ri-plant-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~2 hr" data-zh="约2小时">~2 hr</span></span></div>
+          <div class="place-body">
+            <h4 data-en="Hobbiton Movie Set" data-zh="霍比特村 Hobbiton">Hobbiton Movie Set</h4>
+            <p data-en="The real Lord of the Rings film set — the Shire, the Green Dragon Inn, all of it. A great day trip south." data-zh="《指环王》真实取景地——夏尔村、绿龙酒馆，全都在。往南一日游的首选。">The real Lord of the Rings film set — the Shire, the Green Dragon Inn, all of it. A great day trip south.</p>
+          </div>
+        </div>
+        <div class="place-card">
+          <div class="place-head"><i class="ri-fire-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~3 hr" data-zh="约3小时">~3 hr</span></span></div>
+          <div class="place-body">
+            <h4 data-en="Rotorua" data-zh="罗托鲁瓦 Rotorua">Rotorua</h4>
+            <p data-en="Bubbling geothermal springs, geysers and living Māori culture — a full and unforgettable day." data-zh="沸腾的地热温泉、间歇泉，以及鲜活的毛利文化——充实又难忘的一天。">Bubbling geothermal springs, geysers and living Māori culture — a full and unforgettable day.</p>
+          </div>
+        </div>
+        <div class="place-card">
+          <div class="place-head"><i class="ri-anchor-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~3 hr" data-zh="约3小时">~3 hr</span></span></div>
+          <div class="place-body">
+            <h4 data-en="Bay of Islands" data-zh="岛屿湾 Bay of Islands">Bay of Islands</h4>
+            <p data-en="144 islands north of the city — dolphin cruises and some of New Zealand's most beautiful coastline." data-zh="市区以北的 144 座岛屿——观海豚游船，以及新西兰最美的海岸线之一。">144 islands north of the city — dolphin cruises and some of New Zealand's most beautiful coastline.</p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -514,6 +674,7 @@
   </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
   <script>
     // ===== WhatsApp QR (set your number to generate one) =====
     const WHATSAPP_NUMBER = '+64 27 752 0888';
@@ -662,6 +823,133 @@
         }
       });
     }
+
+    // ===== My Car photo (drop a car.jpg file next to index.html) =====
+    (function () {
+      const box = document.getElementById('car-image-box');
+      if (!box) return;
+      const img = new Image();
+      img.onload = () => { box.innerHTML = ''; box.appendChild(img); };
+      img.src = 'car.jpg';
+    })();
+
+    // ===== Instant Quote (flat fare by area) =====
+    const AKL_AIRPORT = { en:'Auckland Airport (AKL)', zh:'奥克兰机场 (AKL)', lat:-37.0082, lng:174.7850 };
+    const QUOTE_ZONES = [
+      { id:'central', en:'Central Auckland',           zh:'中区（市中心）',           price:120, lat:-36.8485, lng:174.7633,
+        hint:{ en:'CBD · Epsom · Ponsonby · Newmarket · Remuera', zh:'CBD · Epsom · 庞森比 · Newmarket · Remuera' } },
+      { id:'east',    en:'East Auckland',              zh:'东区',                    price:120, lat:-36.8990, lng:174.9080,
+        hint:{ en:'Howick · Pakuranga · Botany', zh:'Howick · 帕库兰加 · Botany' } },
+      { id:'south',   en:'South Auckland',             zh:'南区',                    price:120, lat:-36.9930, lng:174.8790,
+        hint:{ en:'Manukau · Papatoetoe · Ōtāhuhu', zh:'Manukau · Papatoetoe · Ōtāhuhu' } },
+      { id:'north',   en:'North Shore — up to Albany', zh:'北岸（最远至 Albany）',    price:140, lat:-36.7280, lng:174.7000,
+        hint:{ en:'Takapuna · Devonport · Albany', zh:'Takapuna · Devonport · Albany' } },
+      { id:'west',    en:'West — up to Hobsonville',   zh:'西区（最远至 Hobsonville）', price:140, lat:-36.7930, lng:174.6590,
+        hint:{ en:'Henderson · New Lynn · Hobsonville', zh:'Henderson · New Lynn · Hobsonville' } },
+      { id:'other',   en:'Further out / not sure',     zh:'更远地区 / 不确定',         price:null, lat:null, lng:null, hint:null }
+    ];
+    let quoteDir = 'from';
+    let priceMap = null, mapMarkers = null;
+
+    function quoteText(key){
+      const t = {
+        flat:{ en:'Flat fare', zh:'一口价' },
+        oneway:{ en:'one way · same price both ways', zh:'单程 · 接送同价' },
+        ask:{ en:"Tell me the address and I'll send you a price — tap Book This Trip below.", zh:'把地址告诉我，我给你报价——点下方「用这个行程预约」即可。' }
+      };
+      return (t[key] && t[key][currentLang]) || t[key].en;
+    }
+    function zoneName(z){ return currentLang === 'zh' ? z.zh : z.en; }
+
+    function renderQuoteOptions(){
+      const sel = document.getElementById('quote-area');
+      if (!sel) return;
+      const prev = sel.value;
+      sel.innerHTML = '';
+      QUOTE_ZONES.forEach(z => {
+        const o = document.createElement('option');
+        o.value = z.id;
+        o.textContent = (currentLang === 'zh' ? z.zh : z.en) + (z.price ? '  ·  $' + z.price : '');
+        sel.appendChild(o);
+      });
+      if (prev) sel.value = prev;
+    }
+
+    function renderQuoteResult(){
+      const sel = document.getElementById('quote-area');
+      const box = document.getElementById('quote-result');
+      if (!sel || !box) return;
+      const zone = QUOTE_ZONES.find(z => z.id === sel.value) || QUOTE_ZONES[0];
+      if (zone.price == null){
+        box.className = 'quote-result ask';
+        box.innerHTML = '<div class="quote-price">' + quoteText('ask') + '</div>';
+        return;
+      }
+      box.className = 'quote-result';
+      box.innerHTML =
+        '<span class="from">' + quoteText('flat') + '</span>' +
+        '<div class="quote-price">$' + zone.price + ' <small>NZD · ' + quoteText('oneway') + '</small></div>';
+    }
+
+    function renderMapMarkers(){
+      if (!priceMap || !mapMarkers || typeof L === 'undefined') return;
+      mapMarkers.clearLayers();
+      L.marker([AKL_AIRPORT.lat, AKL_AIRPORT.lng], {
+        icon: L.divIcon({ className:'', html:'<div class="price-pill airport">✈ ' + (currentLang==='zh'?'机场':'Airport') + '</div>', iconSize:null })
+      }).addTo(mapMarkers);
+      QUOTE_ZONES.forEach(z => {
+        if (z.price == null || z.lat == null) return;
+        const cls = z.price >= 140 ? 'price-pill p140' : 'price-pill';
+        L.marker([z.lat, z.lng], {
+          icon: L.divIcon({ className:'', html:'<div class="' + cls + '">' + zoneName(z) + ' · $' + z.price + '</div>', iconSize:null })
+        }).addTo(mapMarkers);
+      });
+    }
+
+    function renderQuoteUI(){ renderQuoteOptions(); renderQuoteResult(); renderMapMarkers(); }
+
+    (function initQuote(){
+      const sel = document.getElementById('quote-area');
+      if (!sel) return;
+
+      const mapEl = document.getElementById('price-map');
+      if (mapEl && typeof L !== 'undefined'){
+        priceMap = L.map('price-map', { scrollWheelZoom:false }).setView([-36.87, 174.78], 10);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18, attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(priceMap);
+        mapMarkers = L.layerGroup().addTo(priceMap);
+        const pts = QUOTE_ZONES.filter(z => z.lat != null).map(z => [z.lat, z.lng]);
+        pts.push([AKL_AIRPORT.lat, AKL_AIRPORT.lng]);
+        priceMap.fitBounds(pts, { padding:[45,45] });
+      }
+
+      renderQuoteUI();
+      sel.addEventListener('change', renderQuoteResult);
+      document.querySelectorAll('.quote-dir button').forEach(btn => {
+        btn.addEventListener('click', () => {
+          quoteDir = btn.dataset.dir;
+          document.querySelectorAll('.quote-dir button').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+      document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setTimeout(renderQuoteUI, 0)));
+
+      const bookBtn = document.getElementById('quote-book-btn');
+      if (bookBtn) bookBtn.addEventListener('click', () => {
+        const zone = QUOTE_ZONES.find(z => z.id === sel.value) || QUOTE_ZONES[0];
+        const airport = currentLang === 'zh' ? AKL_AIRPORT.zh : AKL_AIRPORT.en;
+        const area = zoneName(zone);
+        const pickupEl = document.getElementById('pickup');
+        const dropoffEl = document.getElementById('dropoff');
+        if (pickupEl && dropoffEl){
+          if (quoteDir === 'from'){ pickupEl.value = airport; dropoffEl.value = area; }
+          else { pickupEl.value = area; dropoffEl.value = airport; }
+        }
+        const target = document.getElementById('booking');
+        if (target) target.scrollIntoView({ behavior:'smooth', block:'center' });
+      });
+    })();
   </script>
 </body>
 </html>
