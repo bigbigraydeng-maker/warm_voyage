@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Warm Voyage | Charter, Tours & Bespoke Services in Auckland</title>
+  <meta name="description" content="Full-day private charter in Auckland with a Mercedes GLS — tourism day-tours, school & campus visits, factory tours and property viewing. NZ$1,200 per 10-hour day. English & Mandarin." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://warmvoyage.co.nz/services.html" />
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-yellow: #ffc83d;
+      --secondary-orange: #ff8a3d;
+      --deep-brown: #3a2b1f;
+      --cream-white: #fff6e8;
+      --text-dark: #333;
+      --text-gray: #666;
+      --white: #fff;
+      --success: #2e9e5b;
+      --shadow: 0 10px 30px rgba(58, 43, 31, 0.08);
+      --shadow-lg: 0 20px 50px rgba(58, 43, 31, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--cream-white); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
+    a { color: inherit; }
+
+    /* Nav */
+    nav { position: fixed; inset: 0 0 auto 0; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 4vw; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); z-index: 1000; box-shadow: 0 1px 20px rgba(0,0,0,.04); }
+    .logo { font-size: clamp(20px, 2vw, 24px); color: var(--secondary-orange); display: flex; gap: 10px; align-items: center; font-weight: 700; text-decoration: none; }
+    .logo i { color: var(--primary-yellow); font-size: 1.4em; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: 500; font-size: 15px; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--secondary-orange); }
+    .nav-cta { background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); color: var(--white); border: none; padding: 10px 22px; border-radius: 999px; text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 6px; }
+    .lang-switch { display: flex; gap: 4px; background: #f5f0ea; padding: 3px; border-radius: 25px; flex-shrink: 0; }
+    .lang-btn { padding: 6px 12px; border: none; background: transparent; cursor: pointer; font-size: 13px; font-weight: 600; border-radius: 20px; transition: all 0.3s; color: #888; }
+    .lang-btn.active { background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); color: #fff; }
+
+    /* Hero */
+    .hero { margin-top: 72px; padding: 64px 0 40px; background: linear-gradient(160deg, #fffaf2, #ffe8c4); }
+    .hero .badge { display: inline-block; background: rgba(255,138,61,0.14); color: var(--secondary-orange); padding: 6px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
+    .hero h1 { font-size: clamp(30px, 4.5vw, 48px); line-height: 1.18; color: var(--deep-brown); font-weight: 800; letter-spacing: -0.5px; max-width: 15ch; text-wrap: balance; }
+    .hero p { color: var(--text-gray); font-size: clamp(16px, 1.5vw, 19px); margin-top: 18px; max-width: 60ch; line-height: 1.7; }
+
+    section { padding: 64px 0; }
+    .section-header { text-align: center; margin-bottom: 44px; }
+    .section-header .badge { display: inline-block; background: linear-gradient(135deg, rgba(255,200,61,0.15), rgba(255,138,61,0.15)); color: var(--secondary-orange); padding: 6px 18px; border-radius: 999px; font-size: 13px; font-weight: 600; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 1px; }
+    .section-header h2 { font-size: clamp(26px, 3vw, 38px); color: var(--deep-brown); margin-bottom: 12px; font-weight: 700; text-wrap: balance; }
+    .section-header p { color: var(--text-gray); font-size: clamp(15px, 1.3vw, 17px); max-width: 620px; margin: 0 auto; }
+
+    /* Pricing + FX */
+    .pricing { background: var(--white); }
+    .price-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; align-items: stretch; max-width: 920px; margin: 0 auto; }
+    .price-card { background: linear-gradient(135deg, var(--deep-brown), #4a3828); color: #fff; border-radius: 24px; padding: 36px; position: relative; overflow: hidden; }
+    .price-card::before { content: ''; position: absolute; top: -40%; right: -10%; width: 280px; height: 280px; background: radial-gradient(circle, rgba(255,200,61,0.14), transparent 70%); border-radius: 50%; }
+    .price-card .plabel { font-size: 14px; color: var(--primary-yellow); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .price-card .pmain { font-size: clamp(40px, 6vw, 54px); font-weight: 800; line-height: 1.05; margin: 10px 0 4px; }
+    .price-card .pmain small { font-size: 18px; font-weight: 600; color: #e9dcc8; }
+    .price-card ul { list-style: none; margin-top: 22px; display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 1; }
+    .price-card li { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; color: #f3ece0; }
+    .price-card li i { color: var(--primary-yellow); font-size: 18px; margin-top: 2px; flex-shrink: 0; }
+    .fx-card { background: var(--cream-white); border-radius: 24px; padding: 32px; border: 1px solid rgba(255,200,61,0.3); display: flex; flex-direction: column; justify-content: center; text-align: center; box-shadow: var(--shadow); }
+    .fx-card .fx-title { font-size: 14px; color: var(--secondary-orange); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+    .fx-rate { font-size: 26px; font-weight: 700; color: var(--deep-brown); margin: 14px 0 6px; font-variant-numeric: tabular-nums; }
+    .fx-day-label { font-size: 14px; color: var(--text-gray); margin-top: 16px; }
+    .fx-day { font-size: clamp(30px, 5vw, 40px); font-weight: 800; color: var(--secondary-orange); font-variant-numeric: tabular-nums; line-height: 1.1; }
+    .fx-note { font-size: 12px; color: var(--text-gray); margin-top: 14px; }
+
+    /* Service categories */
+    .services { background: linear-gradient(180deg, var(--cream-white), #fff); }
+    .svc-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+    .svc-card { background: var(--white); border-radius: 20px; padding: 30px 28px; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.04); transition: all 0.35s ease; }
+    .svc-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .svc-icon { width: 60px; height: 60px; border-radius: 16px; background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+    .svc-icon i { font-size: 28px; color: #fff; }
+    .svc-card h3 { color: var(--deep-brown); font-size: 19px; margin-bottom: 10px; }
+    .svc-card p { color: var(--text-gray); font-size: 14.5px; line-height: 1.7; }
+
+    /* Itineraries */
+    .tours { background: var(--white); }
+    .tour-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .tour-card { background: var(--cream-white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.04); display: flex; flex-direction: column; }
+    .tour-head { padding: 22px 24px 16px; border-bottom: 1px dashed rgba(255,138,61,0.35); }
+    .tour-days { display: inline-block; background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 999px; margin-bottom: 12px; }
+    .tour-head h3 { color: var(--deep-brown); font-size: 18px; line-height: 1.35; }
+    .tour-body { padding: 18px 24px 24px; }
+    .tour-body ol { list-style: none; counter-reset: day; display: flex; flex-direction: column; gap: 14px; }
+    .tour-body li { display: flex; gap: 12px; align-items: flex-start; }
+    .tour-body li .daynum { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--white); color: var(--secondary-orange); border: 1.5px solid var(--secondary-orange); font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .tour-body li p { color: var(--text-gray); font-size: 14px; line-height: 1.6; }
+    .tour-body li p b { color: var(--deep-brown); font-weight: 600; }
+    .tours-note { text-align: center; color: var(--text-gray); font-size: 13px; margin-top: 30px; line-height: 1.6; }
+
+    /* CTA */
+    .cta { background: linear-gradient(180deg, #fff, var(--cream-white)); text-align: center; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); color: var(--white); border: none; padding: 15px 30px; border-radius: 999px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; gap: 8px; cursor: pointer; font-size: 16px; box-shadow: 0 4px 15px rgba(255,138,61,0.3); transition: all 0.3s; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,138,61,0.4); }
+    .cta p { color: var(--text-gray); margin-top: 16px; font-size: 15px; }
+
+    /* Footer */
+    footer { background: var(--white); border-top: 1px solid #eee; padding: 40px 0; text-align: center; color: var(--text-gray); font-size: 14px; }
+    footer a { color: var(--secondary-orange); text-decoration: none; }
+    footer .foot-links { display: flex; gap: 20px; justify-content: center; margin-bottom: 14px; flex-wrap: wrap; }
+
+    @media (max-width: 900px) {
+      .price-grid, .svc-grid, .tour-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo"><i class="ri-sun-fill"></i> <span data-en="Warm Voyage" data-zh="暖途 Warm Voyage">Warm Voyage</span></a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="index.html" data-en="Home" data-zh="首页">Home</a>
+        <a href="index.html#quote" data-en="Airport Price" data-zh="机场报价">Airport Price</a>
+        <a href="index.html#places" data-en="Places" data-zh="周边景点">Places</a>
+      </div>
+      <div class="lang-switch">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="zh">中文</button>
+      </div>
+      <a href="index.html#booking" class="nav-cta" data-en="Book" data-zh="预约">Book</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container">
+      <span class="badge" data-en="Charter &amp; Bespoke Services" data-zh="包车与增值服务">Charter &amp; Bespoke Services</span>
+      <h1 data-en="More Than Airport Transfers" data-zh="不只是机场接送">More Than Airport Transfers</h1>
+      <p data-en="Book me and my Mercedes-Benz GLS for a full day — sightseeing, wine country, school and campus visits, factory tours, or house-hunting across Auckland. One driver who knows the city and speaks your language." data-zh="包我和我的奔驰 GLS 一整天——观光游览、酒庄之旅、学校与大学考察、工厂参观，或在奥克兰各区看房。还是那句话：一个熟悉本地、会说你语言的司机。">Book me and my Mercedes-Benz GLS for a full day — sightseeing, wine country, school and campus visits, factory tours, or house-hunting across Auckland. One driver who knows the city and speaks your language.</p>
+    </div>
+  </section>
+
+  <!-- Pricing + live FX -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge" data-en="Charter Pricing" data-zh="包车价格">Charter Pricing</span>
+        <h2 data-en="Simple Full-Day Pricing" data-zh="全日包车，价格透明">Simple Full-Day Pricing</h2>
+        <p data-en="One flat rate for the whole day, wherever we go. Tolls, tickets, meals and accommodation are separate." data-zh="一整天一口价，去哪都一样。过路费、门票、餐费和住宿另计。">One flat rate for the whole day, wherever we go. Tolls, tickets, meals and accommodation are separate.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="plabel" data-en="Full-Day Charter" data-zh="全日包车">Full-Day Charter</div>
+          <div class="pmain">NZ$1,200 <small data-en="/ day" data-zh="/ 天">/ day</small></div>
+          <ul>
+            <li><i class="ri-time-line"></i> <span data-en="Up to 10 hours per day" data-zh="每天最多 10 小时">Up to 10 hours per day</span></li>
+            <li><i class="ri-add-circle-line"></i> <span data-en="Extra time NZ$100 per hour" data-zh="超时每小时 NZ$100">Extra time NZ$100 per hour</span></li>
+            <li><i class="ri-user-star-line"></i> <span data-en="Driven personally by me, all day" data-zh="全程我本人亲自驾驶">Driven personally by me, all day</span></li>
+            <li><i class="ri-car-line"></i> <span data-en="Mercedes-Benz GLS, up to 5 passengers" data-zh="奔驰 GLS，最多 5 位乘客">Mercedes-Benz GLS, up to 5 passengers</span></li>
+          </ul>
+        </div>
+        <div class="fx-card">
+          <div class="fx-title"><i class="ri-exchange-line"></i> <span data-en="Live Exchange Rate" data-zh="实时汇率">Live Exchange Rate</span></div>
+          <div class="fx-rate" id="fx-rate">NZ$1 ≈ 3.79 CNY</div>
+          <div class="fx-day-label" data-en="A full charter day is about" data-zh="全日包车大约相当于">A full charter day is about</div>
+          <div class="fx-day" id="fx-day">¥4,548</div>
+          <div class="fx-note" id="fx-note" data-en="Live rate for reference only" data-zh="实时汇率，仅供参考">Live rate for reference only</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service categories -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge" data-en="What I Do" data-zh="服务范围">What I Do</span>
+        <h2 data-en="Services I've Provided" data-zh="我们做过的服务">Services I've Provided</h2>
+        <p data-en="Beyond tourism, I regularly drive for education, business and property clients visiting Auckland." data-zh="除了旅游，我也经常为来奥克兰的教育、商务和购房客户提供用车服务。">Beyond tourism, I regularly drive for education, business and property clients visiting Auckland.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-icon"><i class="ri-camera-line"></i></div>
+          <h3 data-en="Tourism &amp; Day-Tours" data-zh="旅游包车">Tourism &amp; Day-Tours</h3>
+          <p data-en="Sightseeing across Auckland and beyond — city landmarks, west-coast beaches, Waiheke wineries, Hobbiton and Rotorua. See three ready-made routes below." data-zh="奥克兰及周边观光——城市地标、西海岸海滩、怀希基酒庄、霍比特村和罗托鲁瓦。下面有三条现成线路。">Sightseeing across Auckland and beyond — city landmarks, west-coast beaches, Waiheke wineries, Hobbiton and Rotorua. See three ready-made routes below.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="ri-graduation-cap-line"></i></div>
+          <h3 data-en="School &amp; Campus Visits" data-zh="学校考察">School &amp; Campus Visits</h3>
+          <p data-en="University of Auckland and AUT campus tours, international-office meetings, and visits to selected primary and secondary schools — smooth transport between every appointment." data-zh="奥克兰大学、奥克兰理工大学（AUT）校园参观，国际部拜访，以及指定小学、中学参观——每一站之间的用车都安排妥当。">University of Auckland and AUT campus tours, international-office meetings, and visits to selected primary and secondary schools — smooth transport between every appointment.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="ri-building-2-line"></i></div>
+          <h3 data-en="Factory &amp; Industry Tours" data-zh="工厂考察参观">Factory &amp; Industry Tours</h3>
+          <p data-en="Site visits to New Zealand producers — health supplements, beef &amp; lamb, honey and manuka, and more. Ideal for buyers and business delegations." data-zh="参观新西兰本地厂商——保健品、牛羊肉、蜂蜜与麦卢卡等。适合采购商与商务考察团。">Site visits to New Zealand producers — health supplements, beef &amp; lamb, honey and manuka, and more. Ideal for buyers and business delegations.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><i class="ri-home-4-line"></i></div>
+          <h3 data-en="Property Viewing" data-zh="买房看房">Property Viewing</h3>
+          <p data-en="Chauffeured house-hunting across Auckland — I'll get you between viewings and open homes on time, all day, so you can focus on the properties." data-zh="奥克兰各区看房专车——我按时把你送到每一处房源和 open home，跑一整天，让你专心看房。">Chauffeured house-hunting across Auckland — I'll get you between viewings and open homes on time, all day, so you can focus on the properties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tourism itineraries -->
+  <section class="tours" id="tours">
+    <div class="container">
+      <div class="section-header">
+        <span class="badge" data-en="Tour Routes" data-zh="旅游线路">Tour Routes</span>
+        <h2 data-en="Three Ready-Made Routes" data-zh="三条现成线路">Three Ready-Made Routes</h2>
+        <p data-en="A starting point, not a fixed menu — tell me your interests and days and I'll tailor it. Each charter day is up to 10 hours." data-zh="这是起点，不是死菜单——告诉我你的兴趣和天数，我来帮你调整。每个包车日最多 10 小时。">A starting point, not a fixed menu — tell me your interests and days and I'll tailor it. Each charter day is up to 10 hours.</p>
+      </div>
+      <div class="tour-grid">
+        <!-- Route 1 -->
+        <div class="tour-card">
+          <div class="tour-head">
+            <span class="tour-days" data-en="1 Day" data-zh="1 天">1 Day</span>
+            <h3 data-en="Auckland City &amp; Wild West Coast" data-zh="奥克兰城市 + 西海岸黑沙滩">Auckland City &amp; Wild West Coast</h3>
+          </div>
+          <div class="tour-body">
+            <ol>
+              <li><span class="daynum">1</span><p data-en="<b>Morning:</b> Sky Tower, waterfront and city highlights." data-zh="<b>上午：</b>天空塔、海港与市中心亮点。"><b>Morning:</b> Sky Tower, waterfront and city highlights.</p></li>
+              <li><span class="daynum">2</span><p data-en="<b>Midday:</b> drive west through Titirangi rainforest." data-zh="<b>中午：</b>向西穿过 Titirangi 雨林。"><b>Midday:</b> drive west through Titirangi rainforest.</p></li>
+              <li><span class="daynum">3</span><p data-en="<b>Afternoon:</b> Piha black-sand beach &amp; Lion Rock, or the Muriwai gannet colony." data-zh="<b>下午：</b>皮哈黑沙滩与狮子岩，或 Muriwai 鲣鸟栖息地。"><b>Afternoon:</b> Piha black-sand beach &amp; Lion Rock, or the Muriwai gannet colony.</p></li>
+            </ol>
+          </div>
+        </div>
+        <!-- Route 2 -->
+        <div class="tour-card">
+          <div class="tour-head">
+            <span class="tour-days" data-en="2 Days" data-zh="2 天">2 Days</span>
+            <h3 data-en="Waiheke Island &amp; Hobbiton" data-zh="怀希基岛 + 霍比特村">Waiheke Island &amp; Hobbiton</h3>
+          </div>
+          <div class="tour-body">
+            <ol>
+              <li><span class="daynum">1</span><p data-en="<b>Day 1 — Waiheke Island:</b> vineyards, olive groves and golden beaches, a short ferry from the city." data-zh="<b>第 1 天 — 怀希基岛：</b>酒庄、橄榄园与金色沙滩，从市区轮渡很快到达。"><b>Day 1 — Waiheke Island:</b> vineyards, olive groves and golden beaches, a short ferry from the city.</p></li>
+              <li><span class="daynum">2</span><p data-en="<b>Day 2 — Hobbiton:</b> the real Lord of the Rings movie set, plus the green Matamata countryside." data-zh="<b>第 2 天 — 霍比特村：</b>《指环王》真实取景地，加上 Matamata 的乡村风光。"><b>Day 2 — Hobbiton:</b> the real Lord of the Rings movie set, plus the green Matamata countryside.</p></li>
+            </ol>
+          </div>
+        </div>
+        <!-- Route 3 -->
+        <div class="tour-card">
+          <div class="tour-head">
+            <span class="tour-days" data-en="3 Days" data-zh="3 天">3 Days</span>
+            <h3 data-en="Rotorua Geothermal &amp; Māori Culture" data-zh="罗托鲁瓦地热 + 毛利文化">Rotorua Geothermal &amp; Māori Culture</h3>
+          </div>
+          <div class="tour-body">
+            <ol>
+              <li><span class="daynum">1</span><p data-en="<b>Day 1:</b> Auckland → Hobbiton → Rotorua." data-zh="<b>第 1 天：</b>奥克兰 → 霍比特村 → 罗托鲁瓦。"><b>Day 1:</b> Auckland → Hobbiton → Rotorua.</p></li>
+              <li><span class="daynum">2</span><p data-en="<b>Day 2:</b> Te Puia geysers, a Māori cultural village, the Redwoods forest and thermal hot springs." data-zh="<b>第 2 天：</b>Te Puia 间歇泉、毛利文化村、红木森林与地热温泉。"><b>Day 2:</b> Te Puia geysers, a Māori cultural village, the Redwoods forest and thermal hot springs.</p></li>
+              <li><span class="daynum">3</span><p data-en="<b>Day 3:</b> Lake Taupō &amp; Huka Falls on the way back to Auckland." data-zh="<b>第 3 天：</b>返回奥克兰途中游陶波湖与胡卡瀑布。"><b>Day 3:</b> Lake Taupō &amp; Huka Falls on the way back to Auckland.</p></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <p class="tours-note" data-en="Charged per charter day (up to 10 hours / NZ$1,200). Ferry, tickets, meals and accommodation are not included." data-zh="按包车天数计费（每天最多 10 小时 / NZ$1,200）。轮渡、门票、餐费与住宿不含在内。">Charged per charter day (up to 10 hours / NZ$1,200). Ferry, tickets, meals and accommodation are not included.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 24px;">
+        <h2 data-en="Tell Me What You Need" data-zh="把你的需求告诉我">Tell Me What You Need</h2>
+        <p data-en="Send a few details and I'll come back with a plan and a price." data-zh="发几句你的需求，我会回你一份行程安排和报价。">Send a few details and I'll come back with a plan and a price.</p>
+      </div>
+      <a href="index.html#enquiry" class="btn-primary"><i class="ri-send-plane-line"></i> <span data-en="Get a Custom Quote" data-zh="获取单独报价">Get a Custom Quote</span></a>
+      <p><span data-en="or email" data-zh="或邮件联系">or email</span> <a href="mailto:bigbigraydeng@gmail.com" style="color:var(--secondary-orange);text-decoration:none;">bigbigraydeng@gmail.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-links">
+      <a href="index.html" data-en="Home" data-zh="首页">Home</a>
+      <a href="index.html#quote" data-en="Airport Price" data-zh="机场报价">Airport Price</a>
+      <a href="index.html#places" data-en="Places" data-zh="周边景点">Places</a>
+      <a href="index.html#enquiry" data-en="Custom Quote" data-zh="单独报价">Custom Quote</a>
+    </div>
+    <div>&copy; 2026 Warm Voyage New Zealand.</div>
+  </footer>
+
+  <script>
+    // ===== Language =====
+    let currentLang = 'en';
+    const langBtns = document.querySelectorAll('.lang-btn');
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+      document.title = lang === 'zh'
+        ? '暖途 - 奥克兰包车与增值服务'
+        : 'Warm Voyage | Charter, Tours & Bespoke Services in Auckland';
+      document.querySelectorAll('[data-en]').forEach(el => {
+        const text = el.dataset[lang];
+        if (text) el.innerHTML = text;
+      });
+      try { localStorage.setItem('warmvoyage_lang', lang); } catch (e) {}
+      renderFxNote();
+    }
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+        langBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+
+    // ===== Live exchange rate (NZD -> CNY) =====
+    const FX_FALLBACK = 3.79;
+    let lastCny = FX_FALLBACK;
+    let fxUpdated = null;
+    let fxLive = false;
+    function money(n) { return '¥' + Math.round(n).toLocaleString('en-US'); }
+    function renderFxRate() {
+      document.getElementById('fx-rate').textContent = 'NZ$1 ≈ ' + lastCny.toFixed(2) + ' CNY';
+      document.getElementById('fx-day').textContent = money(1200 * lastCny);
+    }
+    function renderFxNote() {
+      const el = document.getElementById('fx-note');
+      if (!el) return;
+      if (fxLive) {
+        const d = fxUpdated ? fxUpdated.toLocaleDateString(currentLang === 'zh' ? 'zh-CN' : 'en-NZ') : '';
+        el.textContent = (currentLang === 'zh' ? '实时汇率 · 更新于 ' : 'Live rate · updated ') + d;
+      } else {
+        el.textContent = currentLang === 'zh' ? '参考汇率（暂未联网）' : 'Approx. rate (offline) — for reference';
+      }
+    }
+    async function loadFx() {
+      try {
+        const res = await fetch('https://open.er-api.com/v6/latest/NZD');
+        const d = await res.json();
+        const cny = d && d.rates && d.rates.CNY;
+        if (!cny) throw new Error('no rate');
+        lastCny = cny;
+        fxUpdated = d.time_last_update_utc ? new Date(d.time_last_update_utc) : new Date();
+        fxLive = true;
+      } catch (e) {
+        fxLive = false;
+      }
+      renderFxRate();
+      renderFxNote();
+    }
+
+    // ===== Init =====
+    let savedLang = 'en';
+    try { savedLang = localStorage.getItem('warmvoyage_lang') || 'en'; } catch (e) {}
+    setLanguage(savedLang);
+    langBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.lang === savedLang));
+    renderFxRate();
+    loadFx();
+  </script>
+</body>
+</html>

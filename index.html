@@ -241,6 +241,8 @@
     .spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .spec-item { display: flex; align-items: center; gap: 10px; background: var(--white); border-radius: 12px; padding: 13px 15px; font-size: 14px; color: var(--text-dark); box-shadow: var(--shadow); }
     .spec-item i { color: var(--secondary-orange); font-size: 20px; flex-shrink: 0; }
+    .car-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
+    .car-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 16px; box-shadow: var(--shadow); display: block; }
 
     /* ===== Instant Quote ===== */
     .quote { background: var(--white); }
@@ -304,7 +306,7 @@
       .places-grid { grid-template-columns: repeat(2, 1fr); }
     }
     @media (max-width: 640px) {
-      .form-row, .features-grid, .steps-grid, .places-grid { grid-template-columns: 1fr; }
+      .form-row, .features-grid, .steps-grid, .places-grid, .car-gallery { grid-template-columns: 1fr; }
       .about-grid { grid-template-columns: 1fr; text-align: center; }
       .about-photo { width: 160px; margin: 0 auto; }
       .cta-box { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
@@ -325,8 +327,8 @@
         <a href="#quote" data-en="Get a Price" data-zh="报价">Get a Price</a>
         <a href="#car" data-en="My Car" data-zh="我的车">My Car</a>
         <a href="#places" data-en="Places" data-zh="周边景点">Places</a>
+        <a href="services.html" data-en="Services" data-zh="增值服务">Services</a>
         <a href="#about" data-en="About Me" data-zh="关于我">About Me</a>
-        <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
         <a href="#booking" class="nav-cta" data-en="<i class='ri-calendar-check-line'></i> Book Now" data-zh="<i class='ri-calendar-check-line'></i> 立即预约"><i class="ri-calendar-check-line"></i> Book Now</a>
       </div>
       <div class="lang-switch">
@@ -342,6 +344,7 @@
     <a href="#quote" data-en="Get a Price" data-zh="报价">Get a Price</a>
     <a href="#car" data-en="My Car" data-zh="我的车">My Car</a>
     <a href="#places" data-en="Places" data-zh="周边景点">Places</a>
+    <a href="services.html" data-en="Services" data-zh="增值服务">Services</a>
     <a href="#about" data-en="About Me" data-zh="关于我">About Me</a>
     <a href="#contact" data-en="Contact" data-zh="联系">Contact</a>
     <a href="#booking" class="btn-primary" data-en="Book Now" data-zh="立即预约">Book Now</a>
@@ -464,6 +467,11 @@
             <div class="spec-item"><i class="ri-cup-line"></i> <span data-en="Bottled water for you" data-zh="为你备有瓶装水">Bottled water for you</span></div>
           </div>
         </div>
+      </div>
+      <div class="car-gallery fade-up">
+        <img src="car-int-1.jpg" alt="Mercedes GLS front cabin and dashboard" loading="lazy" />
+        <img src="car-int-2.jpg" alt="Mercedes GLS rear leather seats" loading="lazy" />
+        <img src="car-int-3.jpg" alt="Mercedes GLS front seats and ambient lighting" loading="lazy" />
       </div>
     </div>
   </section>
@@ -660,6 +668,9 @@
         <span class="badge" data-en="Custom Quote" data-zh="单独报价">Custom Quote</span>
         <h2 data-en="Something Special or Further Afield?" data-zh="特殊行程 / 更远的地方？">Something Special or Further Afield?</h2>
         <p data-en="Multi-day trips, areas outside the map, wine tours, bigger groups — tell me what you have in mind and I'll put together a price just for you." data-zh="多日行程、地图以外的区域、酒庄游、多人团——把你的想法告诉我，我给你单独做一份报价。">Multi-day trips, areas outside the map, wine tours, bigger groups — tell me what you have in mind and I'll put together a price just for you.</p>
+        <div style="margin-top: 20px;">
+          <a href="services.html" class="btn-primary" data-en="<i class='ri-roadster-line'></i> See Charter &amp; Day-Tour Services" data-zh="<i class='ri-roadster-line'></i> 查看包车与增值服务"><i class="ri-roadster-line"></i> See Charter &amp; Day-Tour Services</a>
+        </div>
       </div>
       <div class="enquiry-card fade-up">
         <form id="enquiry-form">
