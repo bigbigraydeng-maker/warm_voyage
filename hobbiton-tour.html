@@ -271,13 +271,12 @@
       });
       try { localStorage.setItem('warmvoyage_lang', lang); } catch (e) {}
     }
-    try {
-      const saved = localStorage.getItem('warmvoyage_lang');
-      if (saved) {
-        setLanguage(saved);
-        langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === saved));
-      }
-    } catch (e) {}
+    (function initLang() {
+      let saved = 'en';
+      try { saved = localStorage.getItem('warmvoyage_lang') || 'en'; } catch (e) {}
+      setLanguage(saved);
+      langBtns.forEach(b => b.classList.toggle('active', b.dataset.lang === saved));
+    })();
   </script>
 </body>
 </html>
