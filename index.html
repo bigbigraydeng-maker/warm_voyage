@@ -71,6 +71,7 @@
       --shadow-lg: 0 20px 50px rgba(58, 43, 31, 0.12);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+    [hidden] { display: none !important; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -262,12 +263,27 @@
     #price-map .price-pill.airport { background: var(--deep-brown); border-color: var(--deep-brown); color: #fff; }
     .map-note { text-align: center; color: var(--text-gray); font-size: 13px; margin-top: 16px; line-height: 1.6; }
 
+    /* ===== Booking success panel ===== */
+    .form-success { text-align: center; padding: 14px 6px 8px; }
+    .form-success .success-icon i { font-size: 62px; color: var(--success); line-height: 1; }
+    .form-success h3 { font-size: 24px; color: var(--deep-brown); margin: 14px 0 10px; justify-content: center; }
+    .form-success p { color: var(--text-gray); font-size: 15px; line-height: 1.7; margin-bottom: 22px; }
+    .btn-ghost { background: transparent; border: 1.5px solid var(--secondary-orange); color: var(--secondary-orange); padding: 10px 22px; border-radius: 999px; font-weight: 600; font-family: inherit; cursor: pointer; font-size: 14px; transition: all 0.3s; }
+    .btn-ghost:hover { background: var(--secondary-orange); color: #fff; }
+
+    /* ===== Place photos ===== */
+    .place-head img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* ===== Enquiry / custom quote ===== */
+    .enquiry { background: var(--white); }
+    .enquiry-card { max-width: 680px; margin: 0 auto; background: var(--cream-white); border-radius: 24px; padding: clamp(24px, 4vw, 36px); box-shadow: var(--shadow-lg); border: 1px solid rgba(255,200,61,0.25); }
+
     /* ===== Places / Attractions ===== */
     .places { background: linear-gradient(180deg, var(--cream-white), #fff); }
     .places-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
     .place-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.04); transition: all 0.4s ease; display: flex; flex-direction: column; }
     .place-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-    .place-head { height: 96px; background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); display: flex; align-items: center; justify-content: center; position: relative; }
+    .place-head { height: 175px; background: linear-gradient(135deg, var(--primary-yellow), var(--secondary-orange)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
     .place-head i { font-size: 44px; color: #fff; opacity: 0.95; }
     .place-time { position: absolute; top: 12px; right: 12px; background: rgba(255,255,255,0.92); color: var(--deep-brown); font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; display: flex; align-items: center; gap: 4px; }
     .place-body { padding: 20px 22px 24px; }
@@ -347,7 +363,7 @@
       </div>
       <div>
         <div class="hero-form" id="booking">
-          <h3><i class="ri-taxi-line"></i> <span data-en="Book a Pickup" data-zh="预约接送">Book a Pickup</span></h3>
+          <h3 id="booking-head"><i class="ri-taxi-line"></i> <span data-en="Book a Pickup" data-zh="预约接送">Book a Pickup</span></h3>
           <form id="booking-form">
             <input type="hidden" name="access_key" value="5fc6e4e8-5eed-4eb8-8cb2-209a8001e98d" />
             <input type="hidden" name="subject" value="New Warm Voyage booking request" />
@@ -391,6 +407,12 @@
             <button type="submit" class="btn-primary" style="width:100%" data-en="<i class='ri-send-plane-line'></i> Send Booking Request" data-zh="<i class='ri-send-plane-line'></i> 发送预约请求"><i class="ri-send-plane-line"></i> Send Booking Request</button>
             <div class="form-msg" id="form-msg"></div>
           </form>
+          <div class="form-success" id="booking-success" hidden>
+            <div class="success-icon"><i class="ri-checkbox-circle-fill"></i></div>
+            <h3 data-en="Request Sent!" data-zh="预约已发送！">Request Sent!</h3>
+            <p data-en="Thanks — I've got your trip details. I'll personally message you back to confirm the price and pickup, usually within a few hours." data-zh="谢谢，你的行程信息我已经收到。我会亲自联系你确认价格和接送安排，通常几小时内回复。">Thanks — I've got your trip details. I'll personally message you back to confirm the price and pickup, usually within a few hours.</p>
+            <button type="button" class="btn-ghost" id="booking-again" data-en="Send another request" data-zh="再发一条预约">Send another request</button>
+          </div>
         </div>
       </div>
     </div>
@@ -586,46 +608,89 @@
       </div>
       <div class="places-grid fade-up">
         <div class="place-card">
-          <div class="place-head"><i class="ri-building-2-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~5 min" data-zh="约5分钟">~5 min</span></span></div>
+          <div class="place-head"><img src="https://images.unsplash.com/photo-1595125990323-885cec5217ff?auto=format&fit=crop&w=800&q=80" alt="Auckland Sky Tower and city skyline" loading="lazy" /><span class="place-time"><i class="ri-time-line"></i> <span data-en="~5 min" data-zh="约5分钟">~5 min</span></span></div>
           <div class="place-body">
             <h4 data-en="Sky Tower" data-zh="天空塔 Sky Tower">Sky Tower</h4>
             <p data-en="New Zealand's tallest tower at 328m, right in the city. 360° views over the harbour and out to the islands." data-zh="新西兰最高建筑，328 米，就在市中心。360 度俯瞰海港，一直望到远处的岛屿。">New Zealand's tallest tower at 328m, right in the city. 360° views over the harbour and out to the islands.</p>
           </div>
         </div>
         <div class="place-card">
-          <div class="place-head"><i class="ri-ship-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~40 min ferry" data-zh="约40分钟轮渡">~40 min ferry</span></span></div>
+          <div class="place-head"><img src="https://images.unsplash.com/photo-1775615763393-99c654694cdd?auto=format&fit=crop&w=800&q=80" alt="Waiheke Island turquoise bay and coastline" loading="lazy" /><span class="place-time"><i class="ri-time-line"></i> <span data-en="~40 min ferry" data-zh="约40分钟轮渡">~40 min ferry</span></span></div>
           <div class="place-body">
             <h4 data-en="Waiheke Island" data-zh="怀希基岛 Waiheke">Waiheke Island</h4>
             <p data-en="A short ferry to a laid-back island of vineyards, olive groves and golden beaches." data-zh="一程轮渡，到达一座悠闲的小岛，遍布葡萄园、橄榄园和金色沙滩。">A short ferry to a laid-back island of vineyards, olive groves and golden beaches.</p>
           </div>
         </div>
         <div class="place-card">
-          <div class="place-head"><i class="ri-landscape-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~45 min" data-zh="约45分钟">~45 min</span></span></div>
+          <div class="place-head"><img src="https://images.unsplash.com/photo-1577940855479-63ea3d0cfa6a?auto=format&fit=crop&w=800&q=80" alt="Piha Beach black sand and Lion Rock" loading="lazy" /><span class="place-time"><i class="ri-time-line"></i> <span data-en="~45 min" data-zh="约45分钟">~45 min</span></span></div>
           <div class="place-body">
             <h4 data-en="Piha Beach" data-zh="皮哈海滩 Piha">Piha Beach</h4>
             <p data-en="A dramatic black-sand surf beach west of the city, framed by rainforest and the iconic Lion Rock." data-zh="市区以西一片壮观的黑沙冲浪海滩，被雨林环抱，狮子岩是它的标志。">A dramatic black-sand surf beach west of the city, framed by rainforest and the iconic Lion Rock.</p>
           </div>
         </div>
         <div class="place-card">
-          <div class="place-head"><i class="ri-plant-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~2 hr" data-zh="约2小时">~2 hr</span></span></div>
+          <div class="place-head"><img src="https://images.unsplash.com/photo-1722448903679-25efcd973e9a?auto=format&fit=crop&w=800&q=80" alt="Hobbiton movie set hobbit hole" loading="lazy" /><span class="place-time"><i class="ri-time-line"></i> <span data-en="~2 hr" data-zh="约2小时">~2 hr</span></span></div>
           <div class="place-body">
             <h4 data-en="Hobbiton Movie Set" data-zh="霍比特村 Hobbiton">Hobbiton Movie Set</h4>
             <p data-en="The real Lord of the Rings film set — the Shire, the Green Dragon Inn, all of it. A great day trip south." data-zh="《指环王》真实取景地——夏尔村、绿龙酒馆，全都在。往南一日游的首选。">The real Lord of the Rings film set — the Shire, the Green Dragon Inn, all of it. A great day trip south.</p>
           </div>
         </div>
         <div class="place-card">
-          <div class="place-head"><i class="ri-fire-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~3 hr" data-zh="约3小时">~3 hr</span></span></div>
+          <div class="place-head"><img src="https://images.unsplash.com/photo-1645697772639-204e4feb35a5?auto=format&fit=crop&w=800&q=80" alt="Rotorua geothermal steam and mud pool" loading="lazy" /><span class="place-time"><i class="ri-time-line"></i> <span data-en="~3 hr" data-zh="约3小时">~3 hr</span></span></div>
           <div class="place-body">
             <h4 data-en="Rotorua" data-zh="罗托鲁瓦 Rotorua">Rotorua</h4>
             <p data-en="Bubbling geothermal springs, geysers and living Māori culture — a full and unforgettable day." data-zh="沸腾的地热温泉、间歇泉，以及鲜活的毛利文化——充实又难忘的一天。">Bubbling geothermal springs, geysers and living Māori culture — a full and unforgettable day.</p>
           </div>
         </div>
         <div class="place-card">
-          <div class="place-head"><i class="ri-anchor-line"></i><span class="place-time"><i class="ri-time-line"></i> <span data-en="~3 hr" data-zh="约3小时">~3 hr</span></span></div>
+          <div class="place-head"><img src="https://images.unsplash.com/photo-1593210563043-6bec3f4bebee?auto=format&fit=crop&w=800&q=80" alt="Bay of Islands green islands and bays" loading="lazy" /><span class="place-time"><i class="ri-time-line"></i> <span data-en="~3 hr" data-zh="约3小时">~3 hr</span></span></div>
           <div class="place-body">
             <h4 data-en="Bay of Islands" data-zh="岛屿湾 Bay of Islands">Bay of Islands</h4>
             <p data-en="144 islands north of the city — dolphin cruises and some of New Zealand's most beautiful coastline." data-zh="市区以北的 144 座岛屿——观海豚游船，以及新西兰最美的海岸线之一。">144 islands north of the city — dolphin cruises and some of New Zealand's most beautiful coastline.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry / Custom Quote -->
+  <section class="enquiry" id="enquiry">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge" data-en="Custom Quote" data-zh="单独报价">Custom Quote</span>
+        <h2 data-en="Something Special or Further Afield?" data-zh="特殊行程 / 更远的地方？">Something Special or Further Afield?</h2>
+        <p data-en="Multi-day trips, areas outside the map, wine tours, bigger groups — tell me what you have in mind and I'll put together a price just for you." data-zh="多日行程、地图以外的区域、酒庄游、多人团——把你的想法告诉我，我给你单独做一份报价。">Multi-day trips, areas outside the map, wine tours, bigger groups — tell me what you have in mind and I'll put together a price just for you.</p>
+      </div>
+      <div class="enquiry-card fade-up">
+        <form id="enquiry-form">
+          <input type="hidden" name="access_key" value="5fc6e4e8-5eed-4eb8-8cb2-209a8001e98d" />
+          <input type="hidden" name="subject" value="New Warm Voyage custom-quote enquiry" />
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="form-row">
+            <div class="form-group">
+              <label for="eq-name" data-en="Your Name" data-zh="您的姓名">Your Name</label>
+              <input id="eq-name" name="name" class="form-control" type="text" required />
+            </div>
+            <div class="form-group">
+              <label for="eq-contact" data-en="Phone / WeChat / Email" data-zh="电话 / 微信 / 邮箱">Phone / WeChat / Email</label>
+              <input id="eq-contact" name="contact" class="form-control" type="text" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="eq-trip" data-en="Where would you like to go?" data-zh="想去哪里 / 什么行程？">Where would you like to go?</label>
+            <input id="eq-trip" name="trip" class="form-control" type="text" data-placeholder-en="e.g. Hobbiton day trip for 4, or a pickup north of Albany" data-placeholder-zh="例如：4 人霍比特村一日，或 Albany 以北接机" placeholder="e.g. Hobbiton day trip for 4, or a pickup north of Albany" />
+          </div>
+          <div class="form-group">
+            <label for="eq-notes" data-en="Details (dates, passengers, luggage…)" data-zh="备注（日期、人数、行李…）">Details (dates, passengers, luggage…)</label>
+            <textarea id="eq-notes" name="notes" class="form-control" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%" data-en="<i class='ri-send-plane-line'></i> Send Enquiry" data-zh="<i class='ri-send-plane-line'></i> 发送咨询"><i class="ri-send-plane-line"></i> Send Enquiry</button>
+          <div class="form-msg" id="eq-msg-box"></div>
+        </form>
+        <div class="form-success" id="enquiry-success" hidden>
+          <div class="success-icon"><i class="ri-checkbox-circle-fill"></i></div>
+          <h3 data-en="Enquiry Sent!" data-zh="咨询已发送！">Enquiry Sent!</h3>
+          <p data-en="Thanks — I'll get back to you personally with a custom quote, usually within a few hours." data-zh="谢谢，我会亲自联系你并给出单独报价，通常几小时内回复。">Thanks — I'll get back to you personally with a custom quote, usually within a few hours.</p>
         </div>
       </div>
     </div>
@@ -807,9 +872,16 @@
           });
           const result = await res.json();
           if (result.success) {
-            formMsg.textContent = MSG.success[currentLang];
-            formMsg.classList.add('success');
             bookingForm.reset();
+            formMsg.className = 'form-msg';
+            formMsg.textContent = '';
+            bookingForm.hidden = true;
+            const bh = document.getElementById('booking-head');
+            if (bh) bh.hidden = true;
+            const bs = document.getElementById('booking-success');
+            if (bs) bs.hidden = false;
+            const anchor = document.getElementById('booking');
+            if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
           } else {
             formMsg.textContent = MSG.error[currentLang];
             formMsg.classList.add('error');
@@ -820,6 +892,56 @@
         } finally {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalBtnHTML;
+        }
+      });
+    }
+
+    // ===== Booking "send another" reset =====
+    const bookingAgain = document.getElementById('booking-again');
+    if (bookingAgain) {
+      bookingAgain.addEventListener('click', function () {
+        const bs = document.getElementById('booking-success');
+        const bh = document.getElementById('booking-head');
+        if (bs) bs.hidden = true;
+        if (bh) bh.hidden = false;
+        if (bookingForm) bookingForm.hidden = false;
+      });
+    }
+
+    // ===== Enquiry form (Web3Forms) =====
+    const enquiryForm = document.getElementById('enquiry-form');
+    const eqMsg = document.getElementById('eq-msg-box');
+    if (enquiryForm) {
+      const eqBtn = enquiryForm.querySelector('button[type="submit"]');
+      const eqBtnHTML = eqBtn.innerHTML;
+      enquiryForm.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        eqMsg.className = 'form-msg';
+        eqBtn.disabled = true;
+        eqBtn.textContent = MSG.sending[currentLang];
+        try {
+          const res = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(enquiryForm)
+          });
+          const result = await res.json();
+          if (result.success) {
+            enquiryForm.reset();
+            eqMsg.textContent = '';
+            enquiryForm.hidden = true;
+            const es = document.getElementById('enquiry-success');
+            if (es) es.hidden = false;
+            const anchor = document.getElementById('enquiry');
+            if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            eqMsg.textContent = MSG.error[currentLang];
+            eqMsg.classList.add('error');
+          }
+        } catch (err) {
+          eqMsg.textContent = MSG.error[currentLang];
+          eqMsg.classList.add('error');
+        } finally {
+          eqBtn.disabled = false;
+          eqBtn.innerHTML = eqBtnHTML;
         }
       });
     }
@@ -938,6 +1060,11 @@
       const bookBtn = document.getElementById('quote-book-btn');
       if (bookBtn) bookBtn.addEventListener('click', () => {
         const zone = QUOTE_ZONES.find(z => z.id === sel.value) || QUOTE_ZONES[0];
+        if (zone.price == null) {
+          const eq = document.getElementById('enquiry');
+          if (eq) eq.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
         const airport = currentLang === 'zh' ? AKL_AIRPORT.zh : AKL_AIRPORT.en;
         const area = zoneName(zone);
         const pickupEl = document.getElementById('pickup');
