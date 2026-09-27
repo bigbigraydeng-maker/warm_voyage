@@ -3,22 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Warm Voyage | Personal Auckland Airport Transfer & Charter Driver</title>
-  <meta name="description" content="One driver, one car, 24 years living in Auckland. Personal airport transfers and day charters — no fleet, no dispatch, just me. English & Mandarin spoken." />
-  <meta name="keywords" content="Auckland airport transfer, Auckland airport pickup, private driver Auckland, Chinese driver NZ, bilingual driver Auckland, 奥克兰机场接送, 新西兰包车, 奥克兰接机, 华人司机" />
+  <title>Auckland Airport Transfers & Chinese-Speaking Driver | 奥克兰接送</title>
+  <meta name="description" content="Flat-fare Auckland airport transfers from NZ$120 — one driver, one Mercedes GLS, no dispatch. English & Mandarin. 奥克兰机场接送 / 接机，华人司机，一口价。" />
+  <meta name="keywords" content="Auckland airport transfer, Auckland airport shuttle, Auckland airport pickup, private driver Auckland, Chinese speaking driver Auckland, bilingual driver Auckland, 奥克兰机场接送, 奥克兰接机, 奥克兰包车, 华人司机" />
   <meta name="author" content="Warm Voyage" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://warm-voyage.onrender.com" />
+  <link rel="canonical" href="https://warmvoyage.co.nz/" />
 
-  <meta property="og:title" content="Warm Voyage | Personal Auckland Airport Transfer & Charter Driver" />
-  <meta property="og:description" content="One driver, one car, 24 years living in Auckland. No fleet, no dispatch — just me. English & Mandarin spoken." />
+  <meta property="og:site_name" content="Warm Voyage" />
+  <meta property="og:title" content="Auckland Airport Transfers & Chinese-Speaking Driver | Warm Voyage" />
+  <meta property="og:description" content="Flat-fare Auckland airport transfers from NZ$120 — one driver, one Mercedes GLS, English & Mandarin spoken. 奥克兰机场接送，华人司机，一口价。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://warm-voyage.onrender.com" />
+  <meta property="og:url" content="https://warmvoyage.co.nz/" />
   <meta property="og:locale" content="en_NZ" />
+  <meta property="og:image" content="https://warmvoyage.co.nz/car.jpg" />
 
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Warm Voyage | Personal Auckland Airport Transfer Driver" />
-  <meta name="twitter:description" content="One driver, one car, 24 years living in Auckland. English & Mandarin spoken." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Auckland Airport Transfers & Chinese-Speaking Driver | Warm Voyage" />
+  <meta name="twitter:description" content="Flat-fare Auckland airport transfers from NZ$120 — English & Mandarin driver. 奥克兰机场接送，华人司机。" />
+  <meta name="twitter:image" content="https://warmvoyage.co.nz/car.jpg" />
 
   <meta name="geo.region" content="NZ-AUK" />
   <meta name="geo.placename" content="Auckland" />
@@ -28,27 +31,54 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "TaxiService"],
     "name": "Warm Voyage",
     "alternateName": "暖途",
-    "description": "Personal, one-driver, one-car airport transfer and day-charter service in Auckland, New Zealand.",
-    "url": "https://warm-voyage.onrender.com",
+    "description": "Personal, one-driver, one-car airport transfer and full-day charter service in Auckland, New Zealand. English and Mandarin spoken.",
+    "url": "https://warmvoyage.co.nz",
     "email": "bigbigraydeng@gmail.com",
+    "telephone": "+64277520888",
+    "priceRange": "NZ$120–NZ$1,200",
+    "image": "https://warmvoyage.co.nz/car.jpg",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Auckland",
       "addressRegion": "Auckland",
       "addressCountry": "NZ"
     },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "-36.8485",
-      "longitude": "174.7633"
-    },
+    "geo": { "@type": "GeoCoordinates", "latitude": "-36.8485", "longitude": "174.7633" },
     "areaServed": [
-      { "@type": "City", "name": "Auckland" }
+      { "@type": "City", "name": "Auckland" },
+      { "@type": "Place", "name": "Central Auckland" },
+      { "@type": "Place", "name": "East Auckland" },
+      { "@type": "Place", "name": "South Auckland" },
+      { "@type": "Place", "name": "North Shore (to Albany)" },
+      { "@type": "Place", "name": "West Auckland (to Hobsonville)" }
     ],
-    "knowsLanguage": ["en", "zh"]
+    "knowsLanguage": ["en", "zh"],
+    "sameAs": ["https://wa.me/64277520888"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "reservations",
+      "telephone": "+64277520888",
+      "email": "bigbigraydeng@gmail.com",
+      "availableLanguage": ["en", "zh"]
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Airport transfers & charter",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Airport transfer – Central / East / South Auckland",
+          "priceCurrency": "NZD", "price": "120",
+          "itemOffered": { "@type": "Service", "name": "Auckland Airport Transfer" } },
+        { "@type": "Offer", "name": "Airport transfer – North Shore (to Albany) / West (to Hobsonville)",
+          "priceCurrency": "NZD", "price": "140",
+          "itemOffered": { "@type": "Service", "name": "Auckland Airport Transfer" } },
+        { "@type": "Offer", "name": "Full-day private charter (up to 10 hours)",
+          "priceCurrency": "NZD", "price": "1200",
+          "itemOffered": { "@type": "Service", "name": "Full-Day Private Charter" } }
+      ]
+    }
   }
   </script>
 
@@ -280,6 +310,14 @@
     .enquiry { background: var(--white); }
     .enquiry-card { max-width: 680px; margin: 0 auto; background: var(--cream-white); border-radius: 24px; padding: clamp(24px, 4vw, 36px); box-shadow: var(--shadow-lg); border: 1px solid rgba(255,200,61,0.25); }
 
+    /* ===== FAQ ===== */
+    .faq { background: linear-gradient(180deg, var(--cream-white), #fff); }
+    .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item { background: var(--white); border-radius: 16px; padding: 22px 24px; box-shadow: var(--shadow); border: 1px solid rgba(0,0,0,0.04); }
+    .faq-item h3 { color: var(--deep-brown); font-size: 16px; margin-bottom: 8px; display: flex; gap: 10px; align-items: flex-start; }
+    .faq-item h3 i { color: var(--secondary-orange); font-size: 18px; margin-top: 2px; flex-shrink: 0; }
+    .faq-item p { color: var(--text-gray); font-size: 14.5px; line-height: 1.7; }
+
     /* ===== Places / Attractions ===== */
     .places { background: linear-gradient(180deg, var(--cream-white), #fff); }
     .places-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
@@ -356,7 +394,7 @@
       <div>
         <div class="hero-text">
           <h1 data-en="Hi, I'm <span class='ph-name'>Ray Deng</span> — Your Driver in Auckland" data-zh="你好，我是<span class='ph-name'>Ray Deng</span>——你在奥克兰的司机">Hi, I'm <span class="ph-name">Ray Deng</span> — Your Driver in Auckland</h1>
-          <p data-en="24 years living in Auckland. One car, one driver — me. No fleet, no dispatch centre, no stranger showing up. Just a local who knows the way and speaks your language." data-zh="在奥克兰生活24年。一台车，一个司机——就是我本人。没有车队，没有调度中心，来接你的不会是陌生人。熟悉本地路线，中英双语沟通无障碍。">24 years living in Auckland. One car, one driver — me. No fleet, no dispatch centre, no stranger showing up. Just a local who knows the way and speaks your language.</p>
+          <p data-en="Private Auckland airport transfers and full-day charters, driven personally by me — Ray Deng, 24 years living in Auckland. One car, one driver, no dispatch, no stranger showing up. English &amp; Mandarin spoken, flat fares from NZ$120." data-zh="奥克兰私人机场接送与全日包车，全程我本人 Ray Deng 亲自驾驶——在奥克兰生活 24 年。一台车、一个司机，没有调度中心，来接你的不会是陌生人。中英双语沟通无障碍，一口价 NZ$120 起。">Private Auckland airport transfers and full-day charters, driven personally by me — Ray Deng, 24 years living in Auckland. One car, one driver, no dispatch, no stranger showing up. English &amp; Mandarin spoken, flat fares from NZ$120.</p>
         </div>
         <div class="hero-trust">
           <div class="hero-trust-item"><i class="ri-user-star-line"></i> <span data-en="Personally Driven" data-zh="本人亲自接送">Personally Driven</span></div>
@@ -482,7 +520,7 @@
       <div class="section-header fade-up">
         <span class="badge" data-en="Instant Estimate" data-zh="即时估价">Instant Estimate</span>
         <h2 data-en="Airport Transfer Price" data-zh="机场接送报价">Airport Transfer Price</h2>
-        <p data-en="Choose your area for an instant estimate. It's a flat fare — no meter, no surge. I confirm the final price when I reply." data-zh="选择你所在的区域，立刻看到预估价。一口价，不打表、不加价。最终价格我会在回复时确认。">Choose your area for an instant estimate. It's a flat fare — no meter, no surge. I confirm the final price when I reply.</p>
+        <p data-en="Choose your area for an instant airport transfer estimate. Fares are flat — NZ$120 for central, east and south Auckland, NZ$140 to the North Shore (Albany) and West (Hobsonville). No meter, no surge. I confirm the final price when I reply." data-zh="选择你所在的区域，立刻看到机场接送预估价。一口价——中区/东区/南区 NZ$120，北岸(Albany)和西区(Hobsonville) NZ$140。不打表、不加价。最终价格我会在回复时确认。">Choose your area for an instant airport transfer estimate. Fares are flat — NZ$120 for central, east and south Auckland, NZ$140 to the North Shore (Albany) and West (Hobsonville). No meter, no surge. I confirm the final price when I reply.</p>
       </div>
       <div class="quote-card fade-up">
         <div class="quote-dir">
@@ -570,7 +608,7 @@
       <div class="section-header fade-up">
         <span class="badge" data-en="Where I Drive" data-zh="服务范围">Where I Drive</span>
         <h2 data-en="Auckland Airport Transfers & Day Charters" data-zh="奥克兰机场接送 + 一日包车">Auckland Airport Transfers & Day Charters</h2>
-        <p data-en="Based in Auckland — available for airport pickups and full-day trips to popular spots nearby" data-zh="常驻奥克兰，提供机场接送以及周边热门景点一日包车">Based in Auckland — available for airport pickups and full-day trips to popular spots nearby</p>
+        <p data-en="Based in Auckland — airport transfers from NZ$120 and full-day charters at NZ$1,200 (up to 10 hours) to Waiheke, Hobbiton, Rotorua and the Bay of Islands." data-zh="常驻奥克兰——机场接送 NZ$120 起，全日包车 NZ$1,200（最多10小时），可去怀希基、霍比特村、罗托鲁瓦、岛屿湾。">Based in Auckland — airport transfers from NZ$120 and full-day charters at NZ$1,200 (up to 10 hours) to Waiheke, Hobbiton, Rotorua and the Bay of Islands.</p>
       </div>
       <div class="dest-grid fade-up">
         <div class="dest-card">
@@ -721,6 +759,50 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="badge" data-en="FAQ" data-zh="常见问题">FAQ</span>
+        <h2 data-en="Common Questions" data-zh="常见问题">Common Questions</h2>
+        <p data-en="Straight answers on prices, areas and how it works." data-zh="价格、区域、怎么预订——直接给答案。">Straight answers on prices, areas and how it works.</p>
+      </div>
+      <div class="faq-list fade-up">
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="How much is an airport transfer from Auckland Airport to the city (CBD)?" data-zh="奥克兰机场到市中心（CBD）接送多少钱？">How much is an airport transfer from Auckland Airport to the city (CBD)?</span></h3><p data-en="A private transfer from Auckland Airport to the city centre (CBD) is a flat NZ$120 for central, east or south Auckland — no meter and no surge pricing. The drive takes about 30 minutes. You ride in a private Mercedes-Benz GLS with an English- and Mandarin-speaking driver, and the fare is the same in both directions." data-zh="奥克兰机场到市中心（CBD）私人接送一口价 NZ$120（适用中区、东区、南区），不打表、不加价。车程约 30 分钟。用的是私人奔驰 GLS，司机中英双语，接和送同价。">A private transfer from Auckland Airport to the city centre (CBD) is a flat NZ$120 for central, east or south Auckland — no meter and no surge pricing. The drive takes about 30 minutes. You ride in a private Mercedes-Benz GLS with an English- and Mandarin-speaking driver, and the fare is the same in both directions.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="Is there a Chinese-speaking (Mandarin) private driver in Auckland?" data-zh="奥克兰有会说中文（普通话）的私人司机吗？">Is there a Chinese-speaking (Mandarin) private driver in Auckland?</span></h3><p data-en="Yes. Warm Voyage is Ray Deng, a private driver in Auckland who speaks fluent Mandarin and English and has lived in Auckland for 24 years. He personally handles every airport transfer and full-day charter himself — one driver, one car, no dispatch and no substitute driver. Contact him on WhatsApp +64 27 752 0888, WeChat, or bigbigraydeng@gmail.com." data-zh="有。暖途 Warm Voyage 就是司机 Ray Deng 本人，中英文流利，在奥克兰生活了 24 年。每一趟机场接送和全日包车都是他本人亲自开——一台车、一个司机，没有调度中心、不会临时换人。联系方式：WhatsApp +64 27 752 0888、微信，或邮箱 bigbigraydeng@gmail.com。">Yes. Warm Voyage is Ray Deng, a private driver in Auckland who speaks fluent Mandarin and English and has lived in Auckland for 24 years. He personally handles every airport transfer and full-day charter himself — one driver, one car, no dispatch and no substitute driver. Contact him on WhatsApp +64 27 752 0888, WeChat, or bigbigraydeng@gmail.com.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="How much does it cost to charter a car and driver for a full day in Auckland?" data-zh="在奥克兰包车加司机一整天多少钱？">How much does it cost to charter a car and driver for a full day in Auckland?</span></h3><p data-en="A full-day private charter in Auckland is NZ$1,200 for up to 10 hours, with extra time at NZ$100 per hour. That covers the car (a Mercedes-Benz GLS for up to 5 passengers) and Ray driving personally all day. Tolls, tickets, ferry, meals and accommodation are separate." data-zh="奥克兰全日私人包车 NZ$1,200，含最多 10 小时，超时每小时 NZ$100。价格包含车辆（奔驰 GLS，最多 5 位乘客）和 Ray 全程亲自驾驶。过路费、门票、轮渡、餐费和住宿另计。">A full-day private charter in Auckland is NZ$1,200 for up to 10 hours, with extra time at NZ$100 per hour. That covers the car (a Mercedes-Benz GLS for up to 5 passengers) and Ray driving personally all day. Tolls, tickets, ferry, meals and accommodation are separate.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="Do you do airport pickups to North Shore or West Auckland, and how much?" data-zh="北岸或西区的接机做吗？多少钱？">Do you do airport pickups to North Shore or West Auckland, and how much?</span></h3><p data-en="Yes. Airport transfers to the North Shore (up to Albany) and West Auckland (up to Hobsonville) are a flat NZ$140. Central, east and south Auckland are NZ$120. Anywhere beyond these areas is quoted separately, and the price is the same for pickup and drop-off." data-zh="做。北岸（到 Albany 为止）和西区（到 Hobsonville 为止）机场接送一口价 NZ$140；中区、东区、南区为 NZ$120。超出这些区域的地点单独报价，接送同价。">Yes. Airport transfers to the North Shore (up to Albany) and West Auckland (up to Hobsonville) are a flat NZ$140. Central, east and south Auckland are NZ$120. Anywhere beyond these areas is quoted separately, and the price is the same for pickup and drop-off.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="How far is Auckland Airport from the city, and how long does the drive take?" data-zh="奥克兰机场离市区多远？开车要多久？">How far is Auckland Airport from the city, and how long does the drive take?</span></h3><p data-en="Auckland Airport is about a 30-minute drive from the city centre (CBD) in normal traffic. Ray tracks your flight and adjusts the pickup time, so if your flight is early or delayed he is still there waiting — with a name board at arrivals." data-zh="奥克兰机场到市中心（CBD）正常路况下车程约 30 分钟。Ray 会跟踪你的航班动态并相应调整接机时间，所以航班提前或延误他都会在到达口举牌等你。">Auckland Airport is about a 30-minute drive from the city centre (CBD) in normal traffic. Ray tracks your flight and adjusts the pickup time, so if your flight is early or delayed he is still there waiting — with a name board at arrivals.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="Can you do a Hobbiton, Waiheke Island or Rotorua day trip from Auckland?" data-zh="可以从奥克兰去霍比特村、怀希基岛或罗托鲁瓦一日游吗？">Can you do a Hobbiton, Waiheke Island or Rotorua day trip from Auckland?</span></h3><p data-en="Yes. Warm Voyage runs full-day private day trips from Auckland to Hobbiton (the Lord of the Rings movie set), Waiheke Island, Rotorua, the Bay of Islands, Piha Beach and Sky Tower. A charter day is NZ$1,200 for up to 10 hours in a Mercedes-Benz GLS, and the itinerary is tailored to you — tell Ray your interests and he will plan the route." data-zh="可以。暖途提供从奥克兰出发的全日私人一日游，目的地包括霍比特村（《指环王》取景地）、怀希基岛、罗托鲁瓦、岛屿湾、皮哈海滩和天空塔。包车一天 NZ$1,200，含最多 10 小时，用奔驰 GLS，行程按你的兴趣定制——把想法告诉 Ray，他来规划路线。">Yes. Warm Voyage runs full-day private day trips from Auckland to Hobbiton (the Lord of the Rings movie set), Waiheke Island, Rotorua, the Bay of Islands, Piha Beach and Sky Tower. A charter day is NZ$1,200 for up to 10 hours in a Mercedes-Benz GLS, and the itinerary is tailored to you — tell Ray your interests and he will plan the route.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="How many passengers and how much luggage can you take?" data-zh="一次最多能坐几个人？行李装得下吗？">How many passengers and how much luggage can you take?</span></h3><p data-en="The car is a Mercedes-Benz GLS that seats up to 5 passengers plus their luggage, so a whole family and all their suitcases travel together in one car with no splitting up. A free child seat is available on request, and there is bottled water and phone charging on board." data-zh="车是奔驰 GLS，最多可坐 5 位乘客并放下他们的行李，所以一家人连人带箱一台车全装下，不用分车。可按需免费提供儿童座椅，车内还备有瓶装水和手机充电。">The car is a Mercedes-Benz GLS that seats up to 5 passengers plus their luggage, so a whole family and all their suitcases travel together in one car with no splitting up. A free child seat is available on request, and there is bottled water and phone charging on board.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="Can you help with school visits or university campus tours in Auckland?" data-zh="能帮忙做学校考察或大学校园参观吗？">Can you help with school visits or university campus tours in Auckland?</span></h3><p data-en="Yes. Ray regularly drives families and delegations to University of Auckland and AUT campus tours, international-office meetings, and visits to selected primary and secondary schools, with smooth transport between every appointment. This runs as a full-day charter (NZ$1,200 for up to 10 hours) with a bilingual driver." data-zh="可以。Ray 经常带家庭和考察团去奥克兰大学、奥克兰理工大学（AUT）参观校园、拜访国际部，以及参观指定的中小学，每一站之间的用车都安排妥当。这项按全日包车计（NZ$1,200，含最多 10 小时），司机中英双语。">Yes. Ray regularly drives families and delegations to University of Auckland and AUT campus tours, international-office meetings, and visits to selected primary and secondary schools, with smooth transport between every appointment. This runs as a full-day charter (NZ$1,200 for up to 10 hours) with a bilingual driver.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="Do you offer factory or industry tours for business visitors?" data-zh="为商务客人提供工厂考察吗？">Do you offer factory or industry tours for business visitors?</span></h3><p data-en="Yes. Ray drives buyers and business delegations to site visits at New Zealand producers — including health-supplement, beef and lamb, and honey and manuka factories. It is booked as a full-day charter (NZ$1,200 for up to 10 hours) with an English- and Mandarin-speaking driver who knows Auckland." data-zh="提供。Ray 为采购商和商务考察团安排参观新西兰本地厂商——包括保健品、牛羊肉、蜂蜜与麦卢卡工厂。按全日包车预订（NZ$1,200，含最多 10 小时），司机中英双语、熟悉奥克兰。">Yes. Ray drives buyers and business delegations to site visits at New Zealand producers — including health-supplement, beef and lamb, and honey and manuka factories. It is booked as a full-day charter (NZ$1,200 for up to 10 hours) with an English- and Mandarin-speaking driver who knows Auckland.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="Can you drive me to house viewings and open homes in Auckland?" data-zh="可以带我在奥克兰看房、跑 open home 吗？">Can you drive me to house viewings and open homes in Auckland?</span></h3><p data-en="Yes. Ray offers chauffeured house-hunting across Auckland, getting you between viewings and open homes on time all day so you can focus on the properties. It is a full-day charter at NZ$1,200 for up to 10 hours in a Mercedes-Benz GLS." data-zh="可以。Ray 提供奥克兰各区看房专车，按时把你送到每一处房源和 open home，跑一整天，让你专心看房。按全日包车计，NZ$1,200 含最多 10 小时，用奔驰 GLS。">Yes. Ray offers chauffeured house-hunting across Auckland, getting you between viewings and open homes on time all day so you can focus on the properties. It is a full-day charter at NZ$1,200 for up to 10 hours in a Mercedes-Benz GLS.</p></div>
+        <div class="faq-item"><h3><i class="ri-question-line"></i> <span data-en="How do I book a Warm Voyage transfer or charter?" data-zh="怎么预订暖途的接送或包车？">How do I book a Warm Voyage transfer or charter?</span></h3><p data-en="Send your trip details through the booking form on this site, or message Ray directly on WhatsApp +64 27 752 0888, WeChat, or bigbigraydeng@gmail.com. He replies personally to confirm the price and pickup, usually within a few hours. Airport transfers start at NZ$120 and full-day charters are NZ$1,200 for up to 10 hours." data-zh="通过本站的预约表单发送行程信息，或直接联系 Ray：WhatsApp +64 27 752 0888、微信，或邮箱 bigbigraydeng@gmail.com。他会亲自回复确认价格和接送安排，通常几小时内。机场接送 NZ$120 起，全日包车 NZ$1,200 含最多 10 小时。">Send your trip details through the booking form on this site, or message Ray directly on WhatsApp +64 27 752 0888, WeChat, or bigbigraydeng@gmail.com. He replies personally to confirm the price and pickup, usually within a few hours. Airport transfers start at NZ$120 and full-day charters are NZ$1,200 for up to 10 hours.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How much is an airport transfer from Auckland Airport to the city (CBD)?", "acceptedAnswer": { "@type": "Answer", "text": "A private transfer from Auckland Airport to the city centre (CBD) is a flat NZ$120 for central, east or south Auckland — no meter and no surge pricing. The drive takes about 30 minutes. You ride in a private Mercedes-Benz GLS with an English- and Mandarin-speaking driver, and the fare is the same in both directions." } },
+      { "@type": "Question", "name": "Is there a Chinese-speaking (Mandarin) private driver in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Warm Voyage is Ray Deng, a private driver in Auckland who speaks fluent Mandarin and English and has lived in Auckland for 24 years. He personally handles every airport transfer and full-day charter himself — one driver, one car, no dispatch and no substitute driver. Contact him on WhatsApp +64 27 752 0888, WeChat, or bigbigraydeng@gmail.com." } },
+      { "@type": "Question", "name": "How much does it cost to charter a car and driver for a full day in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "A full-day private charter in Auckland is NZ$1,200 for up to 10 hours, with extra time at NZ$100 per hour. That covers the car (a Mercedes-Benz GLS for up to 5 passengers) and Ray driving personally all day. Tolls, tickets, ferry, meals and accommodation are separate." } },
+      { "@type": "Question", "name": "Do you do airport pickups to North Shore or West Auckland, and how much?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Airport transfers to the North Shore (up to Albany) and West Auckland (up to Hobsonville) are a flat NZ$140. Central, east and south Auckland are NZ$120. Anywhere beyond these areas is quoted separately, and the price is the same for pickup and drop-off." } },
+      { "@type": "Question", "name": "How far is Auckland Airport from the city, and how long does the drive take?", "acceptedAnswer": { "@type": "Answer", "text": "Auckland Airport is about a 30-minute drive from the city centre (CBD) in normal traffic. Ray tracks your flight and adjusts the pickup time, so if your flight is early or delayed he is still there waiting — with a name board at arrivals." } },
+      { "@type": "Question", "name": "Can you do a Hobbiton, Waiheke Island or Rotorua day trip from Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Warm Voyage runs full-day private day trips from Auckland to Hobbiton (the Lord of the Rings movie set), Waiheke Island, Rotorua, the Bay of Islands, Piha Beach and Sky Tower. A charter day is NZ$1,200 for up to 10 hours in a Mercedes-Benz GLS, and the itinerary is tailored to you — tell Ray your interests and he will plan the route." } },
+      { "@type": "Question", "name": "How many passengers and how much luggage can you take?", "acceptedAnswer": { "@type": "Answer", "text": "The car is a Mercedes-Benz GLS that seats up to 5 passengers plus their luggage, so a whole family and all their suitcases travel together in one car with no splitting up. A free child seat is available on request, and there is bottled water and phone charging on board." } },
+      { "@type": "Question", "name": "Can you help with school visits or university campus tours in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ray regularly drives families and delegations to University of Auckland and AUT campus tours, international-office meetings, and visits to selected primary and secondary schools, with smooth transport between every appointment. This runs as a full-day charter (NZ$1,200 for up to 10 hours) with a bilingual driver." } },
+      { "@type": "Question", "name": "Do you offer factory or industry tours for business visitors?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ray drives buyers and business delegations to site visits at New Zealand producers — including health-supplement, beef and lamb, and honey and manuka factories. It is booked as a full-day charter (NZ$1,200 for up to 10 hours) with an English- and Mandarin-speaking driver who knows Auckland." } },
+      { "@type": "Question", "name": "Can you drive me to house viewings and open homes in Auckland?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Ray offers chauffeured house-hunting across Auckland, getting you between viewings and open homes on time all day so you can focus on the properties. It is a full-day charter at NZ$1,200 for up to 10 hours in a Mercedes-Benz GLS." } },
+      { "@type": "Question", "name": "How do I book a Warm Voyage transfer or charter?", "acceptedAnswer": { "@type": "Answer", "text": "Send your trip details through the booking form on this site, or message Ray directly on WhatsApp +64 27 752 0888, WeChat, or bigbigraydeng@gmail.com. He replies personally to confirm the price and pickup, usually within a few hours. Airport transfers start at NZ$120 and full-day charters are NZ$1,200 for up to 10 hours." } }
+    ]
+  }
+  </script>
+
   <!-- Footer -->
   <footer id="contact">
     <div class="container">
@@ -767,6 +849,7 @@
     (function () {
       const box = document.getElementById('wechat-qr-box');
       const img = new Image();
+      img.alt = 'Warm Voyage WeChat QR code';
       img.onload = () => { box.innerHTML = ''; box.appendChild(img); };
       img.src = 'wechat-qr.jpg';
     })();
@@ -775,6 +858,7 @@
     (function () {
       const box = document.getElementById('about-photo-box');
       const img = new Image();
+      img.alt = 'Ray Deng, your Chinese-speaking Auckland driver';
       img.onload = () => { box.innerHTML = ''; box.appendChild(img); img.style.cssText = 'width:100%;height:100%;object-fit:cover;object-position:75% 30%;border-radius:22px;'; };
       img.src = 'ray-photo.jpg';
     })();
@@ -796,8 +880,8 @@
       currentLang = lang;
       document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
       document.title = lang === 'zh'
-        ? '暖途 - 新西兰个人接送司机'
-        : 'Warm Voyage | Personal Auckland Airport Transfer Driver';
+        ? '奥克兰机场接送 · 华人司机 | 暖途 Warm Voyage'
+        : 'Auckland Airport Transfers & Chinese-Speaking Driver | Warm Voyage';
 
       document.querySelectorAll('[data-en]').forEach(el => {
         const text = el.dataset[lang];
@@ -962,6 +1046,7 @@
       const box = document.getElementById('car-image-box');
       if (!box) return;
       const img = new Image();
+      img.alt = 'Mercedes-Benz GLS — Warm Voyage Auckland private driver';
       img.onload = () => { box.innerHTML = ''; box.appendChild(img); };
       img.src = 'car.jpg';
     })();
