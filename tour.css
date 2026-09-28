@@ -18,7 +18,7 @@ img { max-width: 100%; }
 
 nav { position: fixed; inset: 0 0 auto 0; height: 72px; display: flex; align-items: center; justify-content: space-between; padding: 0 4vw; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); z-index: 1000; box-shadow: 0 1px 20px rgba(0,0,0,.04); }
 .logo { font-size: clamp(20px, 2vw, 24px); color: var(--secondary-orange); display: flex; gap: 10px; align-items: center; font-weight: 700; text-decoration: none; }
-.logo i { color: var(--primary-yellow); font-size: 1.4em; }
+.logo svg { flex-shrink: 0; width: 1.3em; height: 1.3em; }
 .nav-right { display: flex; align-items: center; gap: 16px; }
 .nav-links { display: flex; gap: 22px; align-items: center; }
 .nav-links a { text-decoration: none; color: var(--deep-brown); font-weight: 500; font-size: 15px; }
